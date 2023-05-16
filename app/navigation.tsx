@@ -1,23 +1,26 @@
 "use client"; 
 
 import {useState} from 'react';
+import {useEffect} from 'react';
 
 import Image from 'next/image'
 
 export default function Navigation() {
 
 	const [isOpen, setIsOpen] = useState(false);
-	const burgerClick = event => {
+	const burgerClick = () => {
 		setIsOpen(isOpen => !isOpen);
 	};
 
-	const [isHover, setIsHover] = useState(false);
-	const navHover = event => {
-		setIsHover(isHover => !isHover);
-	};
+	const [scroll, setScroll] = useState(false);
+		useEffect(() => {
+			window.addEventListener("scroll", () => {
+			setScroll(window.scrollY > 0);
+		});
+	}, []);
 
 	return (
-		<main className={`navigation h-auto w-full relative bg-transparent ${isHover ? 'hover' : ''}`} onMouseOver={navHover}>
+		<main className={`navigation h-auto w-full relative ${scroll ? "bg-black" : "bg-transparent"}`}>
 			<div className='nav-container flex content-between items-center lg:max-w-screen-2xl lg:mx-auto'>
 				<div className='logo-wrapper flex justify-items-center w-1/2'>
 					<a href='#'>
@@ -94,6 +97,7 @@ export default function Navigation() {
 										</li>
 									</ul>
 									<div className='recent-articles'>
+										-- créer un component "Preview Article" --
 										<div className='article'>
 											<a href=''>
 												<Image
