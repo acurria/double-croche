@@ -3,7 +3,8 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
 
-import Image from 'next/image'
+import Image from 'next/image';
+import PreviewArticle from './preview-article'
 
 export default function Navigation() {
 
@@ -20,21 +21,21 @@ export default function Navigation() {
 	}, []);
 
 	return (
-		<main className={`navigation h-auto w-full relative ${scroll ? "bg-black" : "bg-transparent"}`}>
+		<main className={`navigation h-auto w-full relative ${scroll ? 'scroll' : ''}`}>
 			<div className='nav-container flex content-between items-center lg:max-w-screen-2xl lg:mx-auto'>
-				<div className='logo-wrapper flex justify-items-center w-1/2'>
+				<div className='logo-wrapper flex justify-items-center w-3/4'>
 					<a href='#'>
 						<Image
-							src="/vercel.svg"
+							src="/next.svg"
 							alt="Double-Croche Logo"
-							className="main-logo mr-2 inline-block"
+							className="main-logo mr-2 inline-block bg-white"
 							width={40}
 							height={40}
 						/>
 						<span className='text-white uppercase'>Double-Croche</span>
 					</a>
 				</div>
-				<div className={`navigation-wrapper mobile-view w-1/2 lg:hidden ${isOpen ? 'open' : ''}`}>
+				<div className={`navigation-wrapper mobile-view w-1/4 lg:hidden ${isOpen ? 'open' : ''}`}>
 					<div className='burger-nav flex justify-items-center flex-col items-end cursor-pointer' onClick={burgerClick}>
 						<span className='bar top-bar h-0.5 w-7 bg-white'></span>
 						<span className='bar middle-bar h-0.5 w-8 bg-white my-1.5'></span>
@@ -46,27 +47,27 @@ export default function Navigation() {
 								<span>MUSIQUE</span>
 								<ul className='level-1'>
 									<li>
-										<a href=''>Chroniques</a>
+										<a href=''>Interview</a>
 									</li>
 									<li>
-										<a href=''>Chroniques</a>
+										<a href=''>Playlists</a>
 									</li>
 									<li>
-										<a href=''>Chroniques</a>
+										<a href=''>Festivals</a>
 									</li>
 								</ul>
 							</li>
 							<li className='item-nav'>
-								<span>CINEMA</span>
+								<span>CINÉMA</span>
 								<ul className='level-1'>
 									<li>
 										<a href=''>Chroniques</a>
 									</li>
 									<li>
-										<a href=''>Chroniques</a>
+										<a href=''>Playlists</a>
 									</li>
 									<li>
-										<a href=''>Chroniques</a>
+										<a href=''>Festivals</a>
 									</li>
 								</ul>
 							</li>
@@ -85,73 +86,28 @@ export default function Navigation() {
 							<li className='item-nav'>
 								<span>MUSIQUE</span>
 								<div className='subnavigation'>
-									<ul className='level-1'>
-										<li>
-											<a href=''>Chroniques</a>
-										</li>
-										<li>
-											<a href=''>Chroniques</a>
-										</li>
-										<li>
-											<a href=''>Chroniques</a>
-										</li>
-									</ul>
-									<div className='recent-articles'>
-										-- créer un component "Preview Article" --
-										<div className='article'>
-											<a href=''>
-												<Image
-													src="/placeholder.png"
-													alt="Vercel Logo"
-													width={100}
-													height={24}
-													priority
-												/>
-											</a>
-											<p>
-												<span className='category'>Musique</span>
-												<span className='subcategory'> - Interview</span>
-											</p>
-											<p>
-												<span className='info'>DAFT PUNK pour “Album de l’année”</span>
-											</p>
-										</div>
-										<div className='article'>
-											<a href=''>
-												<Image
-													src="/placeholder.png"
-													alt="Vercel Logo"
-													width={100}
-													height={24}
-													priority
-												/>
-											</a>
-											<p>
-												<span className='category'>Musique</span>
-												<span className='subcategory'> - Interview</span> 
-											</p>
-											<p>
-												<span className='info'>DAFT PUNK pour “Album de l’année”</span>
-											</p>
-										</div>
-										<div className='article'>
-											<a href=''>
-												<Image
-													src="/placeholder.png"
-													alt="Vercel Logo"
-													className="dark:invert"
-													width={100}
-													height={24}
-													priority
-												/>
-											</a>
-											<p>
-												<span className='category'>Musique</span>
-												<span className='subcategory'> - Interview</span>
-											</p>
-											<p>
-												<span className='info'>DAFT PUNK pour “Album de l’année”</span>
-											</p>
+									<div className='subnavigation-container'>
+										<ul className='level-1'>
+											<li>
+												<a href=''>Interview</a>
+											</li>
+											<li>
+												<a href=''>Playlists</a>
+											</li>
+											<li>
+												<a href=''>Festivals</a>
+											</li>
+										</ul>
+										<div className='recent-articles'>
+											<div className='article'>
+												<PreviewArticle/>
+											</div>
+											<div className='article'>
+												<PreviewArticle/>
+											</div>
+											<div className='article'>
+												<PreviewArticle/>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -159,71 +115,28 @@ export default function Navigation() {
 							<li className='item-nav'>
 								<span>CINEMA</span>
 								<div className='subnavigation'>
-									<ul className='level-1'>
-										<li>
-											<a href=''>Chroniques</a>
-										</li>
-										<li>
-											<a href=''>Chroniques</a>
-										</li>
-										<li>
-											<a href=''>Chroniques</a>
-										</li>
-									</ul>
-									<div className='recent-articles'>
-										<div className='article'>
-											<a href=''>
-												<Image
-													src="/placeholder.png"
-													alt="Vercel Logo"
-													width={100}
-													height={24}
-													priority
-												/>
-											</a>
-											<p>
-												<span className='category'>Musique</span>
-												<span className='subcategory'> - Interview</span>
-											</p>
-											<p>
-												<span className='info'>DAFT PUNK pour “Album de l’année”</span>
-											</p>
-										</div>
-										<div className='article'>
-											<a href=''>
-												<Image
-													src="/placeholder.png"
-													alt="Vercel Logo"
-													width={100}
-													height={24}
-													priority
-												/>
-											</a>
-											<p>
-												<span className='category'>Musique</span>
-												<span className='subcategory'> - Interview</span>
-											</p>
-											<p>
-												<span className='info'>DAFT PUNK pour “Album de l’année”</span>
-											</p>
-										</div>
-										<div className='article'>
-											<a href=''>
-												<Image
-													src="/placeholder.png"
-													alt="Vercel Logo"
-													width={100}
-													height={24}
-													priority
-												/>
-											</a>
-											<p>
-												<span className='category'>Musique</span>
-												<span className='subcategory'> - Interview</span>
-											</p>
-											<p>
-												<span className='info'>DAFT PUNK pour “Album de l’année”</span>
-											</p>
+									<div className='subnavigation-container'>
+										<ul className='level-1'>
+											<li>
+												<a href=''>Chroniques</a>
+											</li>
+											<li>
+												<a href=''>Playlists</a>
+											</li>
+											<li>
+												<a href=''>Festivals</a>
+											</li>
+										</ul>
+										<div className='recent-articles'>
+											<div className='article'>
+												<PreviewArticle/>
+											</div>
+											<div className='article'>
+												<PreviewArticle/>
+											</div>
+											<div className='article'>
+												<PreviewArticle/>
+											</div>
 										</div>
 									</div>
 								</div>
