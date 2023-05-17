@@ -165,11 +165,8 @@ nav {
 	z-index: -1;
 	left: -100%;
 	top: 0;
-	transition: all ease-in 0.2s;
-}
-
-.navigation .mobile-view .items-nav-wrapper {
 	padding-top: 4.6rem;
+	transition: all 500ms cubic-bezier(0.860, 0.000, 0.070, 1.000);
 }
 
 .navigation .mobile-view.open .items-nav-wrapper {
@@ -179,7 +176,7 @@ nav {
 
 .navigation .mobile-view .bar {
 	position: relative;
-	transition: all ease-in 0.2s;
+	transition: all ease-in 0.4s;
 }
 
 .navigation .mobile-view .top-bar {
