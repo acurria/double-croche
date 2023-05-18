@@ -9,8 +9,9 @@ export default function PreviewArticle() {
 
 	return (
 		<main className='preview-article'>
-			<a href=''>
+			<a className="link-image" href=''>
 				<Image
+					className="image-preview-article"
 					src="/placeholder.png"
 					alt="Vercel Logo"
 					width={100}
@@ -25,6 +26,7 @@ export default function PreviewArticle() {
 			<p>
 				<span className='info'>DAFT PUNK pour “Album de l’année”</span>
 			</p>
+			<a className="link" href=''>Lire l'article</a>
 		</main>
 	)
 }

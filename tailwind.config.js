@@ -12,7 +12,7 @@ module.exports = {
                 'secondary': '#AB731F',
                 'black': '#000000',
                 'white': '#FFFFFF',
-                'black-opacity-600': 'rgba(0, 0, 0, 0.6)'
+                'black-opacity-700': 'rgba(0, 0, 0, 0.7)'
             },
             fontFamily: {
                 sans: ['Kanit', 'sans-serif']
