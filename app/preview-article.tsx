@@ -14,12 +14,12 @@ export default function PreviewArticle() {
 					className="image-preview-article"
 					src="/placeholder.png"
 					alt="Vercel Logo"
-					width={100}
+					width={500}
 					height={24}
 					priority
 				/>
 			</a>
-			<p>
+			<p className='category-subcategory'>
 				<span className='category'>Musique</span>
 				<span className='subcategory'> - Interview</span>
 			</p>

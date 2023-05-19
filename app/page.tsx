@@ -24,6 +24,24 @@ export default function Home() {
 				/>
 				<PreviewArticle/>
 			</div>
+			<div className="recent-articles-container bg-primary">
+				<h2><span className='highlight-secondary'>Derniers articles en </span>date</h2>
+				<div className='articles-wrapper lg:flex lg:items-start'>
+					<div className='main-article'>
+						<PreviewArticle/>
+					</div>
+					<div className='recent-articles-grid flex justify-center items-center flex-wrap lg:justify-end'>
+						<PreviewArticle/>
+						<PreviewArticle/>
+						<PreviewArticle/>
+						<PreviewArticle/>
+						<PreviewArticle/>
+						<PreviewArticle/>
+						<PreviewArticle/>
+						<PreviewArticle/>
+					</div>
+				</div>
+			</div>
 		</main>
 	)
 }
