@@ -1,9 +1,11 @@
 "use client"; 
 
-import Image from 'next/image';
+import Image from 'next/image'
 import PreviewArticle from './preview-article'
 import Album from './album'
 import Film from './film'
+
+import Fade from 'react-reveal/Fade';
 
 export default function Home() {
 	return (
@@ -27,7 +29,14 @@ export default function Home() {
 				<PreviewArticle/>
 			</div>
 			<div className="recent-articles-container bg-primary">
-				<h2><span className='highlight-secondary'>Derniers articles en </span>date</h2>
+				<h2>
+					<Fade left cascade>
+						<p className='highlight-secondary'>Derniers articles en </p>
+					</Fade>
+					<Fade left cascade>
+						date
+					</Fade>
+				</h2>
 				<div className='articles-wrapper lg:flex lg:items-start'>
 					<div className='main-article'>
 						<PreviewArticle/>
@@ -45,7 +54,14 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="moment-container bg-white">
-				<h2 className='text-black'><span className='highlight-secondary'>En ce </span>moment</h2>
+				<h2 className='text-black'>
+					<Fade left cascade>
+						<p className='highlight-secondary'>En ce </p>
+					</Fade>
+					<Fade left cascade>
+						moment
+					</Fade>
+				</h2>
 				<div className='albums-films-wrapper lg:flex'>
 					<div className='albums-wrapper'>
 						<h3>Albums</h3>

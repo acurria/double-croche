@@ -45,9 +45,24 @@ h2 span {
 }
 
 h2 {
+	position: relative;
 	padding-left: 1rem;
 	border-left: 0.25rem solid #AB731F;
 	margin-bottom: 1.5625rem;
+}
+
+h2 .react-reveal {
+	font-weight: 400;
+}
+
+h2::before {
+	content: '';
+	z-index: 3;
+	position: absolute;
+	left: -1.8125rem;
+	width: 1.5625rem;
+	height: 100%;
+	background-color: #111111;
 }
 
 h3 {
@@ -93,7 +108,8 @@ b {
 	font-weight: 700;
 }
 
-.highlight-secondary {
+.highlight-secondary,
+.highlight-secondary span {
 	color: #AB731F;
 }
 
@@ -367,6 +383,14 @@ nav {
 	color: #000000;
 }
 
+.moment-container h2 div.react-reveal > span {
+	color: #000000;
+}
+
+.moment-container h2::before {
+	background-color: #FFFFFF;
+}
+
 /* Footer Mobile */
 
 .footer,
@@ -449,6 +473,11 @@ nav {
 
 	h2 {
 		margin-bottom: 3.125rem;
+	}
+
+	h2::before {
+		left: -3.375rem;
+		width: 3.125rem;
 	}
 
 	/* Navigation Desktop */
@@ -646,6 +675,7 @@ nav {
 		color: #FFFFFF;
 		position: absolute;
 		opacity: 0;
+		white-space: nowrap;
 		top: 55%;
 		left: 50%;
 		text-align: center;
