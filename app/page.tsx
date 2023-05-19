@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import PreviewArticle from './preview-article'
+import Album from './album'
+import Film from './film'
 
 export default function Home() {
 	return (
@@ -39,6 +41,27 @@ export default function Home() {
 						<PreviewArticle/>
 						<PreviewArticle/>
 						<PreviewArticle/>
+					</div>
+				</div>
+			</div>
+			<div className="moment-container bg-white">
+				<h2 className='text-black'><span className='highlight-secondary'>En ce </span>moment</h2>
+				<div className='albums-films-wrapper lg:flex'>
+					<div className='albums-wrapper'>
+						<h3>Albums</h3>
+						<div className='albums-items lg:flex'>
+							<Album/>
+							<Album/>
+							<Album/>
+						</div>
+					</div>
+					<div className='films-wrapper'>
+						<h3>Films</h3>
+						<div className='films-items lg:flex'>
+							<Film/>
+							<Film/>
+							<Film/>
+						</div>
 					</div>
 				</div>
 			</div>
