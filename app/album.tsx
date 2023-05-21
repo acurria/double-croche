@@ -7,7 +7,7 @@ export default function Album() {
 	return (
 		<main className='album'>
 			<a className="album-image-link" href='' title='Redirection vers Spotify'>
-				<span className='link-to'>Écouter</span>
+				<span className='link-to hidden lg:block'>Écouter</span>
 				<Image
 					className="image-album"
 					src="/album-placeholder.png"

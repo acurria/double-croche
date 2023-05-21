@@ -457,6 +457,53 @@ nav {
 	margin: 0 0.5rem;
 }
 
+/* Slider Homepage */
+
+.moment-container .albums-items {
+	margin: 0 -1.5625rem;
+}
+
+.moment-container .slick-arrow {
+	z-index: 1;
+	bottom: 0;
+	top: initial;
+	transform: initial;
+}
+
+.moment-container .slick-arrow {
+	bottom: -2.25rem;
+}
+
+.moment-container .slick-arrow.slick-next::before,
+.moment-container .slick-arrow.slick-prev::before {
+	content: '';
+	display: block;
+	background-image: url('../public/arrow.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 0.125rem;
+	color: #000000;
+	opacity: 1;
+	width: 2rem;
+    height: 2rem;
+	border: 0.125rem solid #000000;
+	border-radius: 50%;
+}
+
+.moment-container .slick-arrow.slick-prev {
+	left: initial;
+	right: 5.3125rem;
+}
+
+.moment-container .slick-arrow.slick-next {
+	right: 2.3125rem;
+}
+
+.moment-container .slick-arrow.slick-next::before {
+	transform: rotate(180deg);
+}
+
+
 @media (min-width: 1024px) {
 
 	/* Typography */
@@ -675,6 +722,7 @@ nav {
 		color: #FFFFFF;
 		position: absolute;
 		opacity: 0;
+		visibility: hidden;
 		white-space: nowrap;
 		top: 55%;
 		left: 50%;
@@ -710,6 +758,7 @@ nav {
 	.film-image-link:hover .link-to {
 		top: 50%;
 		opacity: 1;
+		visibility: visible;
 	}
 
 	.album-image-link:hover::after,

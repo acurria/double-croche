@@ -7,7 +7,7 @@ export default function Film() {
 	return (
 		<main className='film'>
 			<a className="film-image-link" href='Redirection vers Allociné'>
-				<span className='link-to'>En savoir plus</span>
+				<span className='link-to hidden lg:block'>En savoir plus</span>
 				<Image
 					className="image-film"
 					src="/film-placeholder.png"

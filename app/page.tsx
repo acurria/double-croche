@@ -5,9 +5,23 @@ import PreviewArticle from './preview-article'
 import Album from './album'
 import Film from './film'
 
-import Fade from 'react-reveal/Fade';
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+
+import Fade from 'react-reveal/Fade'
+import Slider from "react-slick"
 
 export default function Home() {
+	var settings = {
+		dots: false,
+		arrows: true,
+		infinite: true,
+		slidesToShow: 1.6,
+		centerMode: true,
+		centerPadding: '10px',
+		slidesToScroll: 1
+	};
+
 	return (
 		<main className="homepage bg-slate-600">
 			<h1 className="sr-only">HomePage - Double Croche</h1>
@@ -66,17 +80,21 @@ export default function Home() {
 					<div className='albums-wrapper'>
 						<h3>Albums</h3>
 						<div className='albums-items lg:flex'>
-							<Album/>
-							<Album/>
-							<Album/>
+							<Slider {...settings}>
+								<Album/>
+								<Album/>
+								<Album/>
+							</Slider>
 						</div>
 					</div>
 					<div className='films-wrapper'>
 						<h3>Films</h3>
 						<div className='films-items lg:flex'>
-							<Film/>
-							<Film/>
-							<Film/>
+							<Slider {...settings}>
+								<Film/>
+								<Film/>
+								<Film/>
+							</Slider>
 						</div>
 					</div>
 				</div>
