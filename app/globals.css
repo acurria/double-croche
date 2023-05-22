@@ -369,8 +369,9 @@ nav {
 	font-weight: 500;
 }
 
-.albums-wrapper {
-	margin-bottom: 3.125rem;
+.albums-wrapper,
+.films-wrapper {
+	margin-bottom: 5.125rem;
 }
 
 .image-film,
@@ -459,10 +460,15 @@ nav {
 
 /* Slider Homepage */
 
-.moment-container .albums-items {
+.moment-container .albums-items,
+.moment-container .films-items {
 	margin: 0 -1.5625rem;
 }
 
+.moment-container .albums-items img,
+.moment-container .films-items img {
+	width: 100%;
+}
 .moment-container .slick-arrow {
 	z-index: 1;
 	bottom: 0;
@@ -501,6 +507,16 @@ nav {
 
 .moment-container .slick-arrow.slick-next::before {
 	transform: rotate(180deg);
+}
+
+.slick-slide:not(.slick-center) {
+	opacity: 0.4;
+	transform: scale(0.9);
+	transition: all 0.2s ease;
+}
+
+.slick-list {
+	padding-bottom: 2rem;
 }
 
 
@@ -769,6 +785,35 @@ nav {
 	.albums-items .album:nth-child(2),
 	.films-items .film:nth-child(2) {
 		margin: 0 1.3rem;
+	}
+
+	.albums-films-wrapper {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.albums-films-wrapper .film,
+	.albums-films-wrapper .album {
+		width: 100%;
+	}
+
+	.albums-films-wrapper .albums-wrapper,
+	.albums-films-wrapper .films-wrapper {
+		width: 50%;
+	}
+
+	.albums-films-wrapper .albums-wrapper {
+		margin-left: 0;
+	}
+
+	.albums-films-wrapper .films-wrapper {
+		margin-right: 0;
+	}
+
+	.moment-container .albums-items,
+	.moment-container .films-items {
+		margin: 0;
 	}
 
 	/* Footer Desktop */

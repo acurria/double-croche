@@ -10,15 +10,15 @@ import "slick-carousel/slick/slick-theme.css"
 
 import Fade from 'react-reveal/Fade'
 import Slider from "react-slick"
+import {useEffect, useState} from "react";
 
 export default function Home() {
 	var settings = {
 		dots: false,
 		arrows: true,
 		infinite: true,
-		slidesToShow: 1.6,
+		slidesToShow: 1,
 		centerMode: true,
-		centerPadding: '10px',
 		slidesToScroll: 1
 	};
 
@@ -80,21 +80,31 @@ export default function Home() {
 					<div className='albums-wrapper'>
 						<h3>Albums</h3>
 						<div className='albums-items lg:flex'>
-							<Slider {...settings}>
+							<Slider {...settings} className="lg:hidden">
 								<Album/>
 								<Album/>
 								<Album/>
 							</Slider>
+							<div className="items-no-slideshow hidden lg:flex lg:w-full">
+								<Album/>
+								<Album/>
+								<Album/>
+							</div>
 						</div>
 					</div>
 					<div className='films-wrapper'>
 						<h3>Films</h3>
 						<div className='films-items lg:flex'>
-							<Slider {...settings}>
+							<Slider {...settings} className="lg:hidden">
 								<Film/>
 								<Film/>
 								<Film/>
 							</Slider>
+							<div className="items-no-slideshow hidden lg:flex lg:w-full">
+								<Film/>
+								<Film/>
+								<Film/>
+							</div>
 						</div>
 					</div>
 				</div>
