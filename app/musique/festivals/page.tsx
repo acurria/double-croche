@@ -1,11 +1,10 @@
-"use client"; 
+"use client";
 
-import Image from 'next/image'
-import PreviewArticle from '../preview-article'
+import PreviewArticle from '../../components/molecules/preview-article'
 
 import Fade from 'react-reveal/Fade'
 
-export default function MusicInterviews() {
+export default function Page() {
 
 	return (
 		<main className="category-page">
@@ -15,12 +14,12 @@ export default function MusicInterviews() {
 						<p className='highlight-secondary'>Musique</p>
 					</Fade>
 					<Fade left cascade>
-						Interviews
+						Festivals
 					</Fade>
 				</h1>
 				<h2>
-					<span className='highlight-secondary'>Dernière </span>
-					<span>interview</span>
+					<span className='highlight-secondary'>Dernier </span>
+					<span>festival</span>
 				</h2>
 				<PreviewArticle/>
 			</div>

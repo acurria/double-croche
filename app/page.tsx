@@ -1,9 +1,9 @@
 "use client"; 
 
 import Image from 'next/image'
-import PreviewArticle from './preview-article'
-import Album from './album'
-import Film from './film'
+import PreviewArticle from '@/app/components/molecules/preview-article'
+import Album from '@/app/components/molecules/album'
+import Film from '@/app/components/molecules/film'
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"

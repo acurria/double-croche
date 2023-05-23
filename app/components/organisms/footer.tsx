@@ -1,13 +1,14 @@
 "use client";
 
 import Image from 'next/image'
+import Link from 'next/link';
 
 export default function Footer() {
 
 	return (
 		<main className='footer bg-black'>
 			<div className='footer-container flex flex-col items-center lg:flex-row lg:flex-wrap lg:items-start lg:max-w-screen-2xl lg:mx-auto'>
-				<a className='footer-logo' href=''>
+				<Link className='footer-logo' href="./">
 					<Image
 						src="/next.svg"
 						alt="Vercel Logo"
@@ -15,39 +16,39 @@ export default function Footer() {
 						height={24}
 						className="bg-white mb-7"
 					/>
-				</a>
+				</Link>
 				<div className='block menu-container'>
 					<p className='footer-title'>Menu</p>
 					<div className='menu-columns flex flex-wrap'>
 						<ul className='menu-column'>
 							<span>Musique</span>
 							<li>
-								<a href=''>Interviews</a>
+								<Link href="./musique/interviews">Interviews</Link>
 							</li>
 							<li>
-								<a href=''>Playlists</a>
+								<Link href="./musique/playlists">Playlists</Link>
 							</li>
 							<li>
-								<a href=''>Festivals</a>
+								<Link href="./musique/festivals">Festivals</Link>
 							</li>
 						</ul>
 						<ul className='menu-column'>
 							<span>Cinéma</span>
 							<li>
-								<a href=''>Chroniques</a>
+								<Link href="./cinema/interviews">Interviews</Link>
 							</li>
 							<li>
-								<a href=''>Playlists</a>
+								<Link href="./cinema/chroniques">Chroniques</Link>
 							</li>
 							<li>
-								<a href=''>Festivals</a>
+								<Link href="./cinema/festivals">Festivals</Link>
 							</li>
 						</ul>
 						<div className='menu-column'>
-							<a href=''>Concours</a>
+							<Link href="./concours">Concours</Link>
 						</div>
 						<div className='menu-column'>
-							<a href=''>Agenda</a>
+							<Link href="./agenda">Agenda</Link>
 						</div>
 					</div>
 				</div>

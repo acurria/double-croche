@@ -6,6 +6,11 @@ export default defineType({
     type: 'document',
     fields: [
         {
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug'
+        },
+        {
             name: 'category',
             title: 'Catégorie',
             type: 'reference',

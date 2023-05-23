@@ -3,8 +3,10 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
 
+import Link from 'next/link';
+
 import Image from 'next/image';
-import PreviewArticle from './preview-article'
+import PreviewArticle from '../molecules/preview-article'
 
 export default function Navigation() {
 
@@ -24,7 +26,7 @@ export default function Navigation() {
 		<main className={`navigation h-auto w-full relative ${scroll ? 'scroll' : ''}`}>
 			<div className='nav-container flex content-between items-center lg:max-w-screen-2xl lg:mx-auto'>
 				<div className='logo-wrapper flex justify-items-center w-3/4'>
-					<a href='#'>
+					<Link href="./">
 						<Image
 							src="/next.svg"
 							alt="Double-Croche Logo"
@@ -33,7 +35,7 @@ export default function Navigation() {
 							height={40}
 						/>
 						<span className='text-white uppercase'>Double-Croche</span>
-					</a>
+					</Link>
 				</div>
 				<div className={`navigation-wrapper mobile-view w-1/4 lg:hidden ${isOpen ? 'open' : ''}`}>
 					<div className='burger-nav flex justify-items-center flex-col items-end cursor-pointer' onClick={burgerClick}>
@@ -47,13 +49,13 @@ export default function Navigation() {
 								<span>MUSIQUE</span>
 								<ul className='level-1'>
 									<li>
-										<a href=''>Interview</a>
+										<Link href="./musique/interviews" onClick={burgerClick}>Interviews</Link>
 									</li>
 									<li>
-										<a href=''>Playlists</a>
+										<Link href="./musique/playlists" onClick={burgerClick}>Playlists</Link>
 									</li>
 									<li>
-										<a href=''>Festivals</a>
+										<Link href="./musique/festivals" onClick={burgerClick}>Festivals</Link>
 									</li>
 								</ul>
 							</li>
@@ -61,21 +63,21 @@ export default function Navigation() {
 								<span>CINÉMA</span>
 								<ul className='level-1'>
 									<li>
-										<a href=''>Chroniques</a>
+										<Link href="./cinema/interviews" onClick={burgerClick}>Interviews</Link>
 									</li>
 									<li>
-										<a href=''>Playlists</a>
+										<Link href="./cinema/chroniques" onClick={burgerClick}>Chroniques</Link>
 									</li>
 									<li>
-										<a href=''>Festivals</a>
+										<Link href="./cinema/festivals" onClick={burgerClick}>Festivals</Link>
 									</li>
 								</ul>
 							</li>
 							<li className='item-nav'>
-								<a href=''>CONCOURS</a>
+								<Link href="./concours" onClick={burgerClick}>CONCOURS</Link>
 							</li>
 							<li className='item-nav'>
-								<a href=''>AGENDA</a>
+								<Link href="./agenda" onClick={burgerClick}>AGENDA</Link>
 							</li>
 						</ul>
 					</div>
@@ -89,18 +91,18 @@ export default function Navigation() {
 									<div className='subnavigation-container'>
 										<ul className='level-1'>
 											<li>
-												<a href=''>Interview</a>
+												<Link href="./musique/interviews">Interviews</Link>
 											</li>
 											<li>
-												<a href=''>Playlists</a>
+												<Link href="./musique/playlists">Playlists</Link>
 											</li>
 											<li>
-												<a href=''>Festivals</a>
+												<Link href="./musique/festivals">Festivals</Link>
 											</li>
 										</ul>
 										<div className='recent-articles'>
 											<div className='article'>
-												<PreviewArticle/>
+												<PreviewArticle />
 											</div>
 											<div className='article'>
 												<PreviewArticle/>
@@ -113,18 +115,18 @@ export default function Navigation() {
 								</div>
 							</li>
 							<li className='item-nav'>
-								<span>CINEMA</span>
+								<span>CINÉMA</span>
 								<div className='subnavigation'>
 									<div className='subnavigation-container'>
 										<ul className='level-1'>
 											<li>
-												<a href=''>Chroniques</a>
+												<Link href="./cinema/interviews">Interviews</Link>
 											</li>
 											<li>
-												<a href=''>Playlists</a>
+												<Link href="./cinema/chroniques">Chroniques</Link>
 											</li>
 											<li>
-												<a href=''>Festivals</a>
+												<Link href="./cinema/festivals">Festivals</Link>
 											</li>
 										</ul>
 										<div className='recent-articles'>
@@ -142,10 +144,10 @@ export default function Navigation() {
 								</div>
 							</li>
 							<li className='item-nav'>
-								<a href=''>CONCOURS</a>
+								<Link href="./concours">CONCOURS</Link>
 							</li>
 							<li className='item-nav'>
-								<a href=''>AGENDA</a>
+								<Link href="./agenda">AGENDA</Link>
 							</li>
 						</ul>
 					</div>
