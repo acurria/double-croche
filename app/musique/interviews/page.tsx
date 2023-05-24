@@ -7,8 +7,8 @@ import Fade from 'react-reveal/Fade'
 export default function Page() {
 
 	return (
-		<main className="category-page">
-			<div className="header-category">
+		<main className="category-page bg-primary">
+			<div className="header-category lg:mx-auto lg:max-w-screen-2xl">
 				<h1>
 					<Fade left cascade>
 						<p className='highlight-secondary'>Musique</p>
@@ -17,11 +17,18 @@ export default function Page() {
 						Interviews
 					</Fade>
 				</h1>
-				<h2>
-					<span className='highlight-secondary'>Dernière </span>
-					<span>interview</span>
-				</h2>
-				<PreviewArticle/>
+				<div className='main-category-article lg:flex'>
+					<div className='wrapper-title lg:order-2 lg:items-start lg:ml-12'>
+						<h2>
+							<span className='highlight-secondary'>Dernière </span>
+							<span>interview</span>
+						</h2>
+						<div className='info-main-article hidden lg:block'>
+							<PreviewArticle/>
+						</div>
+					</div>
+					<PreviewArticle/>
+				</div>
 			</div>
 		</main>
 	)

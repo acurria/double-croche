@@ -35,6 +35,18 @@ h1 {
 	font-size: 2.625rem;
 	text-transform: uppercase;
 	color: #AB731F;
+	line-height: 1.2;
+}
+
+h1 span {
+	color: #FFFFFF;
+	display: block;
+	font-size: 2.625rem;
+	font-weight: 500;
+}
+
+h1 div.react-reveal span {
+	text-transform: initial;
 }
 
 h2,
@@ -44,6 +56,7 @@ h2 span {
 	display: block;
 }
 
+h1,
 h2 {
 	position: relative;
 	padding-left: 1rem;
@@ -55,6 +68,7 @@ h2 .react-reveal {
 	font-weight: 400;
 }
 
+h1::before,
 h2::before {
 	content: '';
 	z-index: 3;
@@ -88,8 +102,11 @@ p,
 li,
 span,
 a {
-	font-size: 0.875rem;
 	color: #FFFFFF;
+}
+
+p {
+	font-size: 0.875rem;
 }
 
 a,
@@ -320,6 +337,10 @@ nav {
 	margin-bottom: 0.3rem
 }
 
+.preview-article img {
+	width: 100%;
+}
+
 .preview-article span.subcategory {
 	font-size: 0.875rem;
 }
@@ -519,6 +540,56 @@ nav {
 	padding-bottom: 2rem;
 }
 
+/* Categories */
+
+.category-page {
+	padding: 6rem 1.5625rem 3.125rem;
+}
+
+.category-page h1 {
+	margin-bottom: 4rem;
+}
+
+.category-page h2 {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	font-size: 1.125rem;
+	color: #AB731F;
+	text-transform: uppercase;
+	border-left: 0;
+	padding-left: 0;
+}
+
+.category-page h2 .highlight-secondary {
+	margin-right: 0.7rem;
+}
+
+.category-page h2::before {
+	display: none;
+}
+
+.category-page h2::after {
+	content: '';
+	display: inline-block;
+	height: 0.20rem;
+	width: 100%;
+	margin-left: 1rem;
+	margin-bottom: 0.8rem;
+	background-color: #AB731F;
+}
+
+.category-page .preview-article .category-subcategory {
+	display: none;
+}
+
+.category-page .preview-article .title-info {
+	margin-top: 0.5rem;
+}
+
+.category-page .preview-article .title-info span {
+	font-size: 1.125rem;
+}
 
 @media (min-width: 1024px) {
 
@@ -527,6 +598,10 @@ nav {
 	h1,
 	h2 {
 		font-size: 3.5rem;
+	}
+
+	h1 {
+		line-height: 1;
 	}
 	
 	h2,
@@ -538,6 +613,12 @@ nav {
 		margin-bottom: 3.125rem;
 	}
 
+	.category-page h2,
+	.category-page h2 span {
+		font-size: 2.375rem;
+	}
+
+	h1::before,
 	h2::before {
 		left: -3.375rem;
 		width: 3.125rem;
@@ -552,7 +633,8 @@ nav {
 	.navigation,
 	.footer,
 	.recent-articles-container,
-	.moment-container {
+	.moment-container,
+	.category-page {
 		padding-left: 3.125rem;
 		padding-right: 3.125rem;
 	}
@@ -691,7 +773,7 @@ nav {
 		transition: transform ease-in 0.3s;
 	}
 
-	.preview-article img:hover {
+	.preview-article .link-image:hover img {
 		transform: scale(1.05);
 	}
 
@@ -733,7 +815,8 @@ nav {
 	}
 
 	.albums-wrapper .link-to,
-	.films-wrapper .link-to {
+	.films-wrapper .link-to,
+	.preview-article .link-to {
 		z-index: 3;
 		color: #FFFFFF;
 		position: absolute;
@@ -750,12 +833,14 @@ nav {
 	}
 
 	.album-image-link,
-	.film-image-link {
+	.film-image-link,
+	.preview-article .link-image {
 		position: relative;
 	}
 
 	.album-image-link::after,
-	.film-image-link::after {
+	.film-image-link::after,
+	.preview-article .link-image::after {
 		content:'';
 		display: block;
 		width: 100%;
@@ -771,14 +856,16 @@ nav {
 	}
 
 	.album-image-link:hover .link-to,
-	.film-image-link:hover .link-to {
+	.film-image-link:hover .link-to,
+	.preview-article .link-image:hover .link-to {
 		top: 50%;
 		opacity: 1;
 		visibility: visible;
 	}
 
 	.album-image-link:hover::after,
-	.film-image-link:hover::after {
+	.film-image-link:hover::after,
+	.preview-article .link-image:hover::after{
 		opacity: 1;
 	}
 
@@ -814,6 +901,56 @@ nav {
 	.moment-container .albums-items,
 	.moment-container .films-items {
 		margin: 0;
+	}
+
+	/* Categories */
+
+	.category-page h2,
+	.category-page h2 span {
+		font-size: 1.8rem;
+	}
+
+	.category-page h2 {
+		margin-bottom: 1rem;
+	}
+
+	.category-page {
+		padding-top: 8rem;
+	}
+
+	.category-page h2 {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
+	.category-page .info-main-article .link-image,
+	.category-page .info-main-article .category-subcategory,
+	.category-page .info-main-article .link {
+		display: none;
+	}
+
+	.category-page .main-category-article .info-main-article .preview-article {
+		width: 100%;
+	}
+
+	.category-page .info-main-article .preview-article .title-info span {
+		font-size: 1.5rem;
+	}
+
+	.category-page .main-category-article > .preview-article .title-info {
+		display: none;
+	}
+
+	.category-page h2::after {
+		width: 14%;
+	}
+
+	.category-page .wrapper-title {
+		width: 40%;
+	}
+
+	.category-page .main-category-article .preview-article {
+		width: 60%;
 	}
 
 	/* Footer Desktop */
