@@ -490,6 +490,7 @@ nav {
 .moment-container .films-items img {
 	width: 100%;
 }
+
 .moment-container .slick-arrow {
 	z-index: 1;
 	bottom: 0;
@@ -583,13 +584,80 @@ nav {
 	display: none;
 }
 
-.category-page .preview-article .title-info {
+.category-page .preview-article .title-info,
+.grid-container .title-info {
 	margin-top: 0.5rem;
 }
 
 .category-page .preview-article .title-info span {
 	font-size: 1.125rem;
 }
+
+.grid-container {
+	background-color: #FFFFFF;
+	padding: 3.125rem 1.5625rem;
+}
+
+.grid-container .category-subcategory {
+	display: none;
+}
+
+.grid-container .preview-article .info {
+	color: #000000;
+}
+
+.grid-container .wrapper-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1.5625rem;
+}
+
+.grid-container .react-reveal:nth-child(3),
+.grid-container .react-reveal:nth-child(6),
+.grid-container .react-reveal:nth-child(9),
+.grid-container .react-reveal:nth-child(12),
+.grid-container .react-reveal:nth-child(15) {
+	grid-column: 1 / 3;
+}
+
+.grid-container.layout-3x2 .react-reveal:nth-child(9) .preview-article {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	margin-left: -1.5625rem;
+	margin-right: -1.5625rem;
+}
+
+.grid-container.layout-3x2 .react-reveal:nth-child(9) .info {
+	color: #FFFFFF;
+}
+
+.grid-container.layout-3x2 .react-reveal:nth-child(9) .link-image::after {
+	content:'';
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.grid-container.layout-3x2 .react-reveal:nth-child(9) .title-info {
+	position: absolute;
+	z-index: 10;
+	text-align: right;
+	padding: 1.5625rem;
+}
+
+.grid-container.layout-3x2 .react-reveal:nth-child(9) .link-image {
+	width: 100%;
+	margin-bottom: 0;
+}
+
 
 @media (min-width: 1024px) {
 
@@ -634,7 +702,8 @@ nav {
 	.footer,
 	.recent-articles-container,
 	.moment-container,
-	.category-page {
+	.category-page,
+	.grid-container {
 		padding-left: 3.125rem;
 		padding-right: 3.125rem;
 	}
@@ -769,6 +838,7 @@ nav {
 	}
 
 	.preview-article img {
+		height: 100%;
 		object-fit: cover;
 		transition: transform ease-in 0.3s;
 	}
@@ -953,6 +1023,146 @@ nav {
 		width: 60%;
 	}
 
+	.grid-container.layout-3x2 .wrapper-grid {
+		grid-template-columns: auto;
+		grid-auto-rows: minmax(100px, auto);
+		grid-auto-columns: auto;
+		grid-gap: 1.875rem;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(1),
+	.grid-container.layout-3x2 .react-reveal:nth-child(4),
+	.grid-container.layout-3x2 .react-reveal:nth-child(10) {
+		grid-column: 1/2;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(2),
+	.grid-container .react-reveal:nth-child(5) {
+		grid-column: 2/3;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(11) {
+		grid-column: 1/3;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(11) {
+		grid-row: 5/7;
+	}
+
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(3) {
+		grid-row: 1/3;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(12),
+	.grid-container.layout-3x2 .react-reveal:nth-child(14) {
+		grid-column: 3/4;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(3) {
+		grid-column: 3/5;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(3) .preview-article,
+	.grid-container.layout-3x2 .react-reveal:nth-child(11) .preview-article {
+		height: calc(100% - 1.8125rem);
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(3) .preview-article .link-image,
+	.grid-container.layout-3x2 .react-reveal:nth-child(11) .preview-article .link-image {
+		height: 100%;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(13),
+	.grid-container.layout-3x2 .react-reveal:nth-child(15) {
+		grid-column: 4/5;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(6),
+	.grid-container.layout-3x2 .react-reveal:nth-child(16) {
+		grid-column: 1 / 2;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(7),
+	.grid-container.layout-3x2 .react-reveal:nth-child(17) {
+		grid-column: 2 / 3;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(8),
+	.grid-container.layout-3x2 .react-reveal:nth-child(18) {
+		grid-column: 3 / 4;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(9),
+	.grid-container.layout-3x2 .react-reveal:nth-child(19) {
+		grid-column: 4 / 5;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(9) .preview-article {
+		display: block;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(9) .link-image::after {
+		display: none;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(9) .title-info {
+		position: static;
+		text-align: left;
+		padding: 0;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(9) .info {
+		color: #000000;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(10) {
+		grid-column: 1 / 5;
+
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(10) .preview-article {
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		margin-left: -3.125rem;
+		margin-right: -3.125rem;
+	}
+	
+	.grid-container.layout-3x2 .react-reveal:nth-child(10) .info {
+		color: #FFFFFF;
+	}
+	
+	.grid-container.layout-3x2 .react-reveal:nth-child(10) .link-image::after {
+		content:'';
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+	
+	.grid-container.layout-3x2 .react-reveal:nth-child(10) .title-info {
+		position: absolute;
+		z-index: 10;
+		text-align: right;
+		padding: 1.5625rem 3.125rem;
+		font-size: 1.125rem;
+	}
+	
+	.grid-container.layout-3x2 .react-reveal:nth-child(10) .link-image {
+		width: 100%;
+		margin-bottom: 0;
+		height: 30rem;
+	}
+
 	/* Footer Desktop */
 
 	.footer .menu-container,
@@ -998,6 +1208,17 @@ nav {
 
 	.footer .menu-column {
 		width: 25%;
+	}
+}
+
+@media (min-width: 1536px) {
+
+	/* Categories*/
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(10) .preview-article {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 96rem;
 	}
 }
 

@@ -1,3 +1,4 @@
+import CategoryGrid3x2 from '@/app/components/organisms/category-grid-3x2'
 
 export const metadata = {
 	title: 'Musique - Interviews',
@@ -10,6 +11,9 @@ export default function Layout({
 	children: React.ReactNode
 }) {
 	return (
-		<>{children}</>
+		<>
+			{children}
+			<CategoryGrid3x2/>
+		</>
 	)
 }
