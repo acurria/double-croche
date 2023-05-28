@@ -355,6 +355,22 @@ nav {
 	margin-bottom: 1.5625rem;
 }
 
+.recent-articles-container .link-image {
+	overflow: hidden;
+    display: block;
+	height: 13rem;
+}
+
+.recent-articles-container .link-image img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.recent-articles-container .main-article .link-image {
+	height: 30rem;
+}
+
 .recent-articles-container .main-article .category {
 	font-size: 1.375rem;
 }
@@ -591,12 +607,14 @@ nav {
 	font-size: 1.5rem;
 }
 
-.category-page .preview-article .category-subcategory {
+.category-page .preview-article .category-subcategory,
+.subnavigation .category-subcategory {
 	display: none;
 }
 
 .category-page .preview-article .title-info,
-.grid-container .title-info {
+.grid-container .title-info,
+.subnavigation .title-info {
 	margin-top: 0.5rem;
 }
 
@@ -909,6 +927,10 @@ nav {
 
 	.navigation .article img {
 		width: 100%;
+	}
+
+	.subnavigation .link-image {
+		height: 9rem;
 	}
 
 	/* Preview Article Desktop */
