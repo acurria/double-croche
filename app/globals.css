@@ -669,6 +669,8 @@ nav {
 	margin-bottom: 0;
 }
 
+/* Agenda */
+
 .filter-container {
 	margin-left: -1.5625rem;
 	margin-right: -1.5625rem;
@@ -681,10 +683,11 @@ nav {
 	text-align: center;
 	cursor: pointer;
 	font-size: 0.875rem;
+	border-bottom: solid transparent 0.25rem;
 }
 
 .filter-container .item.current {
-	border-bottom: solid #AB731F 0.125rem;
+	border-bottom: solid #AB731F 0.2rem;
 	color: #AB731F;
 }
 
@@ -744,6 +747,14 @@ nav {
 
 .month-event li::marker {
 	color: #AB731F;
+}
+
+.event-category {
+	display: none;
+}
+
+.event-category.active {
+	display: block;
 }
 
 @media (min-width: 1024px) {
@@ -1355,11 +1366,17 @@ nav {
 		margin-right: -3.125rem;
 	}
 
+	.filter-items {
+		max-width: 40rem;
+    	margin: 0 auto;
+	}
+
 	.filter-container ul {
 		justify-content: center;
 	}
 
 	.filter-container .item {
+		width: auto !important;
 		margin: 0 3.125rem;
 		transition: all 0.2s ease-in;
 	}
