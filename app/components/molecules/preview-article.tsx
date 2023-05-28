@@ -10,7 +10,7 @@ export default function PreviewArticle() {
 				<span className='read-article link-to hidden lg:block'>Voir l'article</span>
 				<Image
 					className="image-preview-article"
-					src="/placeholder.png"
+					src="/album-placeholder.png"
 					alt="Vercel Logo"
 					width={500}
 					height={24}

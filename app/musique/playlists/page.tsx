@@ -17,7 +17,7 @@ export default function Page() {
 						Playlists
 					</Fade>
 				</h1>
-				<div className='main-category-article lg:flex'>
+				<div className='main-category-article square lg:flex'>
 					<div className='wrapper-title lg:order-2 lg:items-start lg:ml-12'>
 						<h2>
 							<span className='highlight-secondary'>Dernière </span>
