@@ -3,8 +3,8 @@ import Navigation from '@/app/components/organisms/navigation'
 import Footer from '@/app/components/organisms/footer'
 
 export const metadata = {
-	title: "Double-Croche Page d'accueil",
-	description: 'A FAIRE',
+	title: "Double-Croche - L'actualité musique et cinéma",
+	description: 'Interviews exclusives, playlists captivantes. Une expérience culturelle unique, pleine de créativité et de passion. Une immersion totale dans l\'univers artistique et musical.',
 }
 
 export default function RootLayout({
