@@ -10,9 +10,9 @@ import PreviewArticle from '../molecules/preview-article'
 
 export default function Navigation() {
 
-	const [isOpen, setIsOpen] = useState(false);
+	const [burgerIsOpen, setBurgerIsOpen] = useState(false);
 	const burgerClick = () => {
-		setIsOpen(isOpen => !isOpen);
+		setBurgerIsOpen(burgerIsOpen => !burgerIsOpen);
 	};
 
 	const [scroll, setScroll] = useState(false);
@@ -21,6 +21,26 @@ export default function Navigation() {
 			setScroll(window.scrollY > 0);
 		});
 	}, []);
+
+	const desktopMenuEnabled = (itemName:any) => {
+		let itemSelected = itemName.target.id;
+		let subnavigations = document.querySelectorAll('.level-0 .subnavigation');
+
+		subnavigations.forEach(subnavigation => {
+			subnavigation.classList.remove('active');
+			console.log(itemName.target.id);
+			if(itemSelected + '-subnavigation' == subnavigation.id) {
+				subnavigation.classList.add('active');
+			}
+		});
+	};
+
+	const desktopMenuDisabled = () => {
+		let subnavigations = document.querySelectorAll('.level-0 .subnavigation');
+		subnavigations.forEach(subnavigation => {
+			subnavigation.classList.remove('active');
+		});
+	};
 
 	return (
 		<main className={`navigation h-auto w-full relative ${scroll ? 'scroll' : ''}`}>
@@ -37,7 +57,7 @@ export default function Navigation() {
 						<span className='text-white uppercase'>Double-Croche</span>
 					</Link>
 				</div>
-				<div className={`navigation-wrapper mobile-view w-1/4 lg:hidden ${isOpen ? 'open' : ''}`}>
+				<div className={`navigation-wrapper mobile-view w-1/4 lg:hidden ${burgerIsOpen ? 'open' : ''}`}>
 					<div className='burger-nav flex justify-items-center flex-col items-end cursor-pointer' onClick={burgerClick}>
 						<span className='bar top-bar h-0.5 w-7 bg-white'></span>
 						<span className='bar middle-bar h-0.5 w-8 bg-white my-1.5'></span>
@@ -85,58 +105,58 @@ export default function Navigation() {
 				<div className='navigation-wrapper desktop-view w-1/2 hidden lg:block'>
 					<div className='items-nav-wrapper flex justify-items-center w-full lg:items-end'>
 						<ul className='level-0 flex text-white w-full justify-end'>
-							<li className='item-nav'>
-								<span>MUSIQUE</span>
-								<div className='subnavigation'>
+							<li id='music' className='item-nav' onMouseEnter={desktopMenuEnabled} onMouseLeave={desktopMenuDisabled}>
+								MUSIQUE
+								<div id='music-subnavigation' className='subnavigation'>
 									<div className='subnavigation-container'>
 										<ul className='level-1'>
-											<li>
+											<li onClick={desktopMenuDisabled}>
 												<Link href="./musique/interviews">Interviews</Link>
 											</li>
-											<li>
+											<li onClick={desktopMenuDisabled}>
 												<Link href="./musique/playlists">Playlists</Link>
 											</li>
-											<li>
+											<li onClick={desktopMenuDisabled}>
 												<Link href="./musique/festivals">Festivals</Link>
 											</li>
 										</ul>
 										<div className='recent-articles'>
-											<div className='article'>
+											<div className='article' onClick={desktopMenuDisabled}>
 												<PreviewArticle />
 											</div>
-											<div className='article'>
+											<div className='article' onClick={desktopMenuDisabled}>
 												<PreviewArticle/>
 											</div>
-											<div className='article'>
+											<div className='article' onClick={desktopMenuDisabled}>
 												<PreviewArticle/>
 											</div>
 										</div>
 									</div>
 								</div>
 							</li>
-							<li className='item-nav'>
-								<span>CINÉMA</span>
-								<div className='subnavigation'>
+							<li id='cinema' className='item-nav' onMouseEnter={desktopMenuEnabled} onMouseLeave={desktopMenuDisabled}>
+								CINÉMA
+								<div id='cinema-subnavigation' className='subnavigation'>
 									<div className='subnavigation-container'>
 										<ul className='level-1'>
-											<li>
+											<li onClick={desktopMenuDisabled}>
 												<Link href="./cinema/interviews">Interviews</Link>
 											</li>
-											<li>
+											<li onClick={desktopMenuDisabled}>
 												<Link href="./cinema/chroniques">Chroniques</Link>
 											</li>
-											<li>
+											<li onClick={desktopMenuDisabled}>
 												<Link href="./cinema/festivals">Festivals</Link>
 											</li>
 										</ul>
 										<div className='recent-articles'>
-											<div className='article'>
+											<div className='article' onClick={desktopMenuDisabled}>
 												<PreviewArticle/>
 											</div>
-											<div className='article'>
+											<div className='article' onClick={desktopMenuDisabled}>
 												<PreviewArticle/>
 											</div>
-											<div className='article'>
+											<div className='article' onClick={desktopMenuDisabled}>
 												<PreviewArticle/>
 											</div>
 										</div>
