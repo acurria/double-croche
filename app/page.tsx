@@ -24,7 +24,7 @@ export default function Home() {
 
 	return (
 		<main className="homepage bg-slate-600">
-			<h1 className="sr-only">HomePage - Double Croche</h1>
+			<h1 className="sr-only">Double-Croche - L'actualité musique et cinéma</h1>
 			<div className="banner-container flex justify-end items-end">
 				<Image
 					src="/banner-placeholder-mobile.png"
