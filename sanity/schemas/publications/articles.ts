@@ -6,130 +6,158 @@ export default defineType({
     type: 'document',
     fields: [
         {
+            name: 'title',
+            title: "Titre de l'article",
+            type: 'string',
+            validation: Rule => Rule.required()
+        },
+        {
             name: 'slug',
             title: 'Slug',
-            type: 'slug'
+            type: 'slug',
+            options: {
+                source: 'title'
+            },
+            validation: Rule => Rule.required()
         },
         {
             name: 'category',
             title: 'Catégorie',
             type: 'reference',
-            to: [{type: 'categories'}]        
+            to: [{type: 'categories'}],
+            validation: Rule => Rule.required()      
         },
         {
             name: 'subcategory',
             title: 'Sous-Catégorie',
             type: 'reference',
-            to: [{type: 'subcategories'}]        
+            to: [{type: 'subcategories'}]       
         },
         {
-            // Pour "Musique Interview", "Musique Festival", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival"
-            name: 'rectangleImage',
-            title: "Image - Ratio 3:2 (Sauf pour les Playlists et Concours où le ratio est de 1:1)",
-            type: 'image'
-        },
-        {
-            // Pour "Musique Playlist" et "Concours"
-            name: 'squareImage',
-            title: "Image - Ratio 1:1",
+            // Pour "Musique Interview", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival"
+            name: 'image',
+            title: "Image - Ratio 3:2 pour les articles Musique Interview, Cinéma Interview, Cinéma Chronique, Cinéma Festival et Ratio 1:1 pour les articles Musique Playlist, Musique Festival et Concours",
             type: 'image'
         },
         {
             // Pour "Musique Interview", "Concours"
             name: 'artist',
-            title: "Artiste",
+            title: "Artiste (Musique Interview, Concours)",
             type: 'reference',
             to: [{type: 'artists'}]   
         },
         {
             // Pour "Musique Interview"
             name: 'album',
-            title: "Album",
+            title: "Album (Musique Interview)",
             type: 'reference',
             to: [{type: 'albums'}]  
         },
         {
             // Pour "Musique Playlist"
             name: 'month',
-            title: "Mois",
+            title: "Mois (Musique Playlist)",
             type: 'string'
         },
         {
-            // Pour "Musique Playlist", "Musique Concours"
+            // Pour "Musique Playlist", "Concours"
             name: 'link',
-            title: "Lien",
+            title: "Lien (Musique Playlist, Musique Concours)",
             type: 'url'
         },
         {
             // Pour "Musique Festival", "Musique Playlist", "Cinéma Festival"
             name: 'year',
-            title: "Année",
+            title: "Année (Musique Festival, Musique Playlist, Cinéma Festival)",
             type: 'number'
         },
         {
-            // Pour "Musique Interview"
+            // Pour "Musique Playlist"
             name: 'part',
-            title: "Partie",
+            title: "Partie (Musique Playlist)",
             type: 'string'
         },
         {
             // Pour "Musique Festival"
             name: 'musicFestivalName',
-            title: "Nom du festival",
+            title: "Nom du festival (Musique Festival)",
             type: 'reference',
             to: [{type: 'musicFestivals'}]   
         },
         {
             // Pour "Cinéma Festival"
             name: 'filmFestivalName',
-            title: "Nom du festival",
+            title: "Nom du festival (Cinéma Festival)",
             type: 'reference',
             to: [{type: 'filmFestivals'}]   
         },
         {
             // Pour "Musique Festival"
             name: 'city',
-            title: "Ville",
+            title: "Ville (Musique Festival)",
             type: 'string'
         },
         {
             // Pour "Cinéma Interview" et "Cinéma Chronique"
             name: 'director',
-            title: "Réalisateur",
+            title: "Réalisateur (Cinéma Interview et Cinéma Chronique)",
             type: 'reference',
             to: [{type: 'directors'}]  
         },
         {
             // Pour "Cinéma Interview" et "Cinéma Chronique"
             name: 'filmTitle',
-            title: "Titre du film",
+            title: "Titre du film (Cinéma Interview et Cinéma Chronique)",
             type: 'reference',
             to: [{type: 'films'}]  
         },
         {
             // Pour "Cinéma Festival"
             name: 'day',
-            title: "Jour",
+            title: "Jour (Cinéma Festival)",
             type: 'string'
         },
         {
             // Pour "Concours"
             name: 'localisation',
-            title: "Lieu",
+            title: "Lieu (Concours)",
             type: 'string'
         },
         {
             // Pour "Concours"
             name: 'date',
-            title: "Date",
-            type: 'date'
+            title: "Date (Concours)",
+            type: 'date',
+            options: {
+                dateFormat: 'DD-MM-YYYY'
+            }
         },
         {
             // Pour "Musique Interview", "Musique Festival", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival"
             name: 'content',
-            title: 'Description', 
+            title: 'Description (Musique Interview, Musique Festival, Cinéma Interview, Cinéma Chronique, Cinéma Festival', 
             type: 'array', 
-            of: [{type: 'block'}]
+            of: [
+                {type: 'block'},
+                {type: 'image'}
+            ],
+            validation: Rule => Rule.required()
+        },
+        {
+            // Pour "Concours"
+            name: 'publicationDate',
+            title: "Date de publication de l'article (Pour tous les articles)",
+            type: 'date',
+            options: {
+                dateFormat: 'DD-MM-YYYY hh:mm:ss'
+            },
+            validation: Rule => Rule.required()
+        },
+    ],
+    preview: {
+        select: {
+            media: 'image',
+            title: 'title',
         }
-    ]
+    }
 });

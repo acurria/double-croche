@@ -6,20 +6,35 @@ export default defineType({
     type: 'document',
     fields: [
         {
+            name: 'title',
+            title: "Titre de la bannière",
+            type: 'string',
+            initialValue: 'Bannière active'
+        },
+        {
             name: 'article',
             title: 'Article',
             type: 'reference',
-            to: [{type: 'articles'}]        
+            to: [{type: 'articles'}],
+            validation: Rule => Rule.required()      
         },
         {
             name: 'mobileImage',
-            title: "Image bannière mobile",
-            type: 'image'
+            title: "Image bannière version mobile",
+            type: 'image',
+            validation: Rule => Rule.required()
         },
         {
             name: 'mobileDesktop',
-            title: "Image bannière desktop",
-            type: 'image'
+            title: "Image bannière version desktop",
+            type: 'image',
+            validation: Rule => Rule.required()
         }
-    ]
+    ],
+    preview: {
+        select: {
+            media: 'mobileDesktop',
+            title: 'title'
+        }
+    }
 });

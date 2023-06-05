@@ -16,8 +16,8 @@ export default(S: any) => {
             ),
             S.listItem().title("En ce moment").icon(ClipboardIcon).child(
                 S.list().showIcons(false).title("Films et Albums du moment").items([
-                    S.listItem().title("Films du moment").child(S.documentTypeList("films")),
-                    S.listItem().title("Albums du moment").child(S.documentTypeList("albums"))
+                    S.listItem().title("Films du moment").child(S.documentTypeList("momentFilms")),
+                    S.listItem().title("Albums du moment").child(S.documentTypeList("momentAlbums"))
                 ])
             ),
             S.listItem().title("Agenda").icon(CalendarIcon).child(

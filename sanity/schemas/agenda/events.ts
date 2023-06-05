@@ -8,7 +8,8 @@ export default defineType({
         {
             name: 'title',
             title: "Nom de l'évènement",
-            type: 'string'       
+            type: 'string',
+            validation: Rule => Rule.required()      
         },
         {
             name: 'slug',
@@ -16,23 +17,30 @@ export default defineType({
             type: 'slug',
             options: {
                 source: 'title'
-            }
+            },
+            validation: Rule => Rule.required()
         },
         {
             name: 'type',
-            title: 'Type',
+            title: 'Type de l\'évènement',
             type: 'reference',
-            to: [{type: 'eventTypes'}]        
+            to: [{type: 'eventTypes'}],
+            validation: Rule => Rule.required()       
         },
         {
             name: 'month',
-            title: 'Month',
-            type: 'string'        
+            title: 'Mois',
+            type: 'string',
+            validation: Rule => Rule.required()      
         },
         {
             name: 'date',
             title: 'Date',
-            type: 'date'        
+            type: 'date',
+            options: {
+                dateFormat: 'DD-MM-YYYY'
+            },
+            validation: Rule => Rule.required()     
         }
     ]
 });

@@ -1,4 +1,4 @@
-import CategoryGrid3x2 from '@/app/components/organisms/category-grid-3x2'
+import CategoryGrid1x1 from '@/app/components/organisms/category-grid-1x1'
 
 export const metadata = {
 	title: 'Festivals Musique: Scènes, artistes et ambiance',
@@ -13,7 +13,7 @@ export default function Layout({
 	return (
 		<>
 			{children}
-			<CategoryGrid3x2/>
+			<CategoryGrid1x1/>
 		</>
 	)
 }

@@ -58,7 +58,7 @@ export default function Footer() {
 				</div>
 				<div className='block bottom-container lg:flex lg:flex-row-reverse lg:justify-between'>
 					<div className='social flex items-center justify-center'>
-						<a className='social-item' href=''>
+						<a className='social-item' href='https://open.spotify.com/user/double-croche?si=I-k5frP5TX-riRPywdMn8w&nd=1' target='_blank'>
 							<Image
 								src="/spotify.svg"
 								alt="Spotify Logo"
@@ -66,7 +66,7 @@ export default function Footer() {
 								height={25}
 							/>
 						</a>
-						<a className='social-item' href=''>
+						<a className='social-item' href='https://www.facebook.com/doublecroche.dc' target='_blank'>
 							<Image
 								src="/facebook.svg"
 								alt="facebook Logo"
@@ -74,7 +74,7 @@ export default function Footer() {
 								height={25}
 							/>
 						</a>
-						<a className='social-item' href=''>
+						<a className='social-item' href='https://www.instagram.com/doublecroche_dc/' target='_blank'>
 							<Image
 								src="/instagram.svg"
 								alt="Instagram Logo"

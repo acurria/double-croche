@@ -6,26 +6,42 @@ export default defineType({
     type: 'document',
     fields: [
         {
-            name: 'image',
-            title: "Image - Ratio 1:1",
-            type: 'image'
+            name: 'title',
+            title: "Titre de l'album (Pour la preview en Back-Office)",
+            type: 'string',
+            validation: Rule => Rule.required()
         },
         {
-            name: 'title',
+            name: 'image',
+            title: "Image - Ratio 1:1",
+            type: 'image',
+            validation: Rule => Rule.required()
+        },
+        {
+            name: 'titleAlbum',
             title: "Titre de l'album",
             type: 'reference',
-            to: [{type: 'albums'}]  
+            to: [{type: 'albums'}],
+            validation: Rule => Rule.required() 
         },
         {
             name: 'artist',
             title: "Artiste",
             type: 'reference',
-            to: [{type: 'artists'}]  
+            to: [{type: 'artists'}],
+            validation: Rule => Rule.required()  
         },
         {
             name: 'link',
             title: "Lien Spotify",
-            type: 'url'
+            type: 'url',
+            validation: Rule => Rule.required()
         }
-    ]
+    ],
+    preview: {
+        select: {
+            media: 'image',
+            title: 'title',
+        }
+    }
 });
