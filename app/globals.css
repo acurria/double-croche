@@ -482,6 +482,7 @@ nav {
 
 .contact-container a {
 	color: #AB731F;
+	margin-left: 0.2rem;
 }
 
 .contact-container a:hover {
@@ -1556,4 +1557,3 @@ nav {
 		max-width: 96rem;
 	}
 }
-

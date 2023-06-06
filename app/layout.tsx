@@ -18,11 +18,11 @@ export default function RootLayout({
 				<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
 			</head>
 			<body>
-				<nav className='sticky top-0 z-20'>
-					<Navigation />
+				<nav id="nav-section" className='sticky top-0 z-20'>
+					<Navigation/>
 				</nav>
 				{children}
-				<footer>
+				<footer id="footer-section">
 					<Footer/>
 				</footer>
 			</body>
