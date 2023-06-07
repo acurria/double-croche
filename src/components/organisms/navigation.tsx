@@ -46,7 +46,7 @@ export default function Navigation() {
 		<main className={`navigation h-auto w-full relative ${scroll ? 'scroll' : ''}`}>
 			<div className='nav-container flex content-between items-center lg:max-w-screen-2xl lg:mx-auto'>
 				<div className='logo-wrapper flex justify-items-center w-3/4'>
-					<Link href="./">
+					<Link href="">
 						<Image
 							src="/next.svg"
 							alt="Double-Croche Logo"
@@ -122,13 +122,13 @@ export default function Navigation() {
 										</ul>
 										<div className='recent-articles'>
 											<div className='article' onClick={desktopMenuDisabled}>
-												<PreviewArticle />
+												{/*PreviewArticle*/}
 											</div>
 											<div className='article' onClick={desktopMenuDisabled}>
-												<PreviewArticle/>
+												{/*PreviewArticle*/}
 											</div>
 											<div className='article' onClick={desktopMenuDisabled}>
-												<PreviewArticle/>
+												{/*PreviewArticle*/}
 											</div>
 										</div>
 									</div>
@@ -151,13 +151,13 @@ export default function Navigation() {
 										</ul>
 										<div className='recent-articles'>
 											<div className='article' onClick={desktopMenuDisabled}>
-												<PreviewArticle/>
+												{/*PreviewArticle*/}
 											</div>
 											<div className='article' onClick={desktopMenuDisabled}>
-												<PreviewArticle/>
+												{/*PreviewArticle*/}
 											</div>
 											<div className='article' onClick={desktopMenuDisabled}>
-												<PreviewArticle/>
+												{/*PreviewArticle*/}
 											</div>
 										</div>
 									</div>

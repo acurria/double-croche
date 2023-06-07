@@ -1,11 +1,11 @@
-import CategoryGrid3x2 from '@/app/components/organisms/category-grid-3x2'
+import {Metadata} from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'Interviews Cinéma: Acteurs, réalisateurs et secrets',
 	description: 'Découvrez des interviews exclusives avec des acteurs, réalisateurs et personnalités du cinéma. Plongez dans les coulisses et découvrez les secrets de vos films préférés. Une immersion captivante dans l\'univers du 7ème art vous attend.',
-}
+};
 
-export default function Layout({
+export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode
@@ -13,7 +13,6 @@ export default function Layout({
 	return (
 		<>
 			{children}
-			<CategoryGrid3x2/>
 		</>
 	)
 }

@@ -1,11 +1,11 @@
-import CategoryGrid3x2 from '@/app/components/organisms/category-grid-3x2'
+import {Metadata} from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: 'Chroniques Cinéma: Critiques, analyses et actualités',
 	description: 'Plongez dans l\'univers du cinéma avec nos chroniques riches en critiques, analyses et actualités. Découvrez des articles passionnants qui vous guideront à travers le monde du 7ème art.',
-}
+};
 
-export default function Layout({
+export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode
@@ -13,7 +13,6 @@ export default function Layout({
 	return (
 		<>
 			{children}
-			<CategoryGrid3x2/>
 		</>
 	)
 }

@@ -140,19 +140,8 @@ export default defineType({
             of: [
                 {type: 'block'},
                 {type: 'image'}
-            ],
-            validation: Rule => Rule.required()
-        },
-        {
-            // Pour "Concours"
-            name: 'publicationDate',
-            title: "Date de publication de l'article (Pour tous les articles)",
-            type: 'date',
-            options: {
-                dateFormat: 'DD-MM-YYYY hh:mm:ss'
-            },
-            validation: Rule => Rule.required()
-        },
+            ]
+        }
     ],
     preview: {
         select: {

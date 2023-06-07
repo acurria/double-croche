@@ -1,6 +1,7 @@
 "use client";
 
 import Image from 'next/image'
+// @ts-ignore
 import Fade from 'react-reveal/Fade'
 
 export default function Page() {

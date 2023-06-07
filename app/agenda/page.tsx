@@ -2,10 +2,10 @@
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-
+// @ts-ignore
 import Fade from 'react-reveal/Fade'
+// @ts-ignore
 import Slider from "react-slick"
-
 export default function Page() {
 	var settings = {
 		dots: false,

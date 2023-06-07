@@ -1,16 +1,18 @@
-"use client"; 
+"use client";
 
 import Image from 'next/image'
-import PreviewArticle from '@/app/components/molecules/preview-article'
-import Album from '@/app/components/molecules/album'
-import Film from '@/app/components/molecules/film'
+import PreviewArticle from '@/src/components/molecules/preview-article'
+import Album from '@/src/components/molecules/album'
+import Film from '@/src/components/molecules/film'
+import ArticlesHomepage from "@/src/components/molecules/articlesHomepage";
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+// @ts-ignore
 import Fade from 'react-reveal/Fade'
+// @ts-ignore
 import Slider from "react-slick"
-import {useEffect, useState} from "react";
 
 export default function Home() {
 	var settings = {
@@ -40,7 +42,10 @@ export default function Home() {
 					width={100}
 					height={40}
 				/>
-				<PreviewArticle/>
+				{
+					/*<PreviewArticle/>
+					 */
+				}
 			</div>
 			<div className="recent-articles-container bg-primary">
 				<div className='recent-articles-wrapper lg:max-w-screen-2xl lg:mx-auto'>
@@ -52,20 +57,8 @@ export default function Home() {
 							date
 						</Fade>
 					</h2>
-					<div className='articles-wrapper lg:flex lg:items-start'>
-						<div className='main-article'>
-							<PreviewArticle/>
-						</div>
-						<div className='recent-articles-grid flex justify-center items-center flex-wrap lg:justify-end'>
-							<PreviewArticle/>
-							<PreviewArticle/>
-							<PreviewArticle/>
-							<PreviewArticle/>
-							<PreviewArticle/>
-							<PreviewArticle/>
-							<PreviewArticle/>
-							<PreviewArticle/>
-						</div>
+					<div className='articles-wrapper'>
+						<ArticlesHomepage />
 					</div>
 				</div>
 			</div>
