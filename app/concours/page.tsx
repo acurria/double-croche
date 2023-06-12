@@ -1,36 +1,64 @@
 "use client";
 
 import PreviewArticle from '@/src/components/molecules/preview-article'
-import CategoryGrid1x1 from '@/src/components/organisms/category-grid-1x1'
 // @ts-ignore
 import Fade from 'react-reveal/Fade'
+import {useQuery} from "react-query";
+import client from "@/src/createClient";
 
 export default function Page() {
 
+	const {data, status} = useQuery(
+		'elementsArticlesConcours', async(context) => {
+			const query = `*[_type=="articles" && category->slug.current=='concours']{_id}|order(_createdAt desc)`;
+			return await client.fetch(query);
+		}
+	);
+
+	if (status !== 'success') {
+		return <></>
+		// Create loader to wait
+	}
+
 	return (
 		<>
-			<main className="category-page bg-primary">
+			<div className="category-page bg-primary">
 				<div className="header-category lg:mx-auto lg:max-w-screen-2xl">
 					<h1>
 						<Fade left cascade>
 							<p className='highlight-secondary'>Concours</p>
 						</Fade>
 					</h1>
-					<div className='main-category-article square lg:flex'>
+					<div className='main-category-article lg:flex'>
 						<div className='wrapper-title lg:order-2 lg:items-start lg:ml-12'>
 							<h2>
 								<span className='highlight-secondary'>Dernier </span>
 								<span>concours</span>
 							</h2>
 							<div className='info-main-article hidden lg:block'>
-								<PreviewArticle/>
+								<PreviewArticle id={data[0]._id} />
 							</div>
 						</div>
-						<PreviewArticle/>
+						<PreviewArticle id={data[0]._id} />
 					</div>
 				</div>
-			</main>
-			<CategoryGrid1x1/>
+			</div>
+			<div className='grid-container layout-1x1'>
+				<div className='wrapper-grid lg:max-w-screen-2xl lg:mx-auto'>
+					{
+						data.map(function (item:any, index:number){
+								if (index === 0) {
+									return null
+								}
+
+								return <Fade key={item._id} bottom>
+									<PreviewArticle key={item._id} id={item._id}/>
+								</Fade>
+							}
+						)
+					}
+				</div>
+			</div>
 		</>
 	)
 }

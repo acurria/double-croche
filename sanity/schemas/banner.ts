@@ -25,7 +25,7 @@ export default defineType({
             validation: Rule => Rule.required()
         },
         {
-            name: 'mobileDesktop',
+            name: 'desktopImage',
             title: "Image bannière version desktop",
             type: 'image',
             validation: Rule => Rule.required()
@@ -33,7 +33,7 @@ export default defineType({
     ],
     preview: {
         select: {
-            media: 'mobileDesktop',
+            media: 'desktopImage',
             title: 'title'
         }
     }

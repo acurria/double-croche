@@ -979,20 +979,20 @@ nav {
 		color: #FFFFFF;
 	}
 
-	.navigation .article {
+	.navigation .preview-article {
 		width: calc(100% / 3);
 		margin: 0 1rem;
 	}
 
-	.navigation .article:last-of-type {
+	.navigation .preview-article:last-of-type {
 		margin-right: 0;
 	}
 
-	.navigation .article:first-of-type {
+	.navigation .preview-article:first-of-type {
 		margin-left: 0;
 	}
 
-	.navigation .article img {
+	.navigation .preview-article img {
 		width: 100%;
 	}
 

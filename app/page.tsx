@@ -1,52 +1,21 @@
 "use client";
 
-import Image from 'next/image'
-import PreviewArticle from '@/src/components/molecules/preview-article'
-import Album from '@/src/components/molecules/album'
-import Film from '@/src/components/molecules/film'
-import ArticlesHomepage from "@/src/components/molecules/articlesHomepage";
+import BannerHomepage from "./../src/components/molecules/banner-homepage";
+import ArticlesHomepage from "./../src/components/molecules/articles-homepage";
+import AlbumsHomepage from "./../src/components/molecules/albums-homepage";
+import FilmsHomepage from "./../src/components/molecules/films-homepage";
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
 // @ts-ignore
 import Fade from 'react-reveal/Fade'
-// @ts-ignore
-import Slider from "react-slick"
 
 export default function Home() {
-	var settings = {
-		dots: false,
-		arrows: true,
-		infinite: true,
-		slidesToShow: 1,
-		centerMode: true,
-		slidesToScroll: 1
-	};
-
 	return (
 		<main className="homepage bg-slate-600">
 			<h1 className="sr-only">Double-Croche - L'actualité musique et cinéma</h1>
-			<div className="banner-container flex justify-end items-end">
-				<Image
-					src="/banner-placeholder-mobile.png"
-					alt="Banner Background"
-					className="background-image backgound-banner-image-mobile lg:hidden"
-					width={100}
-					height={40}
-				/>
-				<Image
-					src="/banner-placeholder-desktop.png"
-					alt="Banner Background"
-					className="background-image backgound-banner-image-desktop hidden lg:block"
-					width={100}
-					height={40}
-				/>
-				{
-					/*<PreviewArticle/>
-					 */
-				}
-			</div>
+			<BannerHomepage />
 			<div className="recent-articles-container bg-primary">
 				<div className='recent-articles-wrapper lg:max-w-screen-2xl lg:mx-auto'>
 					<h2>
@@ -75,33 +44,11 @@ export default function Home() {
 					<div className='albums-films-wrapper lg:flex'>
 						<div className='albums-wrapper'>
 							<h3>Albums</h3>
-							<div className='albums-items lg:flex'>
-								<Slider {...settings} className="lg:hidden">
-									<Album/>
-									<Album/>
-									<Album/>
-								</Slider>
-								<div className="items-no-slideshow hidden lg:flex lg:w-full">
-									<Album/>
-									<Album/>
-									<Album/>
-								</div>
-							</div>
+							<AlbumsHomepage/>
 						</div>
 						<div className='films-wrapper'>
 							<h3>Films</h3>
-							<div className='films-items lg:flex'>
-								<Slider {...settings} className="lg:hidden">
-									<Film/>
-									<Film/>
-									<Film/>
-								</Slider>
-								<div className="items-no-slideshow hidden lg:flex lg:w-full">
-									<Film/>
-									<Film/>
-									<Film/>
-								</div>
-							</div>
+							<FilmsHomepage/>
 						</div>
 					</div>
 				</div>

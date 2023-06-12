@@ -6,7 +6,8 @@ import {useEffect} from 'react';
 import Link from 'next/link';
 
 import Image from 'next/image';
-import PreviewArticle from '../molecules/preview-article'
+import ArticlesNavMusic from '../molecules/articles-nav-music'
+import ArticlesNavCinema from '../molecules/articles-nav-cinema'
 
 export default function Navigation() {
 
@@ -120,16 +121,8 @@ export default function Navigation() {
 												<Link href="./musique/festivals">Festivals</Link>
 											</li>
 										</ul>
-										<div className='recent-articles'>
-											<div className='article' onClick={desktopMenuDisabled}>
-												{/*PreviewArticle*/}
-											</div>
-											<div className='article' onClick={desktopMenuDisabled}>
-												{/*PreviewArticle*/}
-											</div>
-											<div className='article' onClick={desktopMenuDisabled}>
-												{/*PreviewArticle*/}
-											</div>
+										<div className='recent-articles' onClick={desktopMenuDisabled}>
+											<ArticlesNavMusic />
 										</div>
 									</div>
 								</div>
@@ -149,16 +142,8 @@ export default function Navigation() {
 												<Link href="./cinema/festivals">Festivals</Link>
 											</li>
 										</ul>
-										<div className='recent-articles'>
-											<div className='article' onClick={desktopMenuDisabled}>
-												{/*PreviewArticle*/}
-											</div>
-											<div className='article' onClick={desktopMenuDisabled}>
-												{/*PreviewArticle*/}
-											</div>
-											<div className='article' onClick={desktopMenuDisabled}>
-												{/*PreviewArticle*/}
-											</div>
+										<div className='recent-articles' onClick={desktopMenuDisabled}>
+											<ArticlesNavCinema />
 										</div>
 									</div>
 								</div>

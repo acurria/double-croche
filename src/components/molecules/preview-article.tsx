@@ -13,15 +13,15 @@ interface propsType {
 export default function PreviewArticle({id}:propsType) {
 
 	const {data, status} = useQuery(
-		'elementsPreviewArticle', async(context) => {
+		'elementsPreviewArticle_'+id, async(context) => {
 			const query = `*[_type=="articles" && _id=='${id}']{
 			  "artist": artist->firstLastName,
-			  "image": image.asset._ref,
+			  "image": image.asset->url,
 			  "album": album->title,
 			  "category": category->title,
 			  "subcategory": subcategory->title,
 			  "musicFestivalName": musicFestivalName->title,
-			  "musicFestivalName": musicFestivalName->title,
+			  "filmFestivalName": filmFestivalName->title,
 			  "city": city,
 			  "year": year,
 			  "month": month,
@@ -41,16 +41,14 @@ export default function PreviewArticle({id}:propsType) {
 		return <></>
 		// Create loader to wait
 	}
-	console.log(data);
-
 
 	return (
 		<main className='preview-article'>
-			<Link className="link-image" href={data[0].url}>
+			<Link className="link-image" href="#">
 				<span className='read-article link-to hidden lg:block'>Voir l'article</span>
 				<Image
 					className="image-preview-article"
-					src="/placeholder.png"
+					src={data[0].image}
 					alt="Vercel Logo"
 					width={500}
 					height={24}
@@ -64,7 +62,7 @@ export default function PreviewArticle({id}:propsType) {
 			<p className='title-info'>
 				<span className='info'><span className='highlight-secondary'>{data[0].artist}</span> pour “{data[0].album}”</span>
 			</p>
-			<Link className="link" href={data[0].url}>Lire l'article</Link>
+			<Link className="link" href='#'>Lire l'article</Link>
 		</main>
 	)
 }

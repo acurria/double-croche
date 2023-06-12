@@ -26,14 +26,14 @@ export default function Page() {
 								<span>festival</span>
 							</h2>
 							<div className='info-main-article hidden lg:block'>
-								<PreviewArticle/>
+								{/*<PreviewArticle/>*/}
 							</div>
 						</div>
-						<PreviewArticle/>
+						{/*<PreviewArticle/>*/}
 					</div>
 				</div>
 			</main>
-			<CategoryGrid1x1/>
+			{/*<CategoryGrid1x1/>*/}
 		</>
 	)
 }

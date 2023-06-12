@@ -8,7 +8,6 @@ import Footer from "@/src/components/organisms/footer";
 
 const queryClient = new QueryClient()
 
-
 export default function RootTemplate({children}:any) {
     return (
         <QueryClientProvider client={queryClient}>
