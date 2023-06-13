@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css"
 import Fade from 'react-reveal/Fade'
 // @ts-ignore
 import Slider from "react-slick"
+import client from "../../src/createClient";
+import {useQuery} from "react-query";
 export default function Page() {
 	var settings = {
 		dots: false,
@@ -47,6 +49,23 @@ export default function Page() {
 
 		filterName.target.classList.add('current');
 	};
+
+	const {data, status} = useQuery(
+		'elementsAgenda', async(context) => {
+			const query = `*[_type=="events"]{
+			  'date': date,
+			  'month': month,
+			  'title': title,
+			  'type': type->slug.current
+			}`;
+			return await client.fetch(query);
+		}
+	);
+
+	if (status !== 'success') {
+		return <></>
+		// Create loader to wait
+	}
 
 	return (
 		<main className="category-page agenda bg-primary">

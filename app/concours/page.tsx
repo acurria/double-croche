@@ -1,10 +1,10 @@
 "use client";
 
-import PreviewArticle from '@/src/components/molecules/preview-article'
 // @ts-ignore
 import Fade from 'react-reveal/Fade'
+import client from "../../src/createClient";
 import {useQuery} from "react-query";
-import client from "@/src/createClient";
+import PreviewArticle from "@/src/components/molecules/preview-article";
 
 export default function Page() {
 
@@ -43,7 +43,7 @@ export default function Page() {
 					</div>
 				</div>
 			</div>
-			<div className='grid-container layout-1x1'>
+			<div className='grid-container layout-3x2'>
 				<div className='wrapper-grid lg:max-w-screen-2xl lg:mx-auto'>
 					{
 						data.map(function (item:any, index:number){
