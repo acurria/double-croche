@@ -147,7 +147,7 @@ b {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.3);
 }
 
 .banner-container .preview-article {
@@ -564,6 +564,15 @@ nav {
 .category-page,
 .article-page {
 	padding: 6rem 1.5625rem 3.125rem;
+}
+
+.layout-3x2 .text-info,
+.layout-1x1 .text-info {
+	color: #000000;
+}
+
+.main-category-article .text-info {
+	color: #FFFFFF;
 }
 
 .category-page h1 {

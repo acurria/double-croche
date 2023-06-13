@@ -34,7 +34,6 @@ export default function AlbumsHomepage() {
             <Slider {...settings} className="lg:hidden">
                 {
                     data.map(function (item:any){
-                        console.log(item._id)
                             return <PreviewAlbum key={item._id} id={item._id}/>
                         }
                     )
