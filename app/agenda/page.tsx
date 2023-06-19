@@ -96,7 +96,7 @@ export default function Page() {
 			<div className='filter-container bg-black'>
 				<div className='filter-items'>
 					<Slider {...settings}>
-						<li id='albums-filter' className='item' onClick={manageFilter}>Albums</li>
+						<li id='albums-filter' className='item current' onClick={manageFilter}>Albums</li>
 						<li id='concerts-filter' className='item' onClick={manageFilter}>Concerts</li>
 						<li id='films-filter' className='item' onClick={manageFilter}>Films</li>
 						<li id='expos-filter' className='item' onClick={manageFilter}>Expos</li>
@@ -258,7 +258,7 @@ export default function Page() {
 							</div>
 						</div>
 					</div>
-					<div id='concerts-filter-container' className='concerts event-category lg:max-w-screen-2xl lg:mx-auto active'>
+					<div id='concerts-filter-container' className='concerts event-category lg:max-w-screen-2xl lg:mx-auto'>
 						<div className='filter-title'>
 							<h2>Concerts</h2>
 						</div>
@@ -411,7 +411,7 @@ export default function Page() {
 							</div>
 						</div>
 					</div>
-					<div id='films-filter-container' className='films event-category lg:max-w-screen-2xl lg:mx-auto active'>
+					<div id='films-filter-container' className='films event-category lg:max-w-screen-2xl lg:mx-auto'>
 						<div className='filter-title'>
 							<h2>Films</h2>
 						</div>
@@ -564,7 +564,7 @@ export default function Page() {
 							</div>
 						</div>
 					</div>
-					<div id='expos-filter-container' className='expos event-category lg:max-w-screen-2xl lg:mx-auto active'>
+					<div id='expos-filter-container' className='expos event-category lg:max-w-screen-2xl lg:mx-auto'>
 						<div className='filter-title'>
 							<h2>Expos</h2>
 						</div>
