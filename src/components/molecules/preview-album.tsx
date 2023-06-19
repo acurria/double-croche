@@ -27,9 +27,6 @@ export default function PreviewAlbum({id}:propsType) {
 		// Create loader to wait
 	}
 
-	console.log(data);
-
-
 	return (
 		<main className='album'>
 			<a className="album-image-link" href='' title={data[0].link}>

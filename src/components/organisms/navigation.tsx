@@ -29,7 +29,6 @@ export default function Navigation() {
 
 		subnavigations.forEach(subnavigation => {
 			subnavigation.classList.remove('active');
-			console.log(itemName.target.id);
 			if(itemSelected + '-subnavigation' == subnavigation.id) {
 				subnavigation.classList.add('active');
 			}

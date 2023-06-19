@@ -738,7 +738,7 @@ nav {
 }
 
 .filter-container .item.current {
-	border-bottom: solid #AB731F 0.2rem;
+	border-bottom: solid #AB731F 0.25rem;
 	color: #AB731F;
 }
 
@@ -772,7 +772,7 @@ nav {
 .event-infos {
 	display: flex;
 	align-items: flex-start;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 .month-title {
@@ -788,8 +788,28 @@ nav {
 	font-size: 1.25rem;
 }
 
-.month-event ul {
+.month-item {
+	margin-bottom: 4rem;
+}
+
+.month-item.Janvier + .Janvier,
+.month-item.Février + .Février,
+.month-item.Mars + .Mars,
+.month-item.Avril + .Avril,
+.month-item.Mai + .Mai,
+.month-item.Juin + .Juin,
+.month-item.Juillet + .Juillet,
+.month-item.Août + .Août,
+.month-item.Septembre + .Septembre,
+.month-item.Octobre + .Octobre,
+.month-item.Novembre + .Novembre,
+.month-item.Décembre + .Décembre {
+	display: none;
+}
+
+.month-event {
 	list-style: initial;
+	padding-left: 2rem;
 }
 
 .month-event li {
@@ -1490,8 +1510,6 @@ nav {
 	}
 
 	.month-container {
-		display: flex;
-		flex-wrap: wrap;
 		margin: 0 -3rem;
 	}
 
@@ -1501,6 +1519,11 @@ nav {
 	}
 
 	.month-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.month-item {
 		width: calc((100% / 3) - 6rem);
 		margin: 0 3rem 3.125rem;
 	}
