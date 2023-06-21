@@ -855,10 +855,10 @@ nav {
 	padding-left: 3rem;
 }
 
-.wrapper-article ul li::marker{
+.wrapper-article ul li::marker,
+.wrapper-article a {
 	color: #AB731F;
 }
-
 
 .wrapper-article img {
 	margin: 1.8rem 0;
