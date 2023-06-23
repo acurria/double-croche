@@ -43,16 +43,16 @@ export default function Navigation() {
 	};
 
 	return (
-		<main className={`navigation h-auto w-full relative ${scroll ? 'scroll' : ''}`}>
+		<main className={`navigation w-full relative ${scroll ? 'scroll' : ''}`}>
 			<div className='nav-container flex content-between items-center lg:max-w-screen-2xl lg:mx-auto'>
 				<div className='logo-wrapper flex justify-items-center w-3/4'>
 					<Link href="/">
 						<Image
-							src="/logo-black.png"
+							src="/logo-black.jpg"
 							alt="Double-Croche Logo"
 							className="main-logo mr-2 inline-block bg-white"
 							width={60}
-							height={86}
+							height={60}
 						/>
 						<span className='text-white uppercase sr-only'>Double-Croche</span>
 					</Link>

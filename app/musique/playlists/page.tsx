@@ -22,7 +22,7 @@ export default function Page() {
 
 	return (
 		<>
-			<div className="category-page bg-primary">
+			<div className="category-page bg-primary playlist">
 				<div className="header-category lg:mx-auto lg:max-w-screen-2xl">
 					<h1>
 						<Fade left cascade>
@@ -46,7 +46,7 @@ export default function Page() {
 					</div>
 				</div>
 			</div>
-			<div className='grid-container layout-3x2'>
+			<div className='grid-container layout-1x1'>
 				<div className='wrapper-grid lg:max-w-screen-2xl lg:mx-auto'>
 					{
 						data.map(function (item:any, index:number){
