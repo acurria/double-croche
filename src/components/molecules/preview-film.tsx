@@ -1,14 +1,21 @@
 "use client"; 
 
-import Image from 'next/image'
 import client from "../../createClient";
 import {useQuery} from "react-query";
+import Link from "next/link";
+
+import imageUrlBuilder from '@sanity/image-url'
 
 interface propsType {
 	id:string
 }
 
 export default function PreviewFilm({id}:propsType) {
+
+	const builder = imageUrlBuilder(client)
+	function urlFor(source:any) {
+		return builder.image(source)
+	}
 
 	const {data, status} = useQuery(
 		'elementsPreviewFilm_'+id, async(context) => {
@@ -29,17 +36,14 @@ export default function PreviewFilm({id}:propsType) {
 
 	return (
 		<main className='film'>
-			<a className="film-image-link" href={data[0].link}>
+			<Link className="film-image-link" href={`/articles/${data[0].link}`}>
 				<span className='link-to hidden lg:block'>En savoir plus</span>
-				<Image
+				<img
 					className="image-film"
-					src={data[0].image}
+					src={urlFor(data[0].image).url()}
 					alt="Film cover"
-					width={204}
-					height={204}
-					priority
 				/>
-			</a>
+			</Link>
 			<p className='film-artist'>{data[0].director}</p>
 			<p className='film-name'>{data[0].film}</p>
 		</main>

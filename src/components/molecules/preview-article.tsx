@@ -1,16 +1,22 @@
 "use client"; 
 
-import Image from 'next/image'
 import {useQuery} from 'react-query'
 
 import client from "../../createClient";
 import Link from "next/link";
+
+import imageUrlBuilder from '@sanity/image-url'
 
 interface propsType {
 	id:string
 }
 
 export default function PreviewArticle({id}:propsType) {
+
+	const builder = imageUrlBuilder(client)
+	function urlFor(source:any) {
+		return builder.image(source)
+	}
 
 	const {data, status} = useQuery(
 		'elementsPreviewArticle_'+id, async(context) => {
@@ -47,93 +53,72 @@ export default function PreviewArticle({id}:propsType) {
 	return (
 		<main className='preview-article'>
 			{
-				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link-image" href={data[0].externalLink}>
+				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link-image" href={data[0].externalLink} target='_blank'>
 					<span className='read-article link-to hidden lg:block'>Écouter sur Spotify</span>
-					<Image
+					<img
 						className="image-preview-article"
-						src={data[0].image}
+						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
-						width={500}
-						height={24}
-						priority
 					/>
 				</Link>
 			}
 			{
-				data[0].categorySlug === 'concours' && <Link className="link-image" href={data[0].externalLink}>
+				data[0].categorySlug === 'concours' && <Link className="link-image" href={data[0].externalLink} target='_blank'>
 					<span className='read-article link-to hidden lg:block'>Voir le post sur Instagram</span>
-					<Image
+					<img
 						className="image-preview-article"
-						src={data[0].image}
+						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
-						width={500}
-						height={24}
-						priority
 					/>
 				</Link>
 			}
 			{
-				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={data[0].url}>
+				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
+					<img
 						className="image-preview-article"
-						src={data[0].image}
+						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
-						width={500}
-						height={24}
-						priority
 					/>
 				</Link>
 			}
 			{
-				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={data[0].url}>
+				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
+					<img
 						className="image-preview-article"
-						src={data[0].image}
+						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
-						width={500}
-						height={24}
-						priority
 					/>
 				</Link>
 			}
 			{
-				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={data[0].url}>
+				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
+					<img
 						className="image-preview-article"
-						src={data[0].image}
+						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
-						width={500}
-						height={24}
-						priority
 					/>
 				</Link>
 			}
 			{
-				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link-image" href={data[0].url}>
+				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
+					<img
 						className="image-preview-article"
-						src={data[0].image}
+						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
-						width={500}
-						height={24}
-						priority
 					/>
 				</Link>
 			}
 			{
-				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={data[0].url}>
+				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
+					<img
 						className="image-preview-article"
-						src={data[0].image}
+						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
-						width={500}
-						height={24}
-						priority
 					/>
 				</Link>
 			}
@@ -172,25 +157,25 @@ export default function PreviewArticle({id}:propsType) {
 				</span>
 			</p>
 			{
-				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
 			}
 			{
-				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
 			}
 			{
-				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
 			}
 			{
-				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
 			}
 			{
-				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
 			}
 			{
-				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link" href={data[0].externalLink}>Écouter sur Spotify</Link>
+				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link" href={data[0].externalLink} target='_blank'>Écouter sur Spotify</Link>
 			}
 			{
-				data[0].categorySlug === 'concours' && <Link className="link" href={data[0].externalLink}>Voir le post sur Instagram</Link>
+				data[0].categorySlug === 'concours' && <Link className="link" href={data[0].externalLink} target='_blank'>Voir le post sur Instagram</Link>
 			}
 		</main>
 	)

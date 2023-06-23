@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-
 :root {
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
@@ -103,10 +101,8 @@ li,
 span,
 a {
 	color: #FFFFFF;
-}
-
-p {
-	font-size: 0.875rem;
+	font-size: 1rem;
+	line-height: 1.7;
 }
 
 a,
@@ -116,13 +112,9 @@ p {
 
 strong,
 b {
-	font-size: 0.875rem;
-	color: #AB731F;
-}
-
-strong,
-b {
-	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.7;
+	font-weight: 500;
 }
 
 .highlight-secondary,
@@ -147,7 +139,7 @@ b {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 .banner-container .preview-article {
@@ -157,12 +149,16 @@ b {
 	padding: 1.5625rem;
 }
 
-.banner-container .preview-article .info {
-	font-size: 1.875rem;
+.banner-container .preview-article .info,
+.banner-container .preview-article .info span,
+.banner-container .preview-article .title-info {
+	font-size: 2rem;
 }
 
 .banner-container .preview-article .link {
 	display: flex;
+	font-weight: 500;
+	font-size: 1.2rem;
 }
 
 .banner-container .background-image {
@@ -233,6 +229,10 @@ nav {
 	margin-left: 1rem;
 	margin-bottom: 0.4rem;
 	background-color: #AB731F;
+}
+
+.preview-article .link::after {
+	margin-bottom: 0.64rem;
 }
 
 .albums-films-wrapper h3::after {
@@ -600,8 +600,13 @@ nav {
 	display: none;
 }
 
-.article-page h2 span {
+.article-page h2 span,
+.article-page h2 p {
 	font-size: 2rem;
+}
+
+.article-page h2 span {
+	text-transform: initial;
 }
 
 .category-page h2 .highlight-secondary,
@@ -612,6 +617,12 @@ nav {
 .category-page h2::before,
 .article-page h2::before {
 	display: none;
+}
+
+.article-page .wrapper-title .title-info,
+.article-page .wrapper-title .info span,
+.article-page .wrapper-title .info {
+	font-size: 1.5rem;
 }
 
 .category-page h2::after,
@@ -836,8 +847,33 @@ nav {
 	color: #000000;
 }
 
+.wrapper-article a,
+.wrapper-article p {
+	font-weight: 300;
+}
+
+.wrapper-article a {
+	text-decoration: underline;
+}
+
+.wrapper-article blockquote {
+	font-size: 0.9rem;
+	font-weight: 300;
+	font-style: italic;
+	text-align: center;
+	margin: 0.5rem 0 1.8rem;
+}
+
+.wrapper-article a:hover {
+	text-decoration: none;
+}
+
 .wrapper-article p {
 	text-align: justify;
+}
+
+.wrapper-article img + p {
+	margin-top: 1.8rem;
 }
 
 .wrapper-article p:first-of-type:first-letter {
@@ -861,7 +897,7 @@ nav {
 }
 
 .wrapper-article img {
-	margin: 1.8rem 0;
+	margin: 1.8rem 0 0;
 }
 
 @media (min-width: 1024px) {
@@ -932,7 +968,7 @@ nav {
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 4.38rem;
+		top: 4.6rem;
 		width: 100%;
 		background: #000000;
 		opacity: 0;

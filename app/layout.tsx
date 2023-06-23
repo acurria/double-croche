@@ -14,6 +14,7 @@ export default function RootLayout({
 		<html lang="fr">
 			<head>
 				<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+				<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;1,200;1,300&family=Red+Hat+Display&family=Source+Serif+4&display=swap" rel="stylesheet" />
 			</head>
 			<body>
 				{children}

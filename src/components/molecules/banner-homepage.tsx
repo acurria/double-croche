@@ -1,12 +1,17 @@
 "use client";
 
-import Image from 'next/image'
 import {useQuery} from 'react-query'
 
 import client from "../../createClient";
 import Link from "next/link";
+import imageUrlBuilder from "@sanity/image-url";
 
 export default function BannerHomepage() {
+
+    const builder = imageUrlBuilder(client)
+    function urlFor(source:any) {
+        return builder.image(source)
+    }
 
     const {data, status} = useQuery(
         'elementsBannerHomepage', async(context) => {
@@ -43,53 +48,49 @@ export default function BannerHomepage() {
 
     return (
         <main className="banner-container flex justify-end items-end">
-            <Image
-                src={data[0].mobileImage}
+            <img
+                src={urlFor(data[0].mobileImage).width(1920).height(1080).url()}
                 alt="/placeholder.png"
                 className="background-image backgound-banner-image-mobile lg:hidden"
-                width={1920}
-                height={1080}
             />
-            <Image
-                src={data[0].desktopImage}
+            <img
+                src={urlFor(data[0].desktopImage).width(1920).height(1080).url()}
                 alt="Banner Background"
                 className="background-image backgound-banner-image-desktop hidden lg:block"
-                width={1920}
-                height={1080}
             />
             <div className='preview-article'>
                 {
-                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={data[0].url}>
+                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`}>
                         <span className='read-article link-to hidden lg:block'>Lire l'article</span>
                     </Link>
                 }
                 {
-                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={data[0].url}>
+                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={`/articles/${data[0].url}`}>
                         <span className='read-article link-to hidden lg:block'>Lire l'article</span>
                     </Link>
                 }
                 {
-                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={data[0].url}>
+                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={`/articles/${data[0].url}`}>
                         <span className='read-article link-to hidden lg:block'>Lire l'article</span>
                     </Link>
                 }
                 {
-                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link-image" href={data[0].url}>
+                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link-image" href={`/articles/${data[0].url}`}>
                         <span className='read-article link-to hidden lg:block'>Lire l'article</span>
                     </Link>
                 }
                 {
-                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={data[0].url}>
+                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`}>
                         <span className='read-article link-to hidden lg:block'>Lire l'article</span>
                     </Link>
                 }
                 {
-                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link-image" href={data[0].externalLink}>
+                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link-image" href={data[0].externalLink} target='_blank'>
                         <span className='read-article link-to hidden lg:block'>Écouter sur Spotify</span>
                     </Link>
                 }
                 {
-                    data[0].categorySlug === 'concours' && <Link className="link-image" href={data[0].externalLink}>
+                    data[0].categorySlug === 'concours' && <Link className="link-image" href={data[0].externalLink} target='_blank'>
                         <span className='read-article link-to hidden lg:block'>Voir le post sur Instagram</span>
                     </Link>
                 }
@@ -128,25 +129,25 @@ export default function BannerHomepage() {
                     </span>
                 </p>
                 {
-                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
                 }
                 {
-                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
                 }
                 {
-                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
                 }
                 {
-                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
                 }
                 {
-                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link" href={data[0].url}>Lire l'article</Link>
+                    data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link" href={`/articles/${data[0].url}`}>Lire l'article</Link>
                 }
                 {
-                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link" href={data[0].externalLink}>Écouter sur Spotify</Link>
+                    data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link" href={data[0].externalLink} target='_blank'>Écouter sur Spotify</Link>
                 }
                 {
-                    data[0].categorySlug === 'concours' && <Link className="link" href={data[0].externalLink}>Voir le post sur Instagram</Link>
+                    data[0].categorySlug === 'concours' && <Link className="link" href={data[0].externalLink} target='_blank'>Voir le post sur Instagram</Link>
                 }
             </div>
         </main>

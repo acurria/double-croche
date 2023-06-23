@@ -25,7 +25,7 @@ export default function ArticlesHomepage() {
             <div className='main-article'>
                 <PreviewArticle id={data[0]._id} />
             </div>
-            <div className='recent-articles-grid flex justify-center items-center flex-wrap lg:justify-end'>
+            <div className='recent-articles-grid flex justify-center items-start flex-wrap lg:justify-end'>
                 {
                     data.map(function (item:any, index:number){
                         if (index === 0) {
