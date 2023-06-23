@@ -52,11 +52,13 @@ export default function BannerHomepage() {
                 src={urlFor(data[0].mobileImage).width(1920).height(1080).url()}
                 alt="/placeholder.png"
                 className="background-image backgound-banner-image-mobile lg:hidden"
+                loading="lazy"
             />
             <img
                 src={urlFor(data[0].desktopImage).width(1920).height(1080).url()}
                 alt="Banner Background"
                 className="background-image backgound-banner-image-desktop hidden lg:block"
+                loading="lazy"
             />
             <div className='preview-article'>
                 {

@@ -60,6 +60,7 @@ export default async function Article({params}:propsType) {
 							className="image-preview-article"
 							src={urlFor(article.image).width(1920).height(1080).url()}
 							alt="Vercel Logo"
+							loading="lazy"
 						/>
 						<div className='wrapper-title'>
 							<h2 className='title-desktop'>

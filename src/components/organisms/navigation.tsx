@@ -48,13 +48,13 @@ export default function Navigation() {
 				<div className='logo-wrapper flex justify-items-center w-3/4'>
 					<Link href="/">
 						<Image
-							src="/next.svg"
+							src="/logo-black.png"
 							alt="Double-Croche Logo"
 							className="main-logo mr-2 inline-block bg-white"
-							width={40}
-							height={40}
+							width={60}
+							height={86}
 						/>
-						<span className='text-white uppercase'>Double-Croche</span>
+						<span className='text-white uppercase sr-only'>Double-Croche</span>
 					</Link>
 				</div>
 				<div className={`navigation-wrapper mobile-view w-1/4 lg:hidden ${burgerIsOpen ? 'open' : ''}`}>

@@ -183,7 +183,7 @@ b {
 }
 
 nav {
-	margin-bottom: -4.625rem;
+	margin-bottom: -5.875rem;
 }
 
 .navigation {
@@ -968,7 +968,7 @@ nav {
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 4.6rem;
+		top: 5.1rem;
 		width: 100%;
 		background: #000000;
 		opacity: 0;
@@ -1023,7 +1023,7 @@ nav {
 
 	.navigation .level-0 > li,
 	.navigation .logo-wrapper {
-		padding-top: 1.5625rem;
+		padding-top: 1.4rem;
 		padding-bottom: 1.2rem;
 	}
 
