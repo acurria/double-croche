@@ -14,10 +14,7 @@ module.exports = {
                 'black': '#000000',
                 'white': '#FFFFFF',
                 'black-opacity-700': 'rgba(0, 0, 0, 0.7)'
-            },
-            fontFamily: {
-                sans: ['Kanit', 'sans-serif']
-            },
+            }
         },
     },
     plugins: [],

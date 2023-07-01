@@ -30,7 +30,7 @@
 /* Typography */
 
 h1 {
-	font-size: 2.625rem;
+	font-size: 3.625rem;
 	text-transform: uppercase;
 	color: #AB731F;
 	line-height: 1.2;
@@ -39,7 +39,7 @@ h1 {
 h1 span {
 	color: #FFFFFF;
 	display: block;
-	font-size: 2.625rem;
+	font-size: 3.625rem;
 	font-weight: 500;
 }
 
@@ -49,9 +49,10 @@ h1 div.react-reveal span {
 
 h2,
 h2 span {
-	font-size: 1.875rem;
+	font-size: 3rem;
 	color: #FFFFFF;
 	display: block;
+	line-height: 1;
 }
 
 h1,
@@ -78,7 +79,7 @@ h2::before {
 }
 
 h3 {
-	font-size: 1.125rem;
+	font-size: 2rem;
 	text-transform: uppercase;
 	color: #AB731F;
 }
@@ -93,7 +94,8 @@ h1,
 h2,
 h3,
 h4 {
-	font-weight: 500;
+	font-family: "magno-sans-variable", sans-serif;
+	font-variation-settings: "wght" 700;
 }
 
 p,
@@ -101,8 +103,15 @@ li,
 span,
 a {
 	color: #FFFFFF;
-	font-size: 1rem;
-	line-height: 1.7;
+	font-size: 1.5rem;
+	line-height: 1.2;
+	font-family: "magno-sans-variable", sans-serif;
+	font-variation-settings: "wght" 700;
+	letter-spacing: 0.1rem;
+}
+
+p {
+	line-height: 1;
 }
 
 a,
@@ -152,13 +161,13 @@ b {
 .banner-container .preview-article .info,
 .banner-container .preview-article .info span,
 .banner-container .preview-article .title-info {
-	font-size: 2rem;
+	font-size: 1.8rem;
 }
 
 .banner-container .preview-article .link {
 	display: flex;
 	font-weight: 500;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 }
 
 .banner-container .background-image {
@@ -198,7 +207,7 @@ nav {
 .navigation .mobile-view .level-0 > li,
 .navigation .mobile-view .level-0 > li a {
 	margin-bottom: 3rem;
-	font-size: 1.125rem;
+	font-size: 2.125rem;
 	color: #AB731F;
 	text-transform: uppercase;
 }
@@ -214,9 +223,8 @@ nav {
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
-	font-size: 1.125rem;
+	font-size: 2rem;
 	color: #AB731F;
-	text-transform: uppercase;
 }
 
 .navigation .mobile-view .level-0 > li > span::after,
@@ -228,7 +236,7 @@ nav {
 	height: 0.15rem;
 	width: 100%;
 	margin-left: 1rem;
-	margin-bottom: 0.4rem;
+	margin-bottom: 1rem;
 	background-color: #AB731F;
 }
 
@@ -247,7 +255,7 @@ nav {
 .navigation .mobile-view .level-1 > li a {
 	display: block;
 	margin-bottom: 1rem;
-	font-size: 1rem;
+	font-size: 1.5rem;
 	text-transform: initial;
 	color: #FFFFFF;
 }
@@ -310,7 +318,6 @@ nav {
 	color: #AB731F;
 	margin-top: 1rem;
 	font-size: 0.875rem;
-	text-transform: uppercase;
 }
 
 .preview-article .link::after {
@@ -327,11 +334,11 @@ nav {
 .preview-article span.category {
 	text-transform: uppercase;
 	color: #AB731F;
-	font-size: 0.875rem;
+	font-size: 1.5rem;
 }
 
 .preview-article .category-subcategory {
-	margin-top: 0.5rem;
+	margin-top: 1rem;
 }
 
 .preview-article .link-image {
@@ -344,7 +351,7 @@ nav {
 }
 
 .preview-article span.subcategory {
-	font-size: 0.875rem;
+	font-size: 1.5rem;
 }
 
 .recent-articles-container .main-article,
@@ -355,6 +362,10 @@ nav {
 
 .recent-articles-container .main-article {
 	margin-bottom: 1.5625rem;
+}
+
+.recent-articles-container .main-article .category-subcategory {
+	margin-bottom: -1rem;
 }
 
 .recent-articles-container .link-image {
@@ -374,12 +385,19 @@ nav {
 }
 
 .recent-articles-container .main-article .category {
-	font-size: 1.375rem;
+	font-size: 2.1rem;
 }
 
 .recent-articles-container .main-article .subcategory,
 .recent-articles-container .main-article .info {
-	font-size: 1.125rem;
+	font-size: 2.1rem;
+}
+
+.preview-article .title-info span {
+	font-family: "Kanit", sans-serif;
+	letter-spacing: 0;
+	font-size: 0.875rem;
+	line-height: 1;
 }
 
 .recent-articles-grid {
@@ -403,9 +421,14 @@ nav {
 
 .album-artist,
 .film-artist {
+	font-family: "Kanit", sans-serif;
 	text-transform: uppercase;
 	color: #AB731F;
 	font-weight: 500;
+	font-size: 1.2rem;
+	letter-spacing: 0;
+	margin-bottom: 0.3rem;
+	margin-top: 0.8rem;
 }
 
 .albums-wrapper,
@@ -420,6 +443,9 @@ nav {
 
 .album-name,
 .film-name {
+	font-family: "Kanit", sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0;
 	color: #000000;
 }
 
@@ -450,7 +476,15 @@ nav {
 }
 
 .footer-title {
+	text-transform: uppercase;
 	margin-bottom: 0.875rem;
+}
+
+.contact-container p a,
+.contact-container p:not(.footer-title) {
+	font-family: "Kanit", sans-serif;
+	font-size: 0.875rem;
+	letter-spacing: 0;
 }
 
 .footer .menu-column {
@@ -491,7 +525,13 @@ nav {
 }
 
 .social {
-	margin-bottom: 3.125rem;
+	margin-bottom: 2.125rem;
+}
+
+.copyright p {
+	font-family: "Kanit", sans-serif;
+	font-size: 0.875rem;
+	letter-spacing: 0;
 }
 
 .social-item {
@@ -848,9 +888,14 @@ nav {
 	color: #000000;
 }
 
-.wrapper-article a,
-.wrapper-article p {
+.wrapper-article p,
+.wrapper-article ul,
+.wrapper-article a{
+	font-family: "Kanit", sans-serif;
 	font-weight: 300;
+	font-size: 0.875rem;
+	line-height: 1.7;
+	letter-spacing: 0;
 }
 
 .wrapper-article a {
@@ -905,27 +950,27 @@ nav {
 
 	/* Typography */
 
-	h1,
-	h2 {
-		font-size: 3.5rem;
-	}
-
 	h1 {
+		font-size: 3.7rem;
 		line-height: 1;
 	}
 	
 	h2,
 	h2 span {
-		font-size: 2.875rem;
+		font-size: 3.875rem;
 	}
 
 	h2 {
 		margin-bottom: 3.125rem;
 	}
 
+	h3 {
+		font-size: 2.5rem;
+	}
+
 	.category-page h2,
 	.category-page h2 span {
-		font-size: 2.375rem;
+		font-size: 2.8rem;
 	}
 
 	h1::before,
@@ -967,6 +1012,12 @@ nav {
 		margin: 0 1rem;
 	}
 
+	.navigation .desktop-view .level-0 > .item-nav,
+	.navigation .desktop-view .level-0 > .item-nav a {
+		font-size: 1.7rem;
+		letter-spacing: 0.2rem;
+	}
+
 	.navigation .desktop-view .level-0 > .item-nav:last-of-type {
 		margin-right: 0;
 	}
@@ -975,7 +1026,7 @@ nav {
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 5.05rem;
+		top: 5.36rem;
 		width: 100%;
 		background: #000000;
 		opacity: 0;
@@ -1068,12 +1119,13 @@ nav {
 
 	/* Preview Article Desktop */
 
-	.preview-article span.category {
-		font-size: 1.25rem;
+	.preview-article span.category,
+	.preview-article span.subcategory {
+		font-size: 1.7rem;
 	}
 
-	.preview-article span.subcategory {
-		font-size: 1.125rem;
+	.preview-article .title-info span {
+		font-size: 1rem;
 	}
 
 	.navigation .preview-article span.category {
@@ -1135,6 +1187,11 @@ nav {
 	.albums-wrapper,
 	.films-wrapper {
 		margin: 0 1.7rem;
+	}
+
+	.album-artist,
+	.film-artist {
+		font-size: 1rem;
 	}
 
 	.albums-wrapper .link-to,
@@ -1227,11 +1284,6 @@ nav {
 	}
 
 	/* Categories */
-
-	.category-page h2,
-	.category-page h2 span {
-		font-size: 1.8rem;
-	}
 
 	.category-page,
 	.article-page {
@@ -1508,13 +1560,19 @@ nav {
 
 	/* Banner Desktop */
 
-	.banner-container .preview-article .info {
+	.banner-container .preview-article .info,
+	.banner-container .preview-article .info span,
+	.banner-container .preview-article .title-info {
 		font-size: 2.5rem;
 	}
 
 	.banner-container .preview-article .category,
 	.banner-container .preview-article .subcategory {
-		font-size: 1.875rem;
+		font-size: 2.875rem;
+	}
+
+	.banner-container .preview-article .link {
+		font-size: 1.8rem;
 	}
 
 	.banner-container .preview-article {
@@ -1591,6 +1649,12 @@ nav {
 		margin-bottom: 1rem;
 	}
 
+	.article-page h2,
+	.article-page h2 p,
+	.article-page h2 span {
+		font-size: 3rem;
+	}
+
 	.article-page h2.title-mobile {
 		display: none;
 	}
@@ -1599,8 +1663,9 @@ nav {
 		width: 60%;
 	}
 
-	.article-page .title-info {
-		font-size: 1.5rem;
+	.article-page .wrapper-title .title-info,
+	.article-page .wrapper-title .title-info span {
+		font-size: 1.9rem;
 	}
 
 	.article-page .wrapper-title {

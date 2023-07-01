@@ -150,25 +150,25 @@ export default function PreviewArticle({id}:propsType) {
 			<p className='title-info'>
 				<span className='info'>
 					{
-						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <span><span className="uppercase highlight-secondary">{data[0].artist}</span> <span className="text-info">pour “{data[0].album}”</span></span>
+						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <span><span className="uppercase ">{data[0].artist}</span> <span className="text-info">pour “{data[0].album}”</span></span>
 					}
 					{
-						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <span><span className="uppercase highlight-secondary">{data[0].month}</span> <span className="text-info">{data[0].year} ({data[0].part})</span></span>
+						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <span><span className="uppercase ">{data[0].month}</span> <span className="text-info">{data[0].year} ({data[0].part})</span></span>
 					}
 					{
-						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <span><span className="uppercase highlight-secondary">{data[0].musicFestivalName} - </span> <span className="text-info">{data[0].city} {data[0].year}</span></span>
+						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <span><span className="uppercase ">{data[0].musicFestivalName} - </span> <span className="text-info">{data[0].city} {data[0].year}</span></span>
 					}
 					{
-						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <span><span className="uppercase highlight-secondary">{data[0].filmFestivalName} - </span> <span className="text-info">{data[0].year}</span></span>
+						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <span><span className="uppercase ">{data[0].filmFestivalName} - </span> <span className="text-info">{data[0].year}</span></span>
 					}
 					{
-						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <span><span className="uppercase highlight-secondary">“{data[0].filmTitle}“</span> <span className="text-info">de {data[0].director}</span></span>
+						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <span><span className="uppercase ">“{data[0].filmTitle}“</span> <span className="text-info">de {data[0].director}</span></span>
 					}
 					{
-						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <span><span className="uppercase highlight-secondary">{data[0].director}</span> <span className="text-info">pour “{data[0].filmTitle}”</span></span>
+						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <span><span className="uppercase ">{data[0].director}</span> <span className="text-info">pour “{data[0].filmTitle}”</span></span>
 					}
 					{
-						data[0].categorySlug === 'concours' && <span className='subcategory'><span className='highlight-secondary'>@ {data[0].localisation}</span> <span className="text-info">{data[0].date}</span></span>
+						data[0].categorySlug === 'concours' && <span className='subcategory'><span className=''>@ {data[0].localisation}</span> <span className="text-info">{data[0].date}</span></span>
 					}
 				</span>
 			</p>
