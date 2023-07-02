@@ -110,6 +110,14 @@ a {
 	letter-spacing: 0.1rem;
 }
 
+form p,
+form span,
+form a {
+	font-family: "Kanit", sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0;
+}
+
 p {
 	line-height: 1;
 }
@@ -743,7 +751,7 @@ nav {
 	margin-right: -1.5625rem;
 }
 
-.grid-container.layout-3x2 .react-reveal:nth-child(9) .info {
+.grid-container.layout-3x2 .react-reveal:nth-child(9) .text-info {
 	color: #FFFFFF;
 }
 
@@ -1423,6 +1431,14 @@ nav {
 		display: block;
 		margin-left: 0;
 		margin-right: 0;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(10) .text-info {
+		color: #FFFFFF;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(9) .text-info {
+		color: #000000;
 	}
 
 	.grid-container.layout-3x2 .react-reveal:nth-child(9) .link-image::after {
