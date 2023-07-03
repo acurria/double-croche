@@ -48,9 +48,10 @@ export default function Navigation() {
 				<div className='logo-wrapper flex justify-items-center w-3/4'>
 					<Link href="/">
 						<Image
-							src="/logo-black.jpg"
+							priority
+							src="/logo-white.svg"
 							alt="Double-Croche Logo"
-							className="main-logo mr-2 inline-block bg-white"
+							className="main-logo mr-2 inline-block"
 							width={60}
 							height={60}
 						/>

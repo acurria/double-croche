@@ -10,11 +10,11 @@ export default function Footer() {
 			<div className='footer-container flex flex-col items-center lg:flex-row lg:flex-wrap lg:items-start lg:max-w-screen-2xl lg:mx-auto'>
 				<Link className='footer-logo' href="/">
 					<Image
-						src="/logo-black.jpg"
+						src="/logo-white.svg"
 						alt="Vercel Logo"
 						width={100}
 						height={24}
-						className="bg-white mb-7"
+						className="mb-7"
 					/>
 				</Link>
 				<div className='block menu-container'>
