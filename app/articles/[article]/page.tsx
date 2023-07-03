@@ -43,7 +43,7 @@ export default async function Article({params}:propsType) {
 	}
 
 	return (
-		<main className="article bg-primary">
+		<main className="article bg-primary page-main">
 			<div className="article-page">
 				<div className="header-article lg:mx-auto lg:max-w-screen-2xl">
 					<h1 className='sr-only'>{article.title}</h1>

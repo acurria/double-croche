@@ -68,8 +68,8 @@ export default function Page() {
 
 	if (status !== 'success') {
 		return <></>
-		// Create loader to wait
 	}
+	
 	const events = (type:string, month:string):any => {
 		return data.map(function (item:any) {
 			if(item.type === type && item.month === month) {
@@ -85,7 +85,7 @@ export default function Page() {
 	}
 
 	return (
-		<div className="category-page agenda bg-primary">
+		<div className="category-page agenda bg-primary page-main">
 			<div className="header-category lg:mx-auto lg:max-w-screen-2xl">
 				<h1>
 					<Fade left cascade>

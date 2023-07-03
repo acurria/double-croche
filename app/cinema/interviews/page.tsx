@@ -17,12 +17,11 @@ export default function Page() {
 
 	if (status !== 'success') {
 		return <></>
-		// Create loader to wait
 	}
 
 	return (
 		<>
-			<div className="category-page bg-primary">
+			<div className="category-page bg-primary page-main">
 				<div className="header-category lg:mx-auto lg:max-w-screen-2xl">
 					<h1>
 						<Fade left cascade>

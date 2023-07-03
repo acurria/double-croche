@@ -67,6 +67,10 @@ h2 .react-reveal {
 	font-weight: 400;
 }
 
+.page-main {
+	min-height: 100%;
+}
+
 h1::before,
 h2::before {
 	content: '';
@@ -137,6 +141,61 @@ b {
 .highlight-secondary,
 .highlight-secondary span {
 	color: #AB731F;
+}
+
+.homepage {
+	min-height: 100dvh;
+}
+
+/* Loader */
+
+.wrapper-loader {
+	position: fixed;
+	background-color: #111111;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 20;
+	right: 0;
+	width: 100%;
+	height: 100dvh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: revealSite 1.5s ease forwards;
+	animation-delay: 4s;
+}
+
+.wrapper-loader img {
+	width: 8rem;
+    margin: 0;
+	animation: zoom-in 3s ease-in-out infinite;
+	opacity: 0;
+}
+
+@keyframes zoom-in {
+	0% {
+		transform: scale(1, 1);
+		opacity: 0.2;
+	}
+	50% {
+		transform: scale(1.2, 1.2);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1, 1);
+		opacity: 0.2;
+	}
+}
+
+@keyframes revealSite {
+	0% {
+		top: 0;
+	}
+	100% {
+		display: none;
+		top: -100dvh;
+	}
 }
 
 /* Homepage Mobile */
@@ -793,7 +852,7 @@ nav {
 	padding: 1rem 0;
 	text-align: center;
 	cursor: pointer;
-	font-size: 0.875rem;
+	font-size: 1.4rem;
 	border-bottom: solid transparent 0.25rem;
 }
 
@@ -821,7 +880,11 @@ nav {
 	padding-left: 1rem;
 	margin-bottom: 3rem;
 	border-left: 0.25rem solid #AB731F;
-	font-size: 1.875rem;
+	font-size: 2.5rem;
+}
+
+.agenda.category-page h3::after {
+	margin-bottom: 0.6rem;
 }
 
 .month-list p,
@@ -837,6 +900,9 @@ nav {
 
 .month-title {
 	margin-bottom: 1.5625rem;
+	font-family: "Kanit", sans-serif;
+	letter-spacing: 0;
+	font-weight: 500;
 }
 
 .month-date {
@@ -872,8 +938,12 @@ nav {
 	padding-left: 2rem;
 }
 
-.month-event li {
+.month-event li,
+.month-event li span {
 	font-weight: 300;
+	font-family: "Kanit", "sans-serif";
+	letter-spacing: 0;
+	font-size: 1rem;
 }
 
 .month-event li::marker {
@@ -1636,7 +1706,7 @@ nav {
 
 	.filter-title h2 {
 		margin-bottom: 2rem;
-		font-size: 1.875rem;
+		font-size: 2.5rem;
 	}
 
 	.month-list {
