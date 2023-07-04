@@ -5,6 +5,7 @@ import Fade from 'react-reveal/Fade'
 import client from "../../../src/createClient";
 import {useQuery} from "react-query";
 import PreviewArticle from "@/src/components/molecules/preview-article";
+import Pager from "@/src/components/organisms/pager";
 
 export default function Page() {
 
@@ -62,6 +63,7 @@ export default function Page() {
 					}
 				</div>
 			</div>
+			<Pager />
 		</>
 	)
 }
