@@ -29,7 +29,7 @@ export default function Home() {
 	return (
 		<main className="homepage bg-slate-600 page-main">
 			{isFirstVisit && <Loader />}
-			<h1 className="sr-only">Double-Croche - L&apos;actualité musique et cinéma</h1>
+			<h1 className="sr-only">Double-Croche - Actualité musique et cinéma</h1>
 			<BannerHomepage />
 			<div className="recent-articles-container bg-primary">
 				<div className='recent-articles-wrapper lg:max-w-screen-2xl lg:mx-auto'>
