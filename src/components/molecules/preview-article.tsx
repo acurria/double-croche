@@ -158,7 +158,7 @@ export default function PreviewArticle({id}:propsType) {
 						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <span><span className="uppercase highlight-secondary">{data[0].director}</span> <span className="text-info">pour “{data[0].filmTitle}”</span></span>
 					}
 					{
-						data[0].categorySlug === 'concours' && <span className='subcategory'><span className=''>@ {data[0].localisation}</span> <span className="text-info">{data[0].date}</span></span>
+						data[0].categorySlug === 'concours' && <span className='subcategory'><span className='highlight-secondary'>@ {data[0].localisation}</span> <span className="text-info">{data[0].date}</span></span>
 					}
 				</span>
 			</p>

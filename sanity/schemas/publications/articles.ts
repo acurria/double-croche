@@ -36,7 +36,7 @@ export default defineType({
         {
             // Pour "Musique Interview", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival"
             name: 'image',
-            title: "Image - Ratio 3:2 pour les articles Musique Interview, Cinéma Interview, Cinéma Chronique, Cinéma Festival et Ratio 1:1 pour les articles Musique Playlist, Musique Festival et Concours",
+            title: "Image - Ratio 3:2 pour les articles Musique Interview, Cinéma Interview, Cinéma Chronique, Cinéma Festival et Ratio 1:1 pour les articles Musique Playlist et Concours",
             type: 'image'
         },
         {
