@@ -1,22 +1,38 @@
 "use client";
 
-import React, { Component } from 'react';
+import React, {Component, useCallback, useEffect, useState} from 'react';
 // @ts-ignore
 import Fade from 'react-reveal/Fade';
 import client from "../../../src/createClient";
 import {useQuery} from "react-query";
 import PreviewArticle from "@/src/components/molecules/preview-article";
 import Pager from "@/src/components/organisms/pager";
-import Pagination from '@etchteam/next-pagination'
 
 export default function Page() {
 
-	const {data, status} = useQuery(
+	const [page, setPage] = useState(0);
+	const itemsPerPage = 17;
+
+	const {data, status, refetch} = useQuery(
 		'elementsArticlesMusiqueInterview', async(context) => {
-			const query = `*[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview']{_id}|order(_createdAt desc)`;
+			const query = `{
+													  "total": count(*[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview']),
+													  "articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview']{
+															_id
+														  }|order(_createdAt desc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage-1}]
+												}`;
+
 			return await client.fetch(query);
 		}
 	);
+
+	const changePage = useCallback((newPage:number) => {
+		setPage(newPage);
+	},[])
+
+	useEffect(() => {
+		refetch();
+	}, [page, refetch]);
 
 	if (status !== 'success') {
 		return <></>
@@ -42,17 +58,17 @@ export default function Page() {
 								<span>interview</span>
 							</h2>
 							<div className='info-main-article hidden lg:block'>
-								<PreviewArticle id={data[0]._id} />
+								<PreviewArticle id={data.articles[0]._id} />
 							</div>
 						</div>
-						<PreviewArticle id={data[0]._id} />
+						<PreviewArticle id={data.articles[0]._id} />
 					</div>
 				</div>
 			</div>
-			<div className='grid-container layout-3x2'>
+			<div id='grid-container' className='grid-container layout-3x2'>
 				<div className='wrapper-grid lg:max-w-screen-2xl lg:mx-auto'>
 					{
-						data.map(function (item:any, index:number){
+						data.articles.map(function (item:any, index:number){
 								if (index === 0) {
 									return null
 								}
@@ -65,7 +81,7 @@ export default function Page() {
 					}
 				</div>
 			</div>
-			<Pagination total={1000} />
+			<Pager items={itemsPerPage} total={data.total} onChange={changePage}/>
 		</>
 	)
 }

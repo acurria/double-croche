@@ -6,7 +6,6 @@ import client from "../../createClient";
 import Link from "next/link";
 
 import imageUrlBuilder from '@sanity/image-url'
-import Image from "next/image";
 
 interface propsType {
 	id:string
@@ -47,16 +46,7 @@ export default function PreviewArticle({id}:propsType) {
 	);
 
 	if (status !== 'success') {
-		return <>
-			<Image
-				src="/logo-black.png"
-				alt="Double-Croche Logo"
-				className="main-logo mr-2 inline-block bg-white"
-				width={60}
-				height={86}
-			/>
-		</>
-		// Create loader to wait
+		return <></>
 	}
 
 	return (
