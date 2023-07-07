@@ -56,11 +56,13 @@ export default async function Article({params}:propsType) {
 						</Fade>
 					</h2>
 					<div className='main-section-article lg:flex'>
-						<img
+						<Image
 							className="image-preview-article"
-							src={urlFor(article.image).width(1920).height(1080).url()}
+							src={urlFor(article.image).url()}
 							alt="Vercel Logo"
 							loading="lazy"
+							width={1920}
+							height={1080}
 						/>
 						<div className='wrapper-title'>
 							<h2 className='title-desktop'>
