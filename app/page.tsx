@@ -6,17 +6,29 @@ import AlbumsHomepage from "./../src/components/molecules/albums-homepage";
 import FilmsHomepage from "./../src/components/molecules/films-homepage";
 import Loader from '@/src/components/organisms/loader';
 
+import {useState, useEffect} from "react";
+
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-
 
 // @ts-ignore
 import Fade from 'react-reveal/Fade'
 
 export default function Home() {
+
+	const [isFirstVisit, setIsFirstVisit] = useState(false);
+
+	if (!isFirstVisit) {
+		const hasVisitedBefore = localStorage.getItem('hasVisitedMyPage')=== 'true';
+		if (!hasVisitedBefore) {
+			setIsFirstVisit(true);
+			localStorage.setItem('hasVisitedMyPage', 'true');
+		}
+	}
+
 	return (
 		<main className="homepage bg-slate-600 page-main">
-			<Loader />
+			{isFirstVisit && <Loader />}
 			<h1 className="sr-only">Double-Croche - L'actualité musique et cinéma</h1>
 			<BannerHomepage />
 			<div className="recent-articles-container bg-primary">
