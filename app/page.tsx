@@ -9,6 +9,7 @@ import Loader from '@/src/components/organisms/loader';
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+
 // @ts-ignore
 import Fade from 'react-reveal/Fade'
 
