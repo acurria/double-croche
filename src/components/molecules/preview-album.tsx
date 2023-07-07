@@ -4,6 +4,7 @@ import client from "../../createClient";
 import {useQuery} from "react-query";
 import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
+import Image from "next/image";
 
 interface propsType {
 	id:string
@@ -37,11 +38,13 @@ export default function PreviewAlbum({id}:propsType) {
 		<main className='album'>
 			<Link className="album-image-link" href={`/articles/${data[0].link}`}>
 				<span className='link-to hidden lg:block'>Écouter</span>
-				<img
+				<Image
 					className="image-album"
 					src={urlFor(data[0].image).url()}
 					alt="Album cover"
 					loading="lazy"
+					width={1920}
+					height={1080}
 				/>
 			</Link>
 			<p className='album-artist'>{data[0].artist}</p>

@@ -3,7 +3,7 @@
 import client from "../../createClient";
 import {useQuery} from "react-query";
 import Link from "next/link";
-
+import Image from "next/image";
 import imageUrlBuilder from '@sanity/image-url'
 
 interface propsType {
@@ -38,11 +38,13 @@ export default function PreviewFilm({id}:propsType) {
 		<main className='film'>
 			<Link className="film-image-link" href={`/articles/${data[0].link}`}>
 				<span className='link-to hidden lg:block'>En savoir plus</span>
-				<img
+				<Image
 					className="image-film"
 					src={urlFor(data[0].image).url()}
 					alt="Film cover"
 					loading="lazy"
+					width={1920}
+					height={1080}
 				/>
 			</Link>
 			<p className='film-artist'>{data[0].director}</p>

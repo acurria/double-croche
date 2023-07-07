@@ -6,6 +6,7 @@ import client from "../../createClient";
 import Link from "next/link";
 
 import imageUrlBuilder from '@sanity/image-url'
+import Image from "next/image";
 
 interface propsType {
 	id:string
@@ -54,77 +55,91 @@ export default function PreviewArticle({id}:propsType) {
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link-image" href={data[0].externalLink} target='_blank'>
 					<span className='read-article link-to hidden lg:block'>Écouter sur Spotify</span>
-					<img
+					<Image
 						className="image-preview-article"
 						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
 						loading="lazy"
+						width={1920}
+						height={1080}
 					/>
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'concours' && <Link className="link-image" href={data[0].externalLink} target='_blank'>
 					<span className='read-article link-to hidden lg:block'>Voir le post sur Instagram</span>
-					<img
+					<Image
 						className="image-preview-article"
 						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
 						loading="lazy"
+						width={1920}
+						height={1080}
 					/>
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<img
+					<Image
 						className="image-preview-article"
 						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
 						loading="lazy"
+						width={1920}
+						height={1080}
 					/>
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<img
+					<Image
 						className="image-preview-article"
 						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
 						loading="lazy"
+						width={1920}
+						height={1080}
 					/>
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<img
+					<Image
 						className="image-preview-article"
 						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
 						loading="lazy"
+						width={1920}
+						height={1080}
 					/>
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<img
+					<Image
 						className="image-preview-article"
 						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
 						loading="lazy"
+						width={1920}
+						height={1080}
 					/>
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`}>
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<img
+					<Image
 						className="image-preview-article"
 						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
 						loading="lazy"
+						width={1920}
+						height={1080}
 					/>
 				</Link>
 			}

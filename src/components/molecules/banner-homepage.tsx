@@ -5,6 +5,7 @@ import {useQuery} from 'react-query'
 import client from "../../createClient";
 import Link from "next/link";
 import imageUrlBuilder from "@sanity/image-url";
+import Image from "next/image";
 
 export default function BannerHomepage() {
 
@@ -48,17 +49,21 @@ export default function BannerHomepage() {
 
     return (
         <main className="banner-container flex justify-end items-end">
-            <img
-                src={urlFor(data[0].mobileImage).width(1920).height(1080).url()}
+            <Image
+                src={urlFor(data[0].mobileImage).url()}
                 alt="/placeholder.png"
                 className="background-image backgound-banner-image-mobile lg:hidden"
                 loading="lazy"
+                width={1920}
+                height={1080}
             />
-            <img
-                src={urlFor(data[0].desktopImage).width(1920).height(1080).url()}
+            <Image
+                src={urlFor(data[0].desktopImage).url()}
                 alt="Banner Background"
                 className="background-image backgound-banner-image-desktop hidden lg:block"
                 loading="lazy"
+                width={1920}
+                height={1080}
             />
             <div className='preview-article'>
                 {
