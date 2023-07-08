@@ -18,11 +18,11 @@ export default function Home() {
 
 	const [isFirstVisit, setIsFirstVisit] = useState(false);
 
-	if (!isFirstVisit) {
-		const hasVisitedBefore = localStorage.getItem('hasVisitedMyPage')=== 'true';
+	if (typeof localStorage !== 'undefined' && !isFirstVisit) {
+		const hasVisitedBefore = localStorage.getItem('hasVisitedMyPage') === 'true';
 		if (!hasVisitedBefore) {
-			setIsFirstVisit(true);
-			localStorage.setItem('hasVisitedMyPage', 'true');
+		  setIsFirstVisit(true);
+		  localStorage.setItem('hasVisitedMyPage', 'true');
 		}
 	}
 
