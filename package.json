@@ -22,6 +22,7 @@
         "dayjs": "^1.11.8",
         "eslint": "8.38.0",
         "eslint-config-next": "13.3.0",
+        "js-cookie": "^3.0.5",
         "next": "13.3.0",
         "next-images": "^1.8.5",
         "next-sanity": "^4.1.6",
@@ -38,5 +39,8 @@
         "styled-components": "^5.3.11",
         "tailwindcss": "3.3.1",
         "typescript": "5.0.4"
+    },
+    "devDependencies": {
+        "@types/js-cookie": "^3.0.3"
     }
 }

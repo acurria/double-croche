@@ -13,20 +13,19 @@ import "slick-carousel/slick/slick-theme.css"
 
 // @ts-ignore
 import Fade from 'react-reveal/Fade'
+import Cookies from 'js-cookie'
 
 export default function Home() {
 
 	const [isFirstVisit, setIsFirstVisit] = useState(false);
 
-	useEffect(() => {
-		if (typeof localStorage !== 'undefined' && !isFirstVisit) {
-		const hasVisitedBefore = localStorage.getItem('hasVisitedMyPage') === 'true';
+    if (!isFirstVisit) {
+		const hasVisitedBefore = Cookies.get('hasVisitedMyPage') === 'true';
 		if (!hasVisitedBefore) {
 			setIsFirstVisit(true);
-			localStorage.setItem('hasVisitedMyPage', 'true');
+			Cookies.set('hasVisitedMyPage', 'true');
 		}
-		}
-	}, [isFirstVisit]);
+	}
 
 	return (
 		<main className="homepage bg-slate-600 page-main">
