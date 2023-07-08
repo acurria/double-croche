@@ -16,6 +16,15 @@
 	}
 }
 
+[data-ui="NextStudioLayout"] p,
+[data-ui="NextStudioLayout"] li,
+[data-ui="NextStudioLayout"] a,
+[data-ui="NextStudioLayout"] span {
+	font-family: "Kanit", sans-serif;
+	letter-spacing: 0;
+	font-size: 1rem;
+}
+
 .sr-only {
 	position: absolute;
 	width: 0.0625rem;
