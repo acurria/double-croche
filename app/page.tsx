@@ -18,13 +18,15 @@ export default function Home() {
 
 	const [isFirstVisit, setIsFirstVisit] = useState(false);
 
-	if (typeof localStorage !== 'undefined' && !isFirstVisit) {
+	useEffect(() => {
+		if (typeof localStorage !== 'undefined' && !isFirstVisit) {
 		const hasVisitedBefore = localStorage.getItem('hasVisitedMyPage') === 'true';
 		if (!hasVisitedBefore) {
-		  setIsFirstVisit(true);
-		  localStorage.setItem('hasVisitedMyPage', 'true');
+			setIsFirstVisit(true);
+			localStorage.setItem('hasVisitedMyPage', 'true');
 		}
-	}
+		}
+	}, [isFirstVisit]);
 
 	return (
 		<main className="homepage bg-slate-600 page-main">
