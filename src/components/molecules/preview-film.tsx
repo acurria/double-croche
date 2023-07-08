@@ -43,8 +43,8 @@ export default function PreviewFilm({id}:propsType) {
 					src={urlFor(data[0].image).url()}
 					alt="Film cover"
 					loading="lazy"
-					width={1920}
-					height={1080}
+					width={800}
+					height={800}
 				/>
 			</Link>
 			<p className='film-artist'>{data[0].director}</p>

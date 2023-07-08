@@ -43,8 +43,8 @@ export default function PreviewAlbum({id}:propsType) {
 					src={urlFor(data[0].image).url()}
 					alt="Album cover"
 					loading="lazy"
-					width={1920}
-					height={1080}
+					width={800}
+					height={800}
 				/>
 			</Link>
 			<p className='album-artist'>{data[0].artist}</p>
