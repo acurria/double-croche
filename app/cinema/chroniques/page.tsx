@@ -11,11 +11,11 @@ import Pager from "@/src/components/organisms/pager";
 
 export default function Page() {
 	const [page, setPage] = useState(0);
-	const itemsPerPage = 17;
+	const itemsPerPage = 15;
 
 	const {data, status, refetch} = useQuery(
 		'elementsArticlesCinemaChronique', async(context) => {
-			const query = `{"total": count(*[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique']), "articles" : *[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique']{_id}|order(_createdAt desc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage-1}]}`;
+			const query = `{"total": count(*[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique']), "articles" : *[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique']{_id}|order(_createdAt desc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage+1}]}`;
 			return await client.fetch(query);
 		}
 	);

@@ -15,7 +15,7 @@ export default function Page() {
 
 	const {data, status, refetch} = useQuery(
 		'elementsArticlesMusiquePlaylist', async(context) => {
-			const query = `{"total": count(*[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='playlist']), "articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='playlist']{_id}|order(_createdAt desc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage-1}]}`;
+			const query = `{"total": count(*[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='playlist']), "articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='playlist']{_id}|order(_createdAt desc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage + 1}]}`;
 			return await client.fetch(query);
 		}
 	);
