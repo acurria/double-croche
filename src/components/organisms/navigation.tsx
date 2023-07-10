@@ -46,7 +46,7 @@ export default function Navigation() {
 		<main className={`navigation w-full relative ${scroll ? 'scroll' : ''}`}>
 			<div className='nav-container flex content-between items-center lg:max-w-screen-2xl lg:mx-auto'>
 				<div className='logo-wrapper flex justify-items-center w-3/4'>
-					<Link href="/">
+					<Link href="/" aria-label="Retour à l'accueil">
 						<Image
 							priority
 							src="/logo-white.svg"
@@ -70,13 +70,13 @@ export default function Navigation() {
 								<span>MUSIQUE</span>
 								<ul className='level-1'>
 									<li>
-										<Link href="./musique/interviews" onClick={burgerClick}>Interviews</Link>
+										<Link href="./musique/interviews" onClick={burgerClick} aria-label="Aller à Musique Interview">Interviews</Link>
 									</li>
 									<li>
-										<Link href="./musique/playlists" onClick={burgerClick}>Playlists</Link>
+										<Link href="./musique/playlists" onClick={burgerClick} aria-label="Aller à Musique Playlist">Playlists</Link>
 									</li>
 									<li>
-										<Link href="./musique/festivals" onClick={burgerClick}>Festivals</Link>
+										<Link href="./musique/festivals" onClick={burgerClick} aria-label="Aller à Musique Festivals">Festivals</Link>
 									</li>
 								</ul>
 							</li>
@@ -84,21 +84,21 @@ export default function Navigation() {
 								<span>CINÉMA</span>
 								<ul className='level-1'>
 									<li>
-										<Link href="./cinema/interviews" onClick={burgerClick}>Interviews</Link>
+										<Link href="./cinema/interviews" onClick={burgerClick} aria-label="Aller à Cinéma Interview">Interviews</Link>
 									</li>
 									<li>
-										<Link href="./cinema/chroniques" onClick={burgerClick}>Chroniques</Link>
+										<Link href="./cinema/chroniques" onClick={burgerClick} aria-label="Aller à Cinéma Chroniques">Chroniques</Link>
 									</li>
 									<li>
-										<Link href="./cinema/festivals" onClick={burgerClick}>Festivals</Link>
+										<Link href="./cinema/festivals" onClick={burgerClick} aria-label="Aller à Cinéma Festivals">Festivals</Link>
 									</li>
 								</ul>
 							</li>
 							<li className='item-nav'>
-								<Link href="./concours" onClick={burgerClick}>CONCOURS</Link>
+								<Link href="./concours" onClick={burgerClick} aria-label="Aller à Concours">CONCOURS</Link>
 							</li>
 							<li className='item-nav'>
-								<Link href="./agenda" onClick={burgerClick}>AGENDA</Link>
+								<Link href="./agenda" onClick={burgerClick} aria-label="Aller à Agenda">AGENDA</Link>
 							</li>
 						</ul>
 					</div>
@@ -112,13 +112,13 @@ export default function Navigation() {
 									<div className='subnavigation-container'>
 										<ul className='level-1'>
 											<li onClick={desktopMenuDisabled}>
-												<Link href="./musique/interviews">Interviews</Link>
+												<Link href="./musique/interviews" aria-label="Aller à Musique Interview">Interviews</Link>
 											</li>
 											<li onClick={desktopMenuDisabled}>
-												<Link href="./musique/playlists">Playlists</Link>
+												<Link href="./musique/playlists" aria-label="Aller à Musique Playlist">Playlists</Link>
 											</li>
 											<li onClick={desktopMenuDisabled}>
-												<Link href="./musique/festivals">Festivals</Link>
+												<Link href="./musique/festivals" aria-label="Aller à Musique Festival">Festivals</Link>
 											</li>
 										</ul>
 										<div className='recent-articles' onClick={desktopMenuDisabled}>
@@ -133,13 +133,13 @@ export default function Navigation() {
 									<div className='subnavigation-container'>
 										<ul className='level-1'>
 											<li onClick={desktopMenuDisabled}>
-												<Link href="./cinema/interviews">Interviews</Link>
+												<Link href="./cinema/interviews" aria-label="Aller à Musique Interview">Interviews</Link>
 											</li>
 											<li onClick={desktopMenuDisabled}>
-												<Link href="./cinema/chroniques">Chroniques</Link>
+												<Link href="./cinema/chroniques" aria-label="Aller à Musique Chroniques">Chroniques</Link>
 											</li>
 											<li onClick={desktopMenuDisabled}>
-												<Link href="./cinema/festivals">Festivals</Link>
+												<Link href="./cinema/festivals" aria-label="Aller à Musique Festivals">Festivals</Link>
 											</li>
 										</ul>
 										<div className='recent-articles' onClick={desktopMenuDisabled}>
@@ -149,10 +149,10 @@ export default function Navigation() {
 								</div>
 							</li>
 							<li className='item-nav'>
-								<Link href="./concours">CONCOURS</Link>
+								<Link href="./concours" aria-label="Aller à Concours">CONCOURS</Link>
 							</li>
 							<li className='item-nav'>
-								<Link href="./agenda">AGENDA</Link>
+								<Link href="./agenda" aria-label="Aller à Agenda">AGENDA</Link>
 							</li>
 						</ul>
 					</div>

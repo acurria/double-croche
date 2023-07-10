@@ -8,7 +8,7 @@ export default function Footer() {
 	return (
 		<main className='footer bg-black'>
 			<div className='footer-container flex flex-col items-center lg:flex-row lg:flex-wrap lg:items-start lg:max-w-screen-2xl lg:mx-auto'>
-				<Link className='footer-logo' href="/">
+				<Link className='footer-logo' href="/" aria-label="Retour à l'accueil">
 					<Image
 						src="/logo-white.svg"
 						alt="Vercel Logo"
@@ -23,32 +23,32 @@ export default function Footer() {
 						<ul className='menu-column'>
 							<span>Musique</span>
 							<li>
-								<Link href="./musique/interviews">Interviews</Link>
+								<Link href="./musique/interviews" aria-label="Aller à Musique Interview">Interviews</Link>
 							</li>
 							<li>
-								<Link href="./musique/playlists">Playlists</Link>
+								<Link href="./musique/playlists" aria-label="Aller à Musique Playlists">Playlists</Link>
 							</li>
 							<li>
-								<Link href="./musique/festivals">Festivals</Link>
+								<Link href="./musique/festivals" aria-label="Aller à Musique Festivals">Festivals</Link>
 							</li>
 						</ul>
 						<ul className='menu-column'>
 							<span>Cinéma</span>
 							<li>
-								<Link href="./cinema/interviews">Interviews</Link>
+								<Link href="./cinema/interviews" aria-label="Aller à Cinéma Interview">Interviews</Link>
 							</li>
 							<li>
-								<Link href="./cinema/chroniques">Chroniques</Link>
+								<Link href="./cinema/chroniques" aria-label="Aller à Cinéma Chroniques">Chroniques</Link>
 							</li>
 							<li>
-								<Link href="./cinema/festivals">Festivals</Link>
+								<Link href="./cinema/festivals" aria-label="Aller à Cinéma Festivals">Festivals</Link>
 							</li>
 						</ul>
 						<div className='menu-column'>
-							<Link href="./concours">Concours</Link>
+							<Link href="./concours" aria-label="Aller à Concours">Concours</Link>
 						</div>
 						<div className='menu-column'>
-							<Link href="./agenda">Agenda</Link>
+							<Link href="./agenda" aria-label="Aller à Agenda">Agenda</Link>
 						</div>
 					</div>
 				</div>
