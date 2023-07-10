@@ -42,7 +42,6 @@ export default function PreviewFilm({id}:propsType) {
 					className="image-film"
 					src={urlFor(data[0].image).url()}
 					alt="Film cover"
-					loading="lazy"
 					width={800}
 					height={800}
 				/>
