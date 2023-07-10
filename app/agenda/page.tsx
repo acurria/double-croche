@@ -10,6 +10,7 @@ import Fade from 'react-reveal/Fade'
 import Slider from "react-slick"
 import client from "../../src/createClient";
 import {useQuery} from "react-query";
+import React from "react";
 
 export default function Page() {
 	var settings = {
@@ -67,7 +68,7 @@ export default function Page() {
 	);
 
 	if (status !== 'success') {
-		return <></>
+		return <div className="page-main"></div>
 	}
 	
 	const events = (type:string, month:string):any => {

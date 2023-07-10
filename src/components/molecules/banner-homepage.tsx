@@ -53,7 +53,6 @@ export default function BannerHomepage() {
                 src={urlFor(data[0].mobileImage).url()}
                 alt="/placeholder.png"
                 className="background-image backgound-banner-image-mobile lg:hidden"
-                loading="lazy"
                 width={500}
                 height={800}
             />
@@ -61,7 +60,6 @@ export default function BannerHomepage() {
                 src={urlFor(data[0].desktopImage).url()}
                 alt="Banner Background"
                 className="background-image backgound-banner-image-desktop hidden lg:block"
-                loading="lazy"
                 width={800}
                 height={800}
             />

@@ -29,7 +29,7 @@ export default function Page() {
 	}, [page, refetch]);
 
 	if (status !== 'success') {
-		return <></>
+		return <div className="page-main"></div>
 		// Create loader to wait
 	}
 

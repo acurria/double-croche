@@ -59,7 +59,6 @@ export default function PreviewArticle({id}:propsType) {
 						className="image-preview-article"
 						src={urlFor(data[0].image).url()}
 						alt="Vercel Logo"
-						loading="lazy"
 						width={800}
 						height={800}
 					/>
