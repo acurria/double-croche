@@ -7,6 +7,7 @@ import client from "../../../src/createClient";
 import {useQuery} from "react-query";
 import PreviewArticle from "@/src/components/molecules/preview-article";
 import Pager from "@/src/components/organisms/pager";
+import Script from "next/script";
 
 export default function Page() {
 
@@ -77,6 +78,16 @@ export default function Page() {
 				</div>
 			</div>
 			<Pager items={itemsPerPage} total={data.total} onChange={changePage}/>
+			<Script async src="https://www.googletagmanager.com/gtag/js?id=UA-80564203-1" />
+			<Script id="google-analytics">
+				{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+	
+					gtag('config', 'UA-80564203-1');
+				`}
+			</Script>
 		</>
 	)
 }

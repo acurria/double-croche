@@ -2,6 +2,7 @@
 
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import Script from 'next/script'
 // @ts-ignore
 import dayjs from "dayjs"
 // @ts-ignore
@@ -720,6 +721,16 @@ export default function Page() {
 					</div>
 				</div>
 			</div>
+			<Script async src="https://www.googletagmanager.com/gtag/js?id=UA-80564203-1" />
+			<Script id="google-analytics">
+				{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+	
+					gtag('config', 'UA-80564203-1');
+				`}
+			</Script>
 		</div>
 	)
 }

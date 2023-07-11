@@ -8,6 +8,8 @@ import {getArticle} from "@/src/createClient";
 import client from "@/src/createClient";
 import {PortableText} from '@portabletext/react'
 import imageUrlBuilder from "@sanity/image-url";
+import Script from "next/script";
+import React from "react";
 
 type propsType = {
 	params: {article: string}
@@ -98,6 +100,16 @@ export default async function Article({params}:propsType) {
 					<PortableText value={article.content} components={myPortableTextComponents}/>
 				</div>
 			</div>
+			<Script async src="https://www.googletagmanager.com/gtag/js?id=UA-80564203-1" />
+			<Script id="google-analytics">
+				{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+	
+					gtag('config', 'UA-80564203-1');
+				`}
+			</Script>
 		</div>
 	)
 }
