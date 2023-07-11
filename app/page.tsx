@@ -36,10 +36,10 @@ export default function Home() {
 				<div className='recent-articles-wrapper lg:max-w-screen-2xl lg:mx-auto'>
 					<h2>
 						<Fade left cascade>
-							<p className='highlight-secondary'>Derniers articles en </p>
+							<p className='highlight-secondary'>Derniers articles </p>
 						</Fade>
 						<Fade left cascade>
-							date
+							en date
 						</Fade>
 					</h2>
 					<div className='articles-wrapper'>
