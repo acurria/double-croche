@@ -1236,6 +1236,7 @@ nav:not(.pager-container) {
 		left: 0;
 		right: 0;
 		top: 5.36rem;
+		padding: 2.5rem;
 		width: 100%;
 		background: #000000;
 		opacity: 0;
@@ -1250,6 +1251,7 @@ nav:not(.pager-container) {
 
 	.navigation .desktop-view .subnavigation-container {
 		display: flex;
+		flex-direction: row-reverse;
 		justify-content: space-between;
 		align-items: flex-start;
 		max-width: 57.5rem;
@@ -1269,6 +1271,7 @@ nav:not(.pager-container) {
 	}
 	.navigation .desktop-view .subnavigation .level-1 {
 		width: 20%;
+		text-align: right;
 	}
 
 	.navigation .desktop-view .subnavigation .recent-articles {
