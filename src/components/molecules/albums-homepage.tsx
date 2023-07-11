@@ -30,7 +30,7 @@ export default function AlbumsHomepage() {
     }
 
     return (
-        <main className='albums-items lg:flex'>
+        <div className='albums-items lg:flex'>
             <Slider {...settings} className="lg:hidden">
                 {
                     data.map(function (item:any){
@@ -47,6 +47,6 @@ export default function AlbumsHomepage() {
                     )
                 }
             </div>
-        </main>
+        </div>
     )
 }

@@ -257,6 +257,18 @@ b {
 	display: none;
 }
 
+.banner-container .global {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	font-size: 0;
+}
+
 /* Navigation Mobile */
 
 .navigation,
@@ -1818,6 +1830,10 @@ nav:not(.pager-container) {
 	.banner-container .preview-article {
 		bottom: 0;
 		padding: 3.125rem;
+		width: 100%;
+		left: 0;
+		right: 0;
+		max-width: 1636px;
 	}
 
 	/* Agenda */

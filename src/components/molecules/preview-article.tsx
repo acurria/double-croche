@@ -51,7 +51,7 @@ export default function PreviewArticle({id}:propsType) {
 	}
 
 	return (
-		<main className='preview-article'>
+		<div className='preview-article'>
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link-image" href={data[0].externalLink} target='_blank' aria-label="Écouter sur Spotify">
 					<span className='read-article link-to hidden lg:block'>Écouter sur Spotify</span>
@@ -191,6 +191,6 @@ export default function PreviewArticle({id}:propsType) {
 			{
 				data[0].categorySlug === 'concours' && <Link className="link" href={data[0].externalLink} target='_blank' aria-label="Voir le post sur Instagram">Voir le post sur Instagram</Link>
 			}
-		</main>
+		</div>
 	)
 }

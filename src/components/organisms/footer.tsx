@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function Footer() {
 
 	return (
-		<main className='footer bg-black'>
+		<div className='footer bg-black'>
 			<div className='footer-container flex flex-col items-center lg:flex-row lg:flex-wrap lg:items-start lg:max-w-screen-2xl lg:mx-auto'>
 				<Link className='footer-logo' href="/" aria-label="Retour à l'accueil">
 					<Image
@@ -89,6 +89,6 @@ export default function Footer() {
 					</div>
 				</div>
 			</div>
-		</main>
+		</div>
 	)
 }

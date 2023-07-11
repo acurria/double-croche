@@ -35,7 +35,7 @@ export default function PreviewAlbum({id}:propsType) {
 	}
 
 	return (
-		<main className='album'>
+		<div className='album'>
 			<Link className="album-image-link" href={`/articles/${data[0].link}`} aria-label="Écouter">
 				<span className='link-to hidden lg:block'>Écouter</span>
 				<Image
@@ -48,6 +48,6 @@ export default function PreviewAlbum({id}:propsType) {
 			</Link>
 			<p className='album-artist'>{data[0].artist}</p>
 			<p className='album-name'>{data[0].album}</p>
-		</main>
+		</div>
 	)
 }

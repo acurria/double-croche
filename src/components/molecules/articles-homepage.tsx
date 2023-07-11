@@ -21,7 +21,7 @@ export default function ArticlesHomepage() {
     }
 
     return (
-        <main className='preview-article lg:flex lg:items-start'>
+        <div className='preview-article lg:flex lg:items-start'>
             <div className='main-article'>
                 <PreviewArticle id={data[0]._id} />
             </div>
@@ -36,6 +36,6 @@ export default function ArticlesHomepage() {
                     )
                 }
             </div>
-        </main>
+        </div>
     )
 }

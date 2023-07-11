@@ -43,7 +43,7 @@ export default function Navigation() {
 	};
 
 	return (
-		<main className={`navigation w-full relative ${scroll ? 'scroll' : ''}`}>
+		<nav className={`navigation w-full relative ${scroll ? 'scroll' : ''}`}>
 			<div className='nav-container flex content-between items-center lg:max-w-screen-2xl lg:mx-auto'>
 				<div className='logo-wrapper flex justify-items-center w-3/4'>
 					<Link href="/" aria-label="Retour à l'accueil">
@@ -158,6 +158,6 @@ export default function Navigation() {
 					</div>
 				</div>
 			</div>
-		</main>
+		</nav>
 	)
 }

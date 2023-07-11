@@ -48,7 +48,7 @@ export default function BannerHomepage() {
     }
 
     return (
-        <main className="banner-container flex justify-end items-end">
+        <div className="banner-container flex justify-end items-end">
             <Image
                 src={urlFor(data[0].mobileImage).url()}
                 alt="/placeholder.png"
@@ -63,7 +63,7 @@ export default function BannerHomepage() {
                 width={800}
                 height={800}
             />
-            <div className='preview-article'>
+            <div className='preview-article lg:mx-auto'>
                 {
                     data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
                         <span className='read-article link-to hidden lg:block'>Lire l'article</span>
@@ -155,6 +155,7 @@ export default function BannerHomepage() {
                     data[0].categorySlug === 'concours' && <Link className="link" href={data[0].externalLink} target='_blank' aria-label="Voir le post sur Instagram">Voir le post sur Instagram</Link>
                 }
             </div>
-        </main>
+            <Link className="link global" href={`/articles/${data[0].url}`} aria-label="Lire l'article">Lire l'article</Link>
+        </div>
     )
 }
