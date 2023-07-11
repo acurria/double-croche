@@ -54,11 +54,11 @@ export default function Footer() {
 				</div>
 				<div className='block contact-container'>
 					<p className='footer-title'>Contact</p>
-					<p>Écrivez-nous à <a href='mailto:info.double-croche@gmail.com'>info.double-croche@gmail.com</a></p>
+					<p>Écrivez-nous à <a href='mailto:info.double-croche@gmail.com'>info.doublecroche@gmail.com</a></p>
 				</div>
 				<div className='block bottom-container lg:flex lg:flex-row-reverse lg:justify-between'>
 					<div className='social flex items-center justify-center'>
-						<a className='social-item' href='https://open.spotify.com/user/double-croche?si=I-k5frP5TX-riRPywdMn8w&nd=1' target='_blank'>
+						<a className='social-item' href='https://open.spotify.com/user/double-croche?si=I-k5frP5TX-riRPywdMn8w&nd=1' target='_blank' aria-label="Redirige vers le compte Spotify">
 							<Image
 								src="/spotify.svg"
 								alt="Spotify Logo"
@@ -66,7 +66,7 @@ export default function Footer() {
 								height={25}
 							/>
 						</a>
-						<a className='social-item' href='https://www.facebook.com/doublecroche.dc' target='_blank'>
+						<a className='social-item' href='https://www.facebook.com/doublecroche.dc' target='_blank' aria-label="Redirige vers le compte Facebook">
 							<Image
 								src="/facebook.svg"
 								alt="facebook Logo"
@@ -74,7 +74,7 @@ export default function Footer() {
 								height={25}
 							/>
 						</a>
-						<a className='social-item' href='https://www.instagram.com/doublecroche_dc/' target='_blank'>
+						<a className='social-item' href='https://www.instagram.com/doublecroche_dc/' target='_blank' aria-label="Redirige vers le compte Instagram">
 							<Image
 								src="/instagram.svg"
 								alt="Instagram Logo"
@@ -84,7 +84,8 @@ export default function Footer() {
 						</a>
 					</div>
 					<div className='copyright text-center text-xs font-normal'>
-						<p className='text-secondary'>© 2023 DOUBLE CROCHE. Tous droits réservés</p>
+						<p className='text-secondary'>© 2023 DOUBLE-CROCHE. Tous droits réservés</p>
+						<p className='credit'>Site web réalisé par <Link href="https://alexandrecurria.fr" target='_blank' aria-label="Redirige vers le site web alexandrecurria.fr">alexandrecurria.fr</Link></p>
 					</div>
 				</div>
 			</div>

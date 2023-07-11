@@ -28,7 +28,7 @@ export default function Home() {
 	}
 
 	return (
-		<main className="homepage bg-slate-600 page-main">
+		<div className="homepage bg-slate-600 page-main">
 			{isFirstVisit && <Loader />}
 			<h1 className="sr-only">Double-Croche - Actualité musique et cinéma</h1>
 			<BannerHomepage />
@@ -69,6 +69,6 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-		</main>
+		</div>
 	)
 }

@@ -732,10 +732,27 @@ nav:not(.pager-container) {
 	margin-bottom: 2.125rem;
 }
 
-.copyright p {
+.copyright p:not(.credit) {
 	font-family: "Kanit", sans-serif;
 	font-size: 0.875rem;
 	letter-spacing: 0;
+}
+
+.credit,
+.credit a {
+	font-size: 0.8rem;
+	text-align: left;
+	margin-top: 1rem;
+	font-family: "Kanit", sans-serif;
+	letter-spacing: 0;
+}
+
+.credit a {
+	color: #AB731F;
+}
+
+.credit a:hover {
+	text-decoration: underline;
 }
 
 .social-item {
