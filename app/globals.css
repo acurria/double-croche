@@ -753,7 +753,6 @@ nav:not(.pager-container) {
 .credit,
 .credit a {
 	font-size: 0.8rem;
-	text-align: left;
 	margin-top: 1rem;
 	font-family: "Kanit", sans-serif;
 	letter-spacing: 0;
@@ -1942,6 +1941,11 @@ nav:not(.pager-container) {
 		initial-letter: 3 3;
 		margin-right: 1rem;
 		color: #AB731F;
+	}
+
+	.credit,
+	.credit a {
+		text-align: left;
 	}
 }
 
