@@ -795,6 +795,8 @@ nav:not(.pager-container) {
 	bottom: 0;
 	top: initial;
 	transform: initial;
+	width: 2rem;
+	height: 2rem;
 }
 
 .moment-container .slick-arrow {
@@ -819,11 +821,11 @@ nav:not(.pager-container) {
 
 .moment-container .slick-arrow.slick-prev {
 	left: initial;
-	right: 5.3125rem;
+	right: 4.3125rem;
 }
 
 .moment-container .slick-arrow.slick-next {
-	right: 2.3125rem;
+	right: 1.3125rem;
 }
 
 .moment-container .slick-arrow.slick-next::before {
