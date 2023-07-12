@@ -800,7 +800,7 @@ nav:not(.pager-container) {
 }
 
 .moment-container .slick-arrow {
-	bottom: -2.25rem;
+	bottom: -3.25rem;
 }
 
 .moment-container .slick-arrow.slick-next::before,
