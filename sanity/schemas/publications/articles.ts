@@ -143,17 +143,15 @@ export default defineType({
             ]
         },
         {
-            // Pour "Concours"
             name: 'createdDate',
             title: "Date/heure de création de l'article",
             type: 'datetime',
             options: {
                 dateFormat: 'DD-MM-YYYY',
-                timeFormat: 'HH:mm',
+                timeFormat: 'HH:mm:ss',
             }
         },
         {
-            // Pour "Concours"
             name: 'hidePublication',
             title: "Masquer la publication (L'article sera visible en tapant directement son URL, mais ne remontera pas dans la liste des catégories)",
             type: 'boolean'

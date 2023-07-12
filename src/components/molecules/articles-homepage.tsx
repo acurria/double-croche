@@ -10,7 +10,7 @@ export default function ArticlesHomepage() {
 
     const {data, status} = useQuery(
         'elementsArticlesHomepage', async(context) => {
-            const query = '*[_type=="articles"]{_id}|order(_createdAt desc)[0..8]';
+            const query = '*[_type=="articles" && hidePublication != true]|order(createdDate desc)[0..8]';
             return await client.fetch(query);
         }
     );

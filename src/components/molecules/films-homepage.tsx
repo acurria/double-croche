@@ -19,7 +19,7 @@ export default function FilmsHomepage() {
 
     const {data, status} = useQuery(
         'elementsFilmsHomepage', async(context) => {
-            const query = '*[_type=="momentFilms"]{_id}';
+            const query = '*[_type=="momentFilms"]';
             return await client.fetch(query);
         }
     );

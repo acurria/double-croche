@@ -31,7 +31,7 @@ export default function Pager(props:any) {
 	const nextButtonClass = currentPage === maxPages - 1 ? 'disabled' : '';
 
 	return (
-		<nav className='pager-container'>
+		<nav className={`pager-container ${total > 15 ? 'show' : 'hide'}`}>
 			<div id='pager-list' className='pager-list'>
 				<div className={`pager-item prev-item ${prevButtonClass}`}>
 					<button onClick={(e) => handleChange('prev', currentPage)} id='prev-button' disabled={isPrevDisabled} title='Accéder à la page précédente'>

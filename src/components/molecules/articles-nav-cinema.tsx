@@ -10,7 +10,7 @@ export default function ArticlesNavCinema() {
 
     const {data, status} = useQuery(
         'elementsArticlesNavCinema', async(context) => {
-            const query = '*[_type=="articles" && category->title=="Cinéma"]{_id}|order(_createdAt desc)[0..2]';
+            const query = '*[_type=="articles" && category->title=="Cinéma" && hidePublication != true]|order(createdDate desc)[0..2]';
             return await client.fetch(query);
         }
     );

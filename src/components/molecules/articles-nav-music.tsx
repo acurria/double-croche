@@ -10,7 +10,7 @@ export default function ArticlesNavMusic() {
 
     const {data, status} = useQuery(
         'elementsArticlesNavMusic', async(context) => {
-            const query = '*[_type=="articles" && category->title=="Musique"]{_id}|order(_createdAt desc)[0..2]';
+            const query = '*[_type=="articles" && category->title=="Musique" && hidePublication != true]|order(createdDate desc)[0..2]';
             return await client.fetch(query);
         }
     );

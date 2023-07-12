@@ -415,6 +415,10 @@ nav:not(.pager-container) {
 	background-color: #FFFFFF;
 }
 
+.pager-container.hide {
+	display: none;
+}
+
 .pagination-numbers {
 	display: flex;
 	justify-content: center;
