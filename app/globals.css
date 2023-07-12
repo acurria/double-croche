@@ -175,6 +175,10 @@ b {
 	animation-delay: 4s;
 }
 
+.wrapper-loader.hide {
+	display: none;
+}
+
 .wrapper-loader img {
 	width: 8rem;
     margin: 0;

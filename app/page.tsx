@@ -30,7 +30,7 @@ export default function Home() {
 
 	return (
 		<div className="homepage bg-slate-600 page-main">
-			{isFirstVisit && <Loader />}
+			<Loader show={isFirstVisit} />
 			<h1 className="sr-only">Double-Croche - Actualité musique et cinéma</h1>
 			<BannerHomepage />
 			<div className="recent-articles-container bg-primary">

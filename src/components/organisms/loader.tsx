@@ -1,11 +1,13 @@
 "use client";
 
 import Image from 'next/image'
-
-export default function Loader() {
+interface propsType {
+	show:boolean
+}
+export default function Loader(props:propsType) {
 
 	return (
-		<div className='wrapper-loader'>
+		<div className={`wrapper-loader ${props.show ? 'show' : 'hide'}`} >
 			<Image
 				priority
 				src="/logo-white.svg"
