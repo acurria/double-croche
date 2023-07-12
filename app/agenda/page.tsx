@@ -58,7 +58,8 @@ export default function Page() {
 	const {data, status} = useQuery(
 		'elementsAgenda', async(context) => {
 			const query = `*[_type=="events"]{
-			  'date': date,
+			  'dateStart': dateStart,
+			  'dateEnd': dateEnd,
 			  'month': month,
 			  'title': title,
 			  'type': type->slug.current,
@@ -77,7 +78,8 @@ export default function Page() {
 			if(item.type === type && item.month === month) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
-						<li>{item.title}  <span className='highlight-secondary'>({dayjs(item.date).format("DD/MM/YYYY")})</span></li>
+						<li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+						</li>
 					</ul>
 				</div>
 			} else {

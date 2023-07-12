@@ -34,13 +34,21 @@ export default defineType({
             validation: Rule => Rule.required()      
         },
         {
-            name: 'date',
-            title: 'Date',
+            name: 'dateStart',
+            title: 'Date de début',
             type: 'date',
             options: {
                 dateFormat: 'DD-MM-YYYY'
             },
             validation: Rule => Rule.required()     
+        },
+        {
+            name: 'dateEnd',
+            title: 'Date de fin',
+            type: 'date',
+            options: {
+                dateFormat: 'DD-MM-YYYY'
+            }
         }
     ]
 });
