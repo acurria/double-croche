@@ -1466,6 +1466,7 @@ nav:not(.pager-container) {
 	.film-image-link,
 	.preview-article .link-image {
 		position: relative;
+		display: block;
 	}
 
 	.album-image-link::after,
