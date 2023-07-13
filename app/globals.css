@@ -558,7 +558,7 @@ nav:not(.pager-container) {
 .preview-article span.category {
 	text-transform: uppercase;
 	color: #AB731F;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 
 .preview-article .category-subcategory {
@@ -575,7 +575,7 @@ nav:not(.pager-container) {
 }
 
 .preview-article span.subcategory {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 
 .recent-articles-container .main-article,
