@@ -54,7 +54,7 @@ export default function Footer() {
 				</div>
 				<div className='block contact-container'>
 					<p className='footer-title'>Contact</p>
-					<p>Écrivez-nous à <a href='mailto:info.double-croche@gmail.com'>info.doublecroche@gmail.com</a></p>
+					<p>Ecrivez-nous à <a href='mailto:info.doublecroche@gmail.com'>info.doublecroche@gmail.com</a></p>
 				</div>
 				<div className='block bottom-container lg:flex lg:flex-row-reverse lg:justify-between'>
 					<div className='social flex items-center justify-center'>
