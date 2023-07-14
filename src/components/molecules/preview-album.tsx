@@ -36,7 +36,7 @@ export default function PreviewAlbum({id}:propsType) {
 
 	return (
 		<div className='album'>
-			<Link className="album-image-link" href={`/articles/${data[0].link}`} aria-label="Écouter">
+			<Link className="album-image-link" href={data[0].externalUrl} aria-label="Écouter">
 				<span className='link-to hidden lg:block'>Écouter</span>
 				<Image
 					className="image-album"
