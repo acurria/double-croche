@@ -160,7 +160,7 @@ export default function PreviewArticle({id}:propsType) {
 						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <span><span className="uppercase highlight-secondary">{data[0].musicFestivalName} - </span> <span className="text-info">{data[0].city} {data[0].year}</span></span>
 					}
 					{
-						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <span><span className="uppercase highlight-secondary">{data[0].filmFestivalName}</span> <span className="text-info">{data[0].year} - </span><span className="text-info">{data[0].day}</span></span>
+						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <span><span className="uppercase highlight-secondary">{data[0].filmFestivalName}</span> <span className="text-info">{data[0].year} - {data[0].day}</span></span>
 					}
 					{
 						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <span><span className="uppercase highlight-secondary">'{data[0].filmTitle}'</span> <span className="text-info">de {data[0].director}</span></span>
