@@ -97,6 +97,9 @@ export default async function Article({params}:propsType) {
 			</div>
 			<div className='article-container'>
 				<div className='wrapper-article lg:max-w-screen-lg lg:mx-auto'>
+					{
+						article.categorySlug === 'cinema' && article.subcategorySlug === 'festival' && <h2 className='article-title'>{article.title}</h2>
+					}
 					<PortableText value={article.content} components={myPortableTextComponents}/>
 				</div>
 			</div>
