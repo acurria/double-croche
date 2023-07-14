@@ -1168,7 +1168,7 @@ nav:not(.pager-container) {
 }
 
 .wrapper-article p {
-	text-align: justify;
+	text-align: left;
 }
 
 .wrapper-article img + p {
