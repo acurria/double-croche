@@ -16,7 +16,7 @@ export default function Page() {
 
 	const {data, status, refetch} = useQuery(
 		'elementsArticlesConcours', async(context) => {
-			const query = `{"total": count(*[_type=="articles" && category->slug.current=='concours']), "articles" : *[_type=="articles" && category->slug.current=='concours' && hidePublication != true]|order(createdDate desc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage+1}]}`;
+			const query = `{"total": count(*[_type=="articles" && category->slug.current=='concours']), "articles" : *[_type=="articles" && category->slug.current=='concours' && hidePublication != true]|order(date asc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage+1}]}`;
 
 			return await client.fetch(query);
 		}

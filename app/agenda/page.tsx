@@ -57,7 +57,7 @@ export default function Page() {
 
 	const {data, status} = useQuery(
 		'elementsAgenda', async(context) => {
-			const query = `*[_type=="events"]{
+			const query = `*[_type=="events"]|order(dateStart asc){
 			  'dateStart': dateStart,
 			  'dateEnd': dateEnd,
 			  'month': month,
@@ -576,11 +576,11 @@ export default function Page() {
 							<div className='month-list'>
 								{
 									data.map(function (item:any, index:any) {
-										if (item.month === 'Janvier' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Janvier</h3>
+										if (item.month === 'En cours' && item.type === 'expos') {
+											return <div key={index} className="month-item in-progress">
+												<h3 className='month-title'>En cours</h3>
 												{
-													events('expos', "Janvier")
+													events('expos', "En cours")
 												}
 											</div>
 										}
@@ -588,131 +588,11 @@ export default function Page() {
 								}
 								{
 									data.map(function (item:any, index:any) {
-										if (item.month === 'Février' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Février</h3>
+										if (item.month === 'A venir' && item.type === 'expos') {
+											return <div key={index} className="month-item soon">
+												<h3 className='month-title'>À venir</h3>
 												{
-													events('expos', "Février")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Mars' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Mars</h3>
-												{
-													events('expos', "Mars")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Avril' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Avril</h3>
-												{
-													events('expos', "Avril")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Mai' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Mai</h3>
-												{
-													events('expos', "Mai")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Juin' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Juin</h3>
-												{
-													events('expos', "Juin")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Juillet' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Juillet</h3>
-												{
-													events('expos', "Juillet")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Août' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Août</h3>
-												{
-													events('expos', "Août")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Septembre' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Septembre</h3>
-												{
-													events('expos', "Septembre")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Octobre' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Octobre</h3>
-												{
-													events('expos', "Octobre")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Novembre' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Novembre</h3>
-												{
-													events('expos', "Novembre")
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.map(function (item:any, index:any) {
-										if (item.month === 'Décembre' && item.type === 'expos') {
-											return <div key={index} className={`month-item ${item.month}`}>
-												<h3 className='month-title'>Décembre</h3>
-												{
-													events('expos', "Décembre")
+													events('expos', "A venir")
 												}
 											</div>
 										}

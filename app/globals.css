@@ -926,6 +926,7 @@ nav:not(.pager-container) {
 
 .category-page h3 {
 	font-size: 1.5rem;
+	white-space: nowrap;
 }
 
 .category-page .preview-article .category-subcategory,
@@ -1104,7 +1105,9 @@ nav:not(.pager-container) {
 .month-item.Septembre + .Septembre,
 .month-item.Octobre + .Octobre,
 .month-item.Novembre + .Novembre,
-.month-item.Décembre + .Décembre {
+.month-item.Décembre + .Décembre,
+.month-item.in-progress + .in-progress,
+.month-item.soon + .soon {
 	display: none;
 }
 
@@ -1898,6 +1901,11 @@ nav:not(.pager-container) {
 	.month-item {
 		width: calc((100% / 3) - 6rem);
 		margin: 0 3rem 3.125rem;
+	}
+
+	.month-item.soon,
+	.month-item.in-progress {
+		width: calc((100% / 2) - 6rem);
 	}
 
 	.event-infos:last-of-type {

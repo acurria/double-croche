@@ -4,6 +4,8 @@ import {useQuery} from 'react-query'
 
 import client from "../../createClient";
 import Link from "next/link";
+// @ts-ignore
+import dayjs from "dayjs"
 
 import imageUrlBuilder from '@sanity/image-url'
 import Image from "next/image";
@@ -166,7 +168,7 @@ export default function PreviewArticle({id}:propsType) {
 						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <span><span className="uppercase highlight-secondary">{data[0].director}</span> <span className="text-info">pour '{data[0].filmTitle}'</span></span>
 					}
 					{
-						data[0].categorySlug === 'concours' && <span className='subcategory'><span className='highlight-secondary'>@ {data[0].localisation}</span> <span className="text-info">{data[0].date}</span></span>
+						data[0].categorySlug === 'concours' && <span className='subcategory'><span className='highlight-secondary'>@ {data[0].localisation}</span> <span className="text-info">{dayjs(data[0].date).format("DD/MM/YYYY")}</span></span>
 					}
 				</span>
 			</p>
