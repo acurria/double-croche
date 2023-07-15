@@ -47,7 +47,7 @@ export default function PreviewAlbum({id}:propsType) {
 				/>
 			</Link>
 			<p className='album-artist'>{data[0].artist}</p>
-			<p className='album-name'>{data[0].album}</p>
+			<p className='album-name'>'{data[0].album}'</p>
 		</div>
 	)
 }

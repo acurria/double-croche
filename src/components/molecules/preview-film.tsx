@@ -47,7 +47,7 @@ export default function PreviewFilm({id}:propsType) {
 				/>
 			</Link>
 			<p className='film-artist'>{data[0].director}</p>
-			<p className='film-name'>{data[0].film}</p>
+			<p className='film-name'>'{data[0].film}'</p>
 		</div>
 	)
 }
