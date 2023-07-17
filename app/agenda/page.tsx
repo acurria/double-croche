@@ -72,7 +72,7 @@ export default function Page() {
 	if (status !== 'success') {
 		return <div className="page-main"></div>
 	}
-	
+
 	const events = (type:string, month:string):any => {
 		return data.map(function (item:any) {
 			if(item.type === type && item.month === month) {
@@ -581,12 +581,15 @@ export default function Page() {
 												<h3 className='month-title'>En cours</h3>
 												{
 													data.map(function (item:any) {
-														return <div key={item.id} className="event-infos">
-															<ul className='month-event'>
-																<li>{item.title} <span className='highlight-secondary'>(jusqu'au {dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
-																</li>
-															</ul>
-														</div>
+														if (item.month === 'En cours' && item.type === 'expos') {
+															return <div key={item.id} className="event-infos">
+																<ul className='month-event'>
+																	<li>{item.title} <span
+																		className='highlight-secondary'>(jusqu'au {dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+																	</li>
+																</ul>
+															</div>
+														}
 													})
 												}
 											</div>
