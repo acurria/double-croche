@@ -907,7 +907,9 @@ nav:not(.pager-container) {
 .article-page .wrapper-title .title-info,
 .article-page .wrapper-title .info span,
 .article-page .wrapper-title .info {
-	font-size: 1.5rem;
+	font-family: "Kanit", sans-serif;
+	letter-spacing: 0;
+	font-size: 1.125rem;
 }
 
 .category-page h2::after,
@@ -1970,7 +1972,7 @@ nav:not(.pager-container) {
 
 	.article-page .wrapper-title .title-info,
 	.article-page .wrapper-title .title-info span {
-		font-size: 1.9rem;
+		font-size: 1.5rem;
 	}
 
 	.article-page .wrapper-title {

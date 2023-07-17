@@ -75,19 +75,19 @@ export default async function Article({params}:propsType) {
 							</h2>
 							<p className='title-info'>
 								{
-									article.categorySlug === 'musique' && article.subcategorySlug === 'interview' && <span className='info'><span className='highlight-secondary'>{article.artist} </span> pour '{article.album}'</span>
+									article.categorySlug === 'musique' && article.subcategorySlug === 'interview' && <span className='info'><span className='highlight-secondary uppercase'>{article.artist} </span> pour '{article.album}'</span>
 								}
 								{
-									article.categorySlug === 'musique' && article.subcategorySlug === 'festival' && <span className='info'><span className='highlight-secondary'>{article.musicFestivalName} {article.year} - </span>{article.city}</span>
+									article.categorySlug === 'musique' && article.subcategorySlug === 'festival' && <span className='info'><span className='highlight-secondary uppercase'>{article.musicFestivalName} {article.year} - </span>{article.city}</span>
 								}
 								{
-									article.categorySlug === 'cinema' && article.subcategorySlug === 'festival' && <span className='info'><span className='highlight-secondary'>{article.filmFestivalName} </span>{article.year}</span>
+									article.categorySlug === 'cinema' && article.subcategorySlug === 'festival' && <span className='info'><span className='highlight-secondary uppercase'>{article.filmFestivalName} </span>{article.year}</span>
 								}
 								{
-									article.categorySlug === 'cinema' && article.subcategorySlug === 'chronique' && <span className='info'><span className='highlight-secondary'>'{article.filmTitle}' </span> de {article.director}</span>
+									article.categorySlug === 'cinema' && article.subcategorySlug === 'chronique' && <span className='info'><span className='highlight-secondary uppercase'>'{article.filmTitle}' </span> de {article.director}</span>
 								}
 								{
-									article.categorySlug === 'cinema' && article.subcategorySlug === 'interview' && <span className='info'><span className='highlight-secondary'>{article.director} </span> pour '{article.filmTitle}'</span>
+									article.categorySlug === 'cinema' && article.subcategorySlug === 'interview' && <span className='info'><span className='highlight-secondary uppercase'>{article.director} </span> pour '{article.filmTitle}'</span>
 								}
 							</p>
 						</div>
