@@ -11,7 +11,7 @@ const queryClient = new QueryClient()
 export default function RootTemplate({children}:any) {
     return (
         <QueryClientProvider client={queryClient}>
-            <nav id="nav-section" className='sticky top-0 z-20'>
+            <nav id="nav-section">
                 <Navigation/>
             </nav>
                 {children}

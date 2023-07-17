@@ -285,7 +285,9 @@ b {
 }
 
 nav:not(.pager-container) {
-	margin-bottom: -6.3rem;
+	position: fixed;
+	z-index: 20;
+	top: 0;
 }
 
 .navigation {
@@ -1300,7 +1302,7 @@ nav:not(.pager-container) {
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 5.36rem;
+		top: 5.3rem;
 		padding: 2.5rem;
 		width: 100%;
 		background: #000000;
