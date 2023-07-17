@@ -16,7 +16,7 @@ export default function Page() {
 
 	const {data, status, refetch} = useQuery(
 		'elementsArticlesCinemaChronique', async(context) => {
-			const query = `{"total": count(*[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique']), "articles" : *[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique' && hidePublication != true]|order(createdDate desc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage+1}]}`;
+			const query = `{"total": count(*[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique']), "main" : *[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique' && hidePublication != true]|order(createdDate desc), "articles" : *[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique' && hidePublication != true]|order(createdDate desc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage+1}]}`;
 			return await client.fetch(query);
 		}
 	);
@@ -52,10 +52,10 @@ export default function Page() {
 								<span>chronique</span>
 							</h2>
 							<div className='info-main-article hidden lg:block'>
-								<PreviewArticle id={data.articles[0]._id} />
+								<PreviewArticle id={data.main[0]._id} />
 							</div>
 						</div>
-						<PreviewArticle id={data.articles[0]._id} />
+						<PreviewArticle id={data.main[0]._id} />
 					</div>
 				</div>
 			</div>
