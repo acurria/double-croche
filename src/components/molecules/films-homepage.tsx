@@ -31,7 +31,7 @@ export default function FilmsHomepage() {
 
     return (
         <div className='films-items lg:flex'>
-            <Slider {...settings} className="lg:hidden">
+            <Slider {...settings} className="slideshow-homepage-mobile">
                 {
                     data.map(function (item:any){
                             return <PreviewFilm key={item._id} id={item._id}/>

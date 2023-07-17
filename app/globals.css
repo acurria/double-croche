@@ -1473,6 +1473,10 @@ nav:not(.pager-container) {
 		font-size: 1rem;
 	}
 
+	.slideshow-homepage-mobile {
+		display: none;
+	}
+
 	.albums-wrapper .link-to,
 	.films-wrapper .link-to,
 	.preview-article .link-to {

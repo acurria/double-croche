@@ -31,7 +31,7 @@ export default function AlbumsHomepage() {
 
     return (
         <div className='albums-items lg:flex'>
-            <Slider {...settings} className="lg:hidden">
+            <Slider {...settings} className="slideshow-homepage-mobile">
                 {
                     data.map(function (item:any){
                             return <PreviewAlbum key={item._id} id={item._id}/>
