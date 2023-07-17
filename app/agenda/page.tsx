@@ -580,7 +580,14 @@ export default function Page() {
 											return <div key={index} className="month-item in-progress">
 												<h3 className='month-title'>En cours</h3>
 												{
-													events('expos', "En cours")
+													data.map(function (item:any) {
+														return <div key={item.id} className="event-infos">
+															<ul className='month-event'>
+																<li>{item.title} <span className='highlight-secondary'>(jusqu'au {dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+																</li>
+															</ul>
+														</div>
+													})
 												}
 											</div>
 										}

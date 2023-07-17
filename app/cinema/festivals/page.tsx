@@ -49,7 +49,7 @@ export default function Page() {
 						<div className='wrapper-title lg:order-2 lg:items-start lg:ml-12'>
 							<h2>
 								<span className='highlight-secondary'>Dernier </span>
-								<span>festival</span>
+								<span>article</span>
 							</h2>
 							<div className='info-main-article hidden lg:block'>
 								<PreviewArticle id={data.articles[0]._id} />
