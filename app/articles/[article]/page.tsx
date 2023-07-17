@@ -84,7 +84,7 @@ export default async function Article({params}:propsType) {
 									article.categorySlug === 'cinema' && article.subcategorySlug === 'festival' && <span className='info'><span className='highlight-secondary'>{article.filmFestivalName} - </span>{article.year} - {article.day}</span>
 								}
 								{
-									article.categorySlug === 'cinema' && article.subcategorySlug === 'chronique' && <span className='info'><span className='highlight-secondary'>{article.filmTitle} </span> de {article.director}</span>
+									article.categorySlug === 'cinema' && article.subcategorySlug === 'chronique' && <span className='info'><span className='highlight-secondary'>'{article.filmTitle}' </span> de {article.director}</span>
 								}
 								{
 									article.categorySlug === 'cinema' && article.subcategorySlug === 'interview' && <span className='info'><span className='highlight-secondary'>{article.director} </span> pour '{article.filmTitle}'</span>
