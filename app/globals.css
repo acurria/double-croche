@@ -78,7 +78,7 @@ h2 .react-reveal {
 
 .page-main {
 	min-height: 100vh;
-	background-color: #000000;
+	background-color: #111111;
 }
 
 h1::before,
@@ -1477,7 +1477,7 @@ nav:not(.pager-container) {
 	}
 
 	.slideshow-homepage-mobile {
-		display: none;
+		display: none !important;
 	}
 
 	.albums-wrapper .link-to,
