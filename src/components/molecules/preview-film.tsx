@@ -36,7 +36,7 @@ export default function PreviewFilm({id}:propsType) {
 
 	return (
 		<div className='film'>
-			<Link className="film-image-link" href={data[0].externalUrl} aria-label="En savoir plus">
+			<Link className="film-image-link" href={data[0].externalUrl} aria-label="En savoir plus" target="_blank">
 				<span className='link-to hidden lg:block'>En savoir plus</span>
 				<Image
 					className="image-film"

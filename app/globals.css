@@ -78,6 +78,7 @@ h2 .react-reveal {
 
 .page-main {
 	min-height: 100vh;
+	background-color: #000000;
 }
 
 h1::before,
@@ -1615,12 +1616,14 @@ nav:not(.pager-container) {
 	}
 
 	.category-page.contest .main-category-article .preview-article,
-	.category-page.playlist .main-category-article .preview-article {
+	.category-page.playlist .main-category-article .preview-article,
+	.category-page.festival .main-category-article .preview-article {
 		width: 40%;
 	}
 
 	.category-page.contest .wrapper-title,
-	.category-page.playlist .wrapper-title {
+	.category-page.playlist .wrapper-title,
+	.category-page.festival .wrapper-title {
 		width: 60%;
 	}
 

@@ -35,7 +35,7 @@ export default function Page() {
 
 	return (
 		<>
-			<div className="category-page bg-primary page-main">
+			<div className="category-page bg-primary page-main festival">
 				<div className="header-category lg:mx-auto lg:max-w-screen-2xl">
 					<h1>
 						<Fade left cascade>
