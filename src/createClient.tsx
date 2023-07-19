@@ -27,7 +27,8 @@ export async function getArticle(slug: string) {
               "externalLink": link,
               "url": slug.current,
               "content": content,
-              "title": title
+              "title": title,
+              "metadescription": metadescription
         }`,
         {slug}
     )

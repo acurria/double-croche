@@ -143,6 +143,11 @@ export default defineType({
             ]
         },
         {
+            name: 'metadescription',
+            title: "Méta-Description pour le référencement - À indiquer pour : Musique Interview, Musique Festival, Cinéma Interview, Cinéma Chronique, Cinéma Festival",
+            type: 'string',
+        },
+        {
             name: 'createdDate',
             title: "Date/heure de création de l'article",
             type: 'datetime',

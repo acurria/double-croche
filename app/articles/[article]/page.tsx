@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import {useNextSanityImage} from 'next-sanity-image'
+
 // @ts-ignore
 import Fade from 'react-reveal/Fade'
 import {getArticle} from "@/src/createClient";
