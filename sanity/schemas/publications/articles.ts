@@ -24,8 +24,7 @@ export default defineType({
             name: 'category',
             title: 'Catégorie',
             type: 'reference',
-            to: [{type: 'categories'}],
-            validation: Rule => Rule.required()      
+            to: [{type: 'categories'}]
         },
         {
             name: 'subcategory',
