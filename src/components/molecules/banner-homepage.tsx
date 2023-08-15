@@ -60,8 +60,8 @@ export default function BannerHomepage() {
                 src={urlFor(data[0].desktopImage).url()}
                 alt="Banner Background"
                 className="background-image backgound-banner-image-desktop hidden lg:block"
-                width={800}
-                height={800}
+                width={1920}
+                height={1080}
             />
             <div className='preview-article lg:mx-auto'>
                 {
