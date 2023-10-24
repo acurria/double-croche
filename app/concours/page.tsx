@@ -13,8 +13,8 @@ export default function Page() {
 
 	const {data, status, refetch} = useQuery(
 		'elementsArticlesConcours', async(context) => {
-			const query = `{"main" : *[_type=="articles" && category->slug.current=='concours' && hidePublication != true]{"_id": _id}|order(date asc),
-								"articles" : *[_type=="articles" && category->slug.current=='concours' && hidePublication != true]{"_id": _id}|order(date asc)}`;
+			const query = `{"main" : *[_type=="articles" && category->slug.current=='concours' && hidePublication != true]|order(date asc){"_id": _id},
+								"articles" : *[_type=="articles" && category->slug.current=='concours' && hidePublication != true]|order(date asc){"_id": _id}}`;
 
 			return await client.fetch(query);
 		}

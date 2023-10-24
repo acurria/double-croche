@@ -14,8 +14,8 @@ export default function Page() {
 	const {data, status, refetch} = useQuery(
 		'elementsArticlesMusiqueFestival', async(context) => {
 			const query = `{
-			"main" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true]{"_id": _id}|order(createdDate desc),
-			"articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true]{"_id": _id}|order(createdDate desc)}`;
+			"main" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true]|order(createdDate desc){"_id": _id},
+			"articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true]|order(createdDate desc){"_id": _id}}`;
 			return await client.fetch(query);
 		}
 	);

@@ -13,8 +13,8 @@ export default function Page() {
 
 	const {data, status, refetch} = useQuery(
 		'elementsArticlesCinemaChronique', async(context) => {
-			const query = `{"main" : *[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique' && hidePublication != true]{"_id": _id}|order(createdDate desc),
-			"articles" : *[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique' && hidePublication != true]{"_id": _id}|order(createdDate desc)}`;
+			const query = `{"main" : *[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique' && hidePublication != true]|order(createdDate desc){"_id": _id},
+			"articles" : *[_type=="articles" && category->slug.current=='cinema' && subcategory->slug.current=='chronique' && hidePublication != true]|order(createdDate desc){"_id": _id}}`;
 			return await client.fetch(query);
 		}
 	);
