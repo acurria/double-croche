@@ -992,19 +992,19 @@ nav:not(.pager-container) {
 
 .grid-container .wrapper-grid {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(2,minmax(0,1fr));
 	grid-gap: 1.5625rem;
 }
 
-.grid-container .react-reveal:nth-child(3),
-.grid-container .react-reveal:nth-child(6),
-.grid-container .react-reveal:nth-child(9),
-.grid-container .react-reveal:nth-child(12),
-.grid-container .react-reveal:nth-child(15) {
+.grid-container .react-reveal:nth-child(15n+3),
+.grid-container .react-reveal:nth-child(15n+6),
+.grid-container .react-reveal:nth-child(15n+9),
+.grid-container .react-reveal:nth-child(15n+12),
+.grid-container .react-reveal:nth-child(15n) {
 	grid-column: 1 / 3;
 }
 
-.grid-container.layout-3x2 .react-reveal:nth-child(9) .preview-article {
+.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .preview-article {
 	position: relative;
 	display: flex;
 	justify-content: flex-end;
@@ -1013,11 +1013,11 @@ nav:not(.pager-container) {
 	margin-right: -1.5625rem;
 }
 
-.grid-container.layout-3x2 .react-reveal:nth-child(9) .text-info {
+.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .text-info {
 	color: #FFFFFF;
 }
 
-.grid-container.layout-3x2 .react-reveal:nth-child(9) .link-image::after {
+.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .link-image::after {
 	content:'';
 	display: block;
 	width: 100%;
@@ -1030,14 +1030,14 @@ nav:not(.pager-container) {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.grid-container.layout-3x2 .react-reveal:nth-child(9) .title-info {
+.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .title-info {
 	position: absolute;
 	z-index: 10;
 	text-align: right;
 	padding: 1.5625rem;
 }
 
-.grid-container.layout-3x2 .react-reveal:nth-child(9) .link-image {
+.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .link-image {
 	width: 100%;
 	margin-bottom: 0;
 }
@@ -1659,114 +1659,75 @@ nav:not(.pager-container) {
 
 	.grid-container.layout-3x2 .wrapper-grid,
 	.grid-container.layout-1x1 .wrapper-grid {
-		grid-template-columns: repeat(4, 1fr);
-		grid-auto-rows: minmax(100px, auto);
-		grid-auto-columns: auto;
+		grid-template-columns: repeat(4,minmax(0,1fr));
+		height: auto;
 		grid-gap: 1.875rem;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(1),
-	.grid-container.layout-3x2 .react-reveal:nth-child(4),
-	.grid-container.layout-3x2 .react-reveal:nth-child(10) {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+1),
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+4){
 		grid-column: 1/2;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(2),
-	.grid-container .react-reveal:nth-child(5) {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+2),
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+5) {
 		grid-column: 2/3;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(11) {
-		grid-column: 1/3;
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+3) {
+		grid-column: 3/5;
+		grid-row-end: span 2;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(11) {
-		grid-row: 5/7;
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+6) {
+		grid-column: 1/2;
 	}
 
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(3) {
-		grid-row: 1/3;
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+7) {
+		grid-column: 2/3;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(12),
-	.grid-container.layout-3x2 .react-reveal:nth-child(14) {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+8) {
 		grid-column: 3/4;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(3) {
-		grid-column: 3/5;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(3) .preview-article,
-	.grid-container.layout-3x2 .react-reveal:nth-child(11) .preview-article {
-		height: calc(100% - 2.2rem);
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(3) .preview-article .link-image,
-	.grid-container.layout-3x2 .react-reveal:nth-child(11) .preview-article .link-image {
-		height: 100%;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(13),
-	.grid-container.layout-3x2 .react-reveal:nth-child(15) {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) {
 		grid-column: 4/5;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(6),
-	.grid-container.layout-3x2 .react-reveal:nth-child(16) {
-		grid-column: 1 / 2;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(7),
-	.grid-container.layout-3x2 .react-reveal:nth-child(17) {
-		grid-column: 2 / 3;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(8),
-	.grid-container.layout-3x2 .react-reveal:nth-child(18) {
-		grid-column: 3 / 4;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(9),
-	.grid-container.layout-3x2 .react-reveal:nth-child(19) {
-		grid-column: 4 / 5;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(9) .preview-article {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .preview-article {
 		display: block;
 		margin-left: 0;
 		margin-right: 0;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(10) .text-info {
-		color: #FFFFFF;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(9) .text-info {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .text-info {
 		color: #000000;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(9) .link-image::after {
-		display: none;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(9) .title-info {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .title-info {
 		position: static;
 		text-align: left;
 		padding: 0;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(9) .info {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .info {
 		color: #000000;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(10) {
-		grid-column: 1 / 5;
-
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .text-info {
+		color: #FFFFFF;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(10) .preview-article {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .link-image::after {
+		display: none;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) {
+		grid-column: 1 / 5;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .preview-article {
 		position: relative;
 		display: flex;
 		justify-content: flex-end;
@@ -1775,11 +1736,11 @@ nav:not(.pager-container) {
 		margin-right: -3.125rem;
 	}
 	
-	.grid-container.layout-3x2 .react-reveal:nth-child(10) .info {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .info {
 		color: #FFFFFF;
 	}
 	
-	.grid-container.layout-3x2 .react-reveal:nth-child(10) .link-image::after {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .link-image::after {
 		content:'';
 		display: block;
 		width: 100%;
@@ -1792,7 +1753,7 @@ nav:not(.pager-container) {
 		background-color: rgba(0, 0, 0, 0.7);
 	}
 	
-	.grid-container.layout-3x2 .react-reveal:nth-child(10) .title-info {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .title-info {
 		position: absolute;
 		z-index: 10;
 		text-align: right;
@@ -1800,60 +1761,90 @@ nav:not(.pager-container) {
 		font-size: 1.125rem;
 	}
 	
-	.grid-container.layout-3x2 .react-reveal:nth-child(10) .link-image {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .link-image {
 		width: 100%;
 		margin-bottom: 0;
 		height: 30rem;
 	}
 
-	.grid-container.layout-1x1 .react-reveal:nth-child(1) {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+11) {
 		grid-column: 1/3;
-		grid-row: 1/3;
+		grid-row-end: span 2;
 	}
 
-	.grid-container.layout-1x1 .react-reveal:nth-child(11) {
-		grid-column: 1/3;
-		grid-row: 5/7;
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+11) .preview-article,
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+3) .preview-article {
+		height: calc(100% - 2rem);
+		width: 100%;
 	}
 
-	.grid-container.layout-1x1 .react-reveal:nth-child(2),
-	.grid-container.layout-1x1 .react-reveal:nth-child(4),
-	.grid-container.layout-1x1 .react-reveal:nth-child(12),
-	.grid-container.layout-1x1 .react-reveal:nth-child(14) {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+11) .preview-article img,
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+3) .preview-article img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+11) .preview-article .link-image,
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+3) .preview-article .link-image {
+		height: 100%;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+12),
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+14) {
 		grid-column: 3/4;
 	}
 
-	.grid-container.layout-1x1 .react-reveal:nth-child(3),
-	.grid-container.layout-1x1 .react-reveal:nth-child(5),
-	.grid-container.layout-1x1 .react-reveal:nth-child(13),
-	.grid-container.layout-1x1 .react-reveal:nth-child(15) {
+	.grid-container.layout-3x2 .react-reveal:nth-child(15n+13),
+    .grid-container.layout-3x2 .react-reveal:nth-child(15n) {
 		grid-column: 4/5;
 	}
 
-	.grid-container.layout-1x1 .react-reveal:nth-child(6),
-	.grid-container.layout-1x1 .react-reveal:nth-child(9) {
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+1) {
+		grid-column: 1/3;
+		grid-row-end: span 2;
+	}
+
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+2),
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+4) {
+		grid-column: 3/4;
+	}
+
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+3),
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+5) {
+		grid-column: 4/5;
+	}
+
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+6),
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+9){
 		grid-column: 1/2;
 	}
 
-	.grid-container.layout-1x1 .react-reveal:nth-child(7),
-	.grid-container.layout-1x1 .react-reveal:nth-child(10) {
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+7),
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n) {
 		grid-column: 2/3;
 	}
 
-	.grid-container.layout-1x1 .react-reveal:nth-child(8) {
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+8) {
 		grid-column: 3/5;
-		grid-row: 3/5;
+		grid-row-end: span 2;
 	}
 
-	.grid-container.layout-1x1 .react-reveal:nth-child(1) .preview-article,
-	.grid-container.layout-1x1 .react-reveal:nth-child(8) .preview-article,
-	.grid-container.layout-1x1 .react-reveal:nth-child(11) .preview-article {
-		height: calc(100% - 2.2rem);
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+1) .preview-article,
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+8) .preview-article {
+		height: calc(100% - 2rem);
+		width: 100%;
 	}
 
-	.grid-container.layout-1x1 .react-reveal:nth-child(1) .preview-article .link-image,
-	.grid-container.layout-1x1 .react-reveal:nth-child(8) .preview-article .link-image,
-	.grid-container.layout-1x1 .react-reveal:nth-child(11) .preview-article .link-image {
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+1) .preview-article img,
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+8) .preview-article img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+1) .preview-article .link-image,
+	.grid-container.layout-1x1 .react-reveal:nth-child(10n+8) .preview-article .link-image {
 		height: 100%;
 	}
 

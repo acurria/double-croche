@@ -6,29 +6,20 @@ import Fade from 'react-reveal/Fade';
 import client from "../../../src/createClient";
 import {useQuery} from "react-query";
 import PreviewArticle from "@/src/components/molecules/preview-article";
-import Pager from "@/src/components/organisms/pager";
 import Script from "next/script";
 
 export default function Page() {
 
-	const [page, setPage] = useState(0);
-	const itemsPerPage = 15;
-
 	const {data, status, refetch} = useQuery(
 		'elementsArticlesMusiqueInterview', async(context) => {
-			const query = `{"total": count(*[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview']), "main" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview' && hidePublication != true]|order(createdDate desc), "articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview' && hidePublication != true]|order(createdDate desc)[${page*itemsPerPage}...${page*itemsPerPage + itemsPerPage+1}]}`;
+			const query = `{
+									"main" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview' && hidePublication != true]{"_id": _id}|order(createdDate desc),
+									"articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview' && hidePublication != true]{"_id": _id}|order(createdDate desc)
+									}`;
 
 			return await client.fetch(query);
 		}
 	);
-
-	const changePage = useCallback((newPage:number) => {
-		setPage(newPage);
-	},[])
-
-	useEffect(() => {
-		refetch();
-	}, [page, refetch]);
 
 	if (status !== 'success') {
 		return <div className="page-main"></div>
@@ -77,7 +68,6 @@ export default function Page() {
 					}
 				</div>
 			</div>
-			<Pager items={itemsPerPage} total={data.total} onChange={changePage}/>
 			<Script async src="https://www.googletagmanager.com/gtag/js?id=UA-80564203-1" />
 			<Script id="google-analytics">
 				{`
