@@ -39,8 +39,7 @@ export default defineType({
             type: 'date',
             options: {
                 dateFormat: 'DD-MM-YYYY'
-            },
-            validation: Rule => Rule.required()     
+            }
         },
         {
             name: 'dateEnd',
