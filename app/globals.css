@@ -1247,6 +1247,18 @@ nav:not(.pager-container) {
 	margin: 1.8rem auto 0;
 }
 
+@media (max-width: 1024px) {
+	.navigation {
+		padding-top: 1.2rem;
+		padding-bottom: 1.2rem;
+	}
+
+	.navigation .main-logo {
+		height: 2.5rem;
+		width: auto;
+	}
+}
+
 @media (min-width: 1024px) {
 
 	/* Typography */
@@ -1283,14 +1295,28 @@ nav:not(.pager-container) {
 	/* Navigation Desktop */
 
 	.navigation {
+		position: relative;
 		height: auto;
 		padding-top: 0;
 		padding-bottom: 0;
 	}
 
 	.navigation ul > li {
-		padding-top: 1.6rem;
-		padding-bottom: 1.6rem;
+		padding: 1.6rem 1rem;
+	}
+
+	.navigation .level-0 > li:first-of-type:hover::after,
+	.navigation .level-0 > li:nth-child(2):hover::after {
+		content: '';
+		display: block;
+		background-color: #000000;
+		width: 100%;
+		position: absolute;
+		z-index: -1;
+		top: 5rem;
+		left: 0;
+		right: 0;
+		height: 17.5rem;
 	}
 
 	.navigation,
@@ -1307,10 +1333,6 @@ nav:not(.pager-container) {
 
 	.navigation:hover {
 		background-color: #000000;
-	}
-
-	.navigation .desktop-view .level-0 > .item-nav {
-		margin: 0 1rem;
 	}
 
 	.navigation .desktop-view .level-0 > .item-nav,

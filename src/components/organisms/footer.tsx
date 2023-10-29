@@ -23,32 +23,32 @@ export default function Footer() {
 						<ul className='menu-column'>
 							<span>Musique</span>
 							<li>
-								<Link href="./musique/interviews" aria-label="Aller à Musique Interview">Interviews</Link>
+								<Link href={`/musique/interviews`} aria-label="Aller à Musique Interview">Interviews</Link>
 							</li>
 							<li>
-								<Link href="./musique/playlists" aria-label="Aller à Musique Playlists">Playlists</Link>
+								<Link href={`/musique/playlists`} aria-label="Aller à Musique Playlists">Playlists</Link>
 							</li>
 							<li>
-								<Link href="./musique/festivals" aria-label="Aller à Musique Festivals">Festivals</Link>
+								<Link href={`/musique/festivals`} aria-label="Aller à Musique Festivals">Festivals</Link>
 							</li>
 						</ul>
 						<ul className='menu-column'>
 							<span>Cinéma</span>
 							<li>
-								<Link href="./cinema/interviews" aria-label="Aller à Cinéma Interview">Interviews</Link>
+								<Link href={`/cinema/interviews`} aria-label="Aller à Cinéma Interview">Interviews</Link>
 							</li>
 							<li>
-								<Link href="./cinema/chroniques" aria-label="Aller à Cinéma Chroniques">Chroniques</Link>
+								<Link href={`/cinema/chroniques`} aria-label="Aller à Cinéma Chroniques">Chroniques</Link>
 							</li>
 							<li>
-								<Link href="./cinema/festivals" aria-label="Aller à Cinéma Festivals">Festivals</Link>
+								<Link href={`/cinema/festivals`} aria-label="Aller à Cinéma Festivals">Festivals</Link>
 							</li>
 						</ul>
 						<div className='menu-column'>
-							<Link href="./concours" aria-label="Aller à Concours">Concours</Link>
+							<Link href={`/concours`} aria-label="Aller à Concours">Concours</Link>
 						</div>
 						<div className='menu-column'>
-							<Link href="./agenda" aria-label="Aller à Agenda">Agenda</Link>
+							<Link href={`/agenda`} aria-label="Aller à Agenda">Agenda</Link>
 						</div>
 					</div>
 				</div>
