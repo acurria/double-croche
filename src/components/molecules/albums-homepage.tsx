@@ -19,7 +19,7 @@ export default function AlbumsHomepage() {
 
     const {data, status} = useQuery(
         'elementsAlbumsHomepage', async(context) => {
-            const query = '*[_type=="momentAlbums"]';
+            const query = '*[_type=="momentAlbums"] | order(_createdAt desc)[0..2]';
             return await client.fetch(query);
         }
     );
