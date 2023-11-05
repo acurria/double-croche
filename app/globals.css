@@ -888,6 +888,7 @@ nav:not(.pager-container) {
 }
 
 .category-page h2,
+.layout-basic h2,
 .category-page h3,
 .article-page h2 {
 	display: flex;
@@ -898,6 +899,10 @@ nav:not(.pager-container) {
 	text-transform: uppercase;
 	border-left: 0;
 	padding-left: 0;
+}
+
+.layout-basic h2 span:last-of-type {
+	color: #000000;
 }
 
 .article-page h2 {
@@ -918,11 +923,13 @@ nav:not(.pager-container) {
 }
 
 .category-page h2 .highlight-secondary,
-.article-page h2 .highlight-secondary {
+.article-page h2 .highlight-secondary,
+.layout-basic h2 .highlight-secondary {
 	margin-right: 0.7rem;
 }
 
 .category-page h2::before,
+.layout-basic h2::before,
 .article-page h2::before {
 	display: none;
 }
@@ -936,6 +943,7 @@ nav:not(.pager-container) {
 }
 
 .category-page h2::after,
+.layout-basic h2::after,
 .category-page h3::after {
 	content: '';
 	display: inline-block;
@@ -982,6 +990,10 @@ nav:not(.pager-container) {
 	padding: 3.125rem 1.5625rem;
 }
 
+.grid-container.empty-grid {
+	padding-bottom: 0;
+}
+
 .grid-container .category-subcategory {
 	display: none;
 }
@@ -994,6 +1006,19 @@ nav:not(.pager-container) {
 	display: grid;
 	grid-template-columns: repeat(2,minmax(0,1fr));
 	grid-gap: 1.5625rem;
+}
+
+.layout-basic .wrapper-grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.layout-basic .wrapper-grid .react-reveal {
+	width: calc(50% - 0.8rem);
+}
+
+.layout-basic .wrapper-grid .react-reveal .text-info {
+	color: #000000;
 }
 
 .grid-container .react-reveal:nth-child(15n+3),
@@ -1282,7 +1307,9 @@ nav:not(.pager-container) {
 	}
 
 	.category-page h2,
-	.category-page h2 span {
+	.category-page h2 span,
+	.layout-basic h2,
+	.layout-basic h2 span {
 		font-size: 2.8rem;
 	}
 
@@ -1621,7 +1648,8 @@ nav:not(.pager-container) {
 		padding-top: 10rem;
 	}
 
-	.category-page h2 {
+	.category-page h2,
+	.layout-basic h2 {
 		justify-content: flex-start;
 		margin-bottom: 1rem;
 	}
@@ -1649,6 +1677,10 @@ nav:not(.pager-container) {
 
 	.category-page h2::after {
 		width: 100%;
+	}
+
+	.layout-basic h2::after {
+		width: 20%;
 	}
 
 	.category-page .wrapper-title {
@@ -1868,6 +1900,10 @@ nav:not(.pager-container) {
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+1) .preview-article .link-image,
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+8) .preview-article .link-image {
 		height: 100%;
+	}
+
+	.layout-basic .wrapper-grid .react-reveal {
+		width: calc(25% - 1.2rem);
 	}
 
 	/* Footer Desktop */

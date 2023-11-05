@@ -14,8 +14,9 @@ export default function Page() {
 	const {data, status, refetch} = useQuery(
 		'elementsArticlesMusiqueFestival', async(context) => {
 			const query = `{
-			"main" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true]|order(createdDate desc){"_id": _id},
-			"articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true]|order(createdDate desc){"_id": _id}}`;
+			"main" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle != true]|order(createdDate desc){"_id": _id},
+			"articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle != true]|order(createdDate desc){"_id": _id}, 
+			"oldArticles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle == true]|order(createdDate asc){"_id": _id}}`;
 			return await client.fetch(query);
 		}
 	);
@@ -40,7 +41,7 @@ export default function Page() {
 						<div className='wrapper-title lg:order-2 lg:items-start lg:ml-12'>
 							<h2>
 								<span className='highlight-secondary'>Dernier </span>
-								<span>article</span>
+								<span>festival</span>
 							</h2>
 							<div className='info-main-article hidden lg:block'>
 								<PreviewArticle id={data.main[0]._id} />
@@ -50,7 +51,7 @@ export default function Page() {
 					</div>
 				</div>
 			</div>
-			<div className='grid-container layout-1x1'>
+			<div className='grid-container layout-1x1 empty-grid'>
 				<div className='wrapper-grid lg:max-w-screen-2xl lg:mx-auto'>
 					{
 						data.articles.map(function (item:any, index:number){
@@ -58,6 +59,22 @@ export default function Page() {
 									return null
 								}
 
+								return <Fade key={item._id} bottom>
+									<PreviewArticle key={item._id} id={item._id}/>
+								</Fade>
+							}
+						)
+					}
+				</div>
+			</div>
+			<div className='grid-container layout-basic'>
+				<h2>
+					<span className='highlight-secondary'>Festivals </span>
+					<span>passés</span>
+				</h2>
+				<div className='wrapper-grid'>
+					{
+						data.oldArticles.map(function (item:any, index:number){
 								return <Fade key={item._id} bottom>
 									<PreviewArticle key={item._id} id={item._id}/>
 								</Fade>
