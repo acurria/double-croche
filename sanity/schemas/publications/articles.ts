@@ -44,6 +44,11 @@ export default defineType({
             type: 'image'
         },
         {
+            name: 'oldArticle',
+            title: "À activer si le Festival de Musique ou le Concours est passé",
+            type: 'boolean'
+        },
+        {
             // Pour "Musique Interview", "Concours"
             name: 'artist',
             title: "Artiste (Musique Interview, Concours)",
