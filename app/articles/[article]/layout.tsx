@@ -8,7 +8,7 @@ type propsType = {
 export async function generateMetadata({params}:propsType) {
 	const slug = params.article;
 	const article = await getArticle(slug);
-	console.log(<PortableText value={article.content} />)
+
 	return {
 	  title: article.title,
 	  description: article.metadescription,

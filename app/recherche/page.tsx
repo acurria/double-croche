@@ -7,14 +7,17 @@ import client from "../../src/createClient";
 import {useQuery} from "react-query";
 import PreviewArticle from "@/src/components/molecules/preview-article";
 import Script from "next/script";
-import Link from "next/link";
 
-export default function Page() {
+type propsType = {
+	searchValue:string
+};
 
+export default function Page({searchValue}:propsType) {
+
+	console.log(searchValue);
 	const {data, status, refetch} = useQuery(
 		'elementsSearchResults', async(context) => {
 			const query = `{
-									"main" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview' && hidePublication != true]|order(createdDate desc){"_id": _id},
 									"articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview' && hidePublication != true]|order(createdDate desc){"_id": _id}
 									}`;
 

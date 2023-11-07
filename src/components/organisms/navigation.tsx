@@ -1,6 +1,6 @@
 "use client"; 
 
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 import {useEffect} from 'react';
 
 import Link from 'next/link';
@@ -17,7 +17,7 @@ export default function Navigation() {
 	};
 
 	const [searchIsOpen, setSearchIsOpen] = useState(false);
-	const searchClick = () => {
+	const openSearch = () => {
 		setSearchIsOpen(searchIsOpen => !searchIsOpen);
 	};
 
@@ -47,6 +47,8 @@ export default function Navigation() {
 		});
 	};
 
+	const [searchValue, setSearchValue] = useState('');
+
 	return (
 		<div>
 			<nav className={`navigation w-full relative ${scroll ? 'scroll' : ''}`}>
@@ -66,7 +68,7 @@ export default function Navigation() {
 					</div>
 					<div className={`navigation-wrapper mobile-view lg:hidden ${burgerIsOpen ? 'open' : ''}`}>
 						<div className='wrapper-search-burger'>
-							<button id='search-icon' className='search-wrapper-icon' onClick={searchClick}>
+							<button id='search-icon' className='search-wrapper-icon' onClick={openSearch}>
 								<Image
 									priority
 									src="/search-icon.png"
@@ -174,7 +176,7 @@ export default function Navigation() {
 								</li>
 							</ul>
 						</div>
-						<button id='search-icon' className='search-wrapper-icon' onClick={searchClick}>
+						<button id='search-icon' className='search-wrapper-icon' onClick={openSearch}>
 							<Image
 								priority
 								src="/search-icon.png"
@@ -191,12 +193,14 @@ export default function Navigation() {
 				<div className='searchbar'>
 					<label htmlFor='searchbar-field' className='sr-only'>Rechercher</label>
 					<div className='search-field-button-wrapper'>
-						<input type='search' className='searchbar-field' placeholder='Rechercher' name='searchbar-field'/>
-						<button className='search-button' type='submit' onClick={searchClick}>Rechercher</button>
+						<input id='input-search' type='search' className='searchbar-field'
+							   placeholder='Rechercher' name='searchbar-field' value={searchValue}
+							   onChange={(event) => setSearchValue(event.target.value)}/>
+						<Link href={`/recherche`} className='search-button'>Rechercher</Link>
 					</div>
 				</div>
-				<button id='close-search' className='close-search' onClick={searchClick}>Fermer la recherche</button>
-				<div className='search-overlay' onClick={searchClick}></div>
+				<button id='close-search' className='close-search' onClick={openSearch}>Fermer la recherche</button>
+				<div className='search-overlay' onClick={openSearch}></div>
 			</div>
 		</div>
 	)
