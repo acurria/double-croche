@@ -16,7 +16,7 @@ export default function Page() {
 			const query = `{
 			"main" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle != true]|order(createdDate desc){"_id": _id},
 			"articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle != true]|order(createdDate desc){"_id": _id}, 
-			"oldArticles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle == true]|order(date asc){"_id": _id}}`;
+			"oldArticles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle == true]|order(date desc){"_id": _id}}`;
 			return await client.fetch(query);
 		}
 	);
