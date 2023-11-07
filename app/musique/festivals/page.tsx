@@ -16,7 +16,7 @@ export default function Page() {
 			const query = `{
 			"main" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle != true]|order(createdDate desc){"_id": _id},
 			"articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle != true]|order(createdDate desc){"_id": _id}, 
-			"oldArticles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle == true]|order(date asc){"_id": _id}}`;
+			"oldArticles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='festival' && hidePublication != true && oldArticle == true]|order(date desc){"_id": _id}}`;
 			return await client.fetch(query);
 		}
 	);
@@ -40,7 +40,7 @@ export default function Page() {
 					<div className='main-category-article lg:flex'>
 						<div className='wrapper-title lg:order-2 lg:items-start lg:ml-12'>
 							<h2>
-								<span className='highlight-secondary'>Dernier </span>
+								<span className='highlight-secondary'>Prochain </span>
 								<span>festival</span>
 							</h2>
 							<div className='info-main-article hidden lg:block'>
