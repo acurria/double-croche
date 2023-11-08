@@ -49,7 +49,7 @@ export default function Page() {
 					</div>
 				</div>
 			</div>
-			<div className='grid-container layout-3x2 empty-grid'>
+			<div className='grid-container layout-1x1 empty-grid'>
 				<div className='wrapper-grid lg:max-w-screen-2xl lg:mx-auto'>
 					{
 						data.articles.map(function (item:any, index:number){
