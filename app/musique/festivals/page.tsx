@@ -69,8 +69,8 @@ export default function Page() {
 			</div>
 			<div className='grid-container layout-basic'>
 				<h2>
-					<span className='highlight-secondary'>Festivals </span>
-					<span>passés</span>
+					<span className='highlight-secondary'>FESTIVALS </span>
+					<span>PASSÉS</span>
 				</h2>
 				<div className='wrapper-grid'>
 					{
