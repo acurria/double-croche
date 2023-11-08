@@ -1918,7 +1918,7 @@ nav:not(.pager-container) {
 	}
 
 	.filter-items {
-		max-width: 40rem;
+		max-width: 55rem;
     	margin: 0 auto;
 		padding: 0;
 	}
