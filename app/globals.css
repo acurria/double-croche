@@ -1075,6 +1075,10 @@ nav:not(.pager-container) {
 	border-top: 0.1875rem solid #AB731F;
 }
 
+.filter-items {
+	padding: 0 1.5rem 0 0;
+}
+
 .filter-container .item {
 	text-transform: uppercase;
 	padding: 1rem 0;
@@ -1916,6 +1920,7 @@ nav:not(.pager-container) {
 	.filter-items {
 		max-width: 40rem;
     	margin: 0 auto;
+		padding: 0;
 	}
 
 	.filter-container ul {

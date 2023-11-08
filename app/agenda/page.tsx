@@ -104,6 +104,7 @@ export default function Page() {
 						<li id='concerts-filter' className='item' onClick={manageFilter}>Concerts</li>
 						<li id='films-filter' className='item' onClick={manageFilter}>Films</li>
 						<li id='expos-filter' className='item' onClick={manageFilter}>Expos</li>
+						<li id='expos-filter' className='item' onClick={manageFilter}>Théâtre/Danse</li>
 					</Slider>
 				</div>
 			</div>
@@ -571,6 +572,49 @@ export default function Page() {
 					<div id='expos-filter-container' className='expos event-category lg:max-w-screen-2xl lg:mx-auto'>
 						<div className='filter-title'>
 							<h2>Expos</h2>
+						</div>
+						<div className='month-container'>
+							<div className='month-list'>
+								{
+									data.map(function (item:any, index:any) {
+										if (item.month === 'En cours' && item.type === 'expos') {
+											return <div key={index} className="month-item in-progress">
+												<h3 className='month-title'>En cours</h3>
+												{
+													data.map(function (item:any) {
+														if (item.month === 'En cours' && item.type === 'expos') {
+															return <div key={item.id} className="event-infos">
+																<ul className='month-event'>
+																	<li>{item.title} <span
+																		className='highlight-secondary'>(jusqu'au {dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+																	</li>
+																</ul>
+															</div>
+														}
+													})
+												}
+											</div>
+										}
+									})
+								}
+								{
+									data.map(function (item:any, index:any) {
+										if (item.month === 'A venir' && item.type === 'expos') {
+											return <div key={index} className="month-item soon">
+												<h3 className='month-title'>À venir</h3>
+												{
+													events('expos', "A venir")
+												}
+											</div>
+										}
+									})
+								}
+							</div>
+						</div>
+					</div>
+					<div id='expos-filter-container' className='expos event-category lg:max-w-screen-2xl lg:mx-auto'>
+						<div className='filter-title'>
+							<h2>Théâtre/Danse</h2>
 						</div>
 						<div className='month-container'>
 							<div className='month-list'>
