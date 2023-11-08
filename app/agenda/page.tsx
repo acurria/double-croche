@@ -74,13 +74,14 @@ export default function Page() {
 															  'id': _id
 															},
 															"exposInProgress" : *[_type=="events"]|order(dateEnd asc){
+															  'dateStart': dateStart,
 															  'dateEnd': dateEnd,
 															  'month': month,
 															  'title': title,
 															  'type': type->slug.current,
 															  'id': _id
 															},
-															"concerts" : *[_type=="events"]|order(dateStart asc){
+															"concerts" : *[_type=="events"]|order(dateEnd asc){
 															  'dateStart': dateStart,
 															  'dateEnd': dateEnd,
 															  'month': month,
@@ -115,11 +116,12 @@ export default function Page() {
 
 	const concerts = (type:string, month:string):any => {
 		return data.concerts.map(function (item:any) {
-			const givenDateEnd = new Date(dayjs(item.dateEnd).format("DD/MM/YYYY"));
-			if(item.type === type && item.month === month && (givenDateEnd.getTime() > currentDate.getTime()) ) {
+			const givenDateEnd = new Date(item.dateEnd);
+
+			if(item.type === type && item.month === month && givenDateEnd > currentDate) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
-						<li>{item.title} <span className='highlight-secondary'>({item.dateStart && dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+						<li>{item.title} <span className='highlight-secondary'>({item.dateStart && dayjs(item.dateStart).format("DD/MM/YYYY") + ' au ' }{dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
 						</li>
 					</ul>
 				</div>
@@ -129,12 +131,33 @@ export default function Page() {
 		})
 	}
 
-	const exposSoon = (type:string, month:string):any => {
+	const exposSoon = (type:string):any => {
 		return data.exposSoon.map(function (item:any) {
-			if(item.type === type && item.month === month) {
+			const givenDateEnd = new Date(item.dateEnd);
+			const givenDateStart = new Date(item.dateStart);
+
+			if (givenDateStart > currentDate && givenDateEnd > currentDate && item.type === type) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
-						<li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+						<li>{item.title} <span className='highlight-secondary'>({item.dateStart && dayjs(item.dateStart).format("DD/MM/YYYY") + ' au ' }{dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+						</li>
+					</ul>
+				</div>
+			} else {
+				return null
+			}
+		})
+	}
+
+	const exposInProgress = (type:string):any => {
+		return data.exposInProgress.map(function (item:any) {
+			const givenDateEnd = new Date(item.dateEnd);
+			const givenDateStart = new Date(item.dateStart);
+
+			if (givenDateStart <= currentDate && givenDateEnd >= currentDate && item.type === type) {
+				return <div key={item.id} className="event-infos">
+					<ul className='month-event'>
+						<li>{item.title} <span className='highlight-secondary'>(jusqu'au {dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
 						</li>
 					</ul>
 				</div>
@@ -631,40 +654,18 @@ export default function Page() {
 						</div>
 						<div className='month-container'>
 							<div className='month-list'>
-								{
-									data.exposInProgress.map(function (item:any, index:any) {
-										if (item.month === 'En cours' && item.type === 'expos') {
-											return <div key={index} className="month-item in-progress">
-												<h3 className='month-title'>En cours</h3>
-												{
-													data.exposInProgress.map(function (item:any) {
-														if (item.month === 'En cours' && item.type === 'expos') {
-															return <div key={item.id} className="event-infos">
-																<ul className='month-event'>
-																	<li>{item.title} <span
-																		className='highlight-secondary'>(jusqu'au {dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
-																	</li>
-																</ul>
-															</div>
-														}
-													})
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.exposSoon.map(function (item:any, index:any) {
-										if (item.month === 'A venir' && item.type === 'expos') {
-											return <div key={index} className="month-item soon">
-												<h3 className='month-title'>À venir</h3>
-												{
-													exposSoon('expos', "A venir")
-												}
-											</div>
-										}
-									})
-								}
+								<div className="month-item in-progress">
+									<h3 className='month-title'>En cours</h3>
+									{
+										exposInProgress('expos')
+									}
+								</div>
+								<div className="month-item soon">
+									<h3 className='month-title'>À venir</h3>
+									{
+										exposSoon('expos')
+									}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -674,40 +675,18 @@ export default function Page() {
 						</div>
 						<div className='month-container'>
 							<div className='month-list'>
-								{
-									data.exposInProgress.map(function (item:any, index:any) {
-										if (item.month === 'En cours' && item.type === 'theatre') {
-											return <div key={index} className="month-item in-progress">
-												<h3 className='month-title'>En cours</h3>
-												{
-													data.exposInProgress.map(function (item:any) {
-														if (item.month === 'En cours' && item.type === 'theatre') {
-															return <div key={item.id} className="event-infos">
-																<ul className='month-event'>
-																	<li>{item.title} <span
-																		className='highlight-secondary'>(jusqu'au {dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
-																	</li>
-																</ul>
-															</div>
-														}
-													})
-												}
-											</div>
-										}
-									})
-								}
-								{
-									data.exposSoon.map(function (item:any, index:any) {
-										if (item.month === 'A venir' && item.type === 'theatre') {
-											return <div key={index} className="month-item soon">
-												<h3 className='month-title'>À venir</h3>
-												{
-													exposSoon('theatre', "A venir")
-												}
-											</div>
-										}
-									})
-								}
+								<div className="month-item in-progress">
+									<h3 className='month-title'>En cours</h3>
+									{
+										exposInProgress('theatre')
+									}
+								</div>
+								<div className="month-item soon">
+									<h3 className='month-title'>À venir</h3>
+									{
+										exposSoon('theatre')
+									}
+								</div>
 							</div>
 						</div>
 					</div>

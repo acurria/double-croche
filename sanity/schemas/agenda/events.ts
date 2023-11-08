@@ -30,8 +30,7 @@ export default defineType({
         {
             name: 'month',
             title: 'Mois',
-            type: 'string',
-            validation: Rule => Rule.required()      
+            type: 'string'
         },
         {
             name: 'dateStart',
