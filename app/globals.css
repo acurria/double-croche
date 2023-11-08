@@ -901,6 +901,10 @@ nav:not(.pager-container) {
 	padding-left: 0;
 }
 
+.layout-basic h2 {
+	padding-top: 0.5rem;
+}
+
 .layout-basic h2 span:last-of-type {
 	color: #000000;
 }
