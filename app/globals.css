@@ -888,6 +888,7 @@ nav:not(.pager-container) {
 }
 
 .category-page h2,
+.layout-basic h2,
 .category-page h3,
 .article-page h2 {
 	display: flex;
@@ -898,6 +899,10 @@ nav:not(.pager-container) {
 	text-transform: uppercase;
 	border-left: 0;
 	padding-left: 0;
+}
+
+.layout-basic h2 span:last-of-type {
+	color: #000000;
 }
 
 .article-page h2 {
@@ -918,11 +923,13 @@ nav:not(.pager-container) {
 }
 
 .category-page h2 .highlight-secondary,
-.article-page h2 .highlight-secondary {
+.article-page h2 .highlight-secondary,
+.layout-basic h2 .highlight-secondary {
 	margin-right: 0.7rem;
 }
 
 .category-page h2::before,
+.layout-basic h2::before,
 .article-page h2::before {
 	display: none;
 }
@@ -936,6 +943,7 @@ nav:not(.pager-container) {
 }
 
 .category-page h2::after,
+.layout-basic h2::after,
 .category-page h3::after {
 	content: '';
 	display: inline-block;
@@ -982,6 +990,10 @@ nav:not(.pager-container) {
 	padding: 3.125rem 1.5625rem;
 }
 
+.grid-container.empty-grid {
+	padding-bottom: 0;
+}
+
 .grid-container .category-subcategory {
 	display: none;
 }
@@ -994,6 +1006,19 @@ nav:not(.pager-container) {
 	display: grid;
 	grid-template-columns: repeat(2,minmax(0,1fr));
 	grid-gap: 1.5625rem;
+}
+
+.layout-basic .wrapper-grid {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.layout-basic .wrapper-grid .react-reveal {
+	width: calc(50% - 0.8rem);
+}
+
+.layout-basic .wrapper-grid .react-reveal .text-info {
+	color: #000000;
 }
 
 .grid-container .react-reveal:nth-child(15n+3),
@@ -1282,7 +1307,9 @@ nav:not(.pager-container) {
 	}
 
 	.category-page h2,
-	.category-page h2 span {
+	.category-page h2 span,
+	.layout-basic h2,
+	.layout-basic h2 span {
 		font-size: 2.8rem;
 	}
 
@@ -1621,7 +1648,8 @@ nav:not(.pager-container) {
 		padding-top: 10rem;
 	}
 
-	.category-page h2 {
+	.category-page h2,
+	.layout-basic h2 {
 		justify-content: flex-start;
 		margin-bottom: 1rem;
 	}
@@ -1649,6 +1677,10 @@ nav:not(.pager-container) {
 
 	.category-page h2::after {
 		width: 100%;
+	}
+
+	.layout-basic h2::after {
+		width: 20%;
 	}
 
 	.category-page .wrapper-title {
@@ -1681,145 +1713,92 @@ nav:not(.pager-container) {
 
 	.grid-container.layout-3x2 .wrapper-grid,
 	.grid-container.layout-1x1 .wrapper-grid {
-		grid-template-columns: repeat(4,minmax(0,1fr));
+		grid-template-columns: repeat(9,minmax(0,1fr));
 		height: auto;
 		grid-gap: 1.875rem;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+1),
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+4){
-		grid-column: 1/2;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+2),
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+5) {
-		grid-column: 2/3;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+3) {
-		grid-column: 3/5;
-		grid-row-end: span 2;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+6) {
-		grid-column: 1/2;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+7) {
-		grid-column: 2/3;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+8) {
-		grid-column: 3/4;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) {
-		grid-column: 4/5;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .preview-article {
-		display: block;
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .text-info {
-		color: #000000;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .title-info {
-		position: static;
-		text-align: left;
-		padding: 0;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+9) .info {
-		color: #000000;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .text-info {
-		color: #FFFFFF;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .link-image::after {
-		display: none;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) {
-		grid-column: 1 / 5;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .preview-article {
-		position: relative;
-		display: flex;
-		justify-content: flex-end;
-		align-items: flex-end;
-		margin-left: -3.125rem;
-		margin-right: -3.125rem;
-	}
-	
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .info {
-		color: #FFFFFF;
-	}
-	
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .link-image::after {
-		content:'';
-		display: block;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: rgba(0, 0, 0, 0.7);
-	}
-	
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .title-info {
-		position: absolute;
-		z-index: 10;
-		text-align: right;
-		padding: 1.5625rem 3.125rem;
-		font-size: 1.125rem;
-	}
-	
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+10) .link-image {
-		width: 100%;
-		margin-bottom: 0;
-		height: 30rem;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+11) {
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+1),
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+4){
 		grid-column: 1/3;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+2),
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+5) {
+		grid-column: 3/5;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+3) {
+		grid-column: 5/10;
 		grid-row-end: span 2;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+11) .preview-article,
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+3) .preview-article {
-		height: calc(100% - 2rem);
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+6),
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+14) {
+		grid-column: 1/4;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+7),
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+15) {
+		grid-column: 4/7;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+8),
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n) {
+		grid-column: 7/10;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+9) {
+		grid-column: 1/6;
+		grid-row-end: span 2;
+	}
+
+	.grid-container.layout-3x2 .react-reveal .preview-article {
+		display: block !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.grid-container.layout-3x2 .react-reveal .text-info {
+		color: #000000 !important;
+	}
+
+	.grid-container.layout-3x2 .react-reveal .title-info {
+		position: static !important;
+		text-align: left !important;
+		padding: 0 !important;
+	}
+
+	.grid-container.layout-3x2 .react-reveal .info {
+		color: #000000 !important;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+10),
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+12) {
+		grid-column: 6/8;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+11),
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+13) {
+		grid-column: 8/10;
+	}
+
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+9) .preview-article,
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+3) .preview-article {
+		height: calc(100% - 3.3rem);
 		width: 100%;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+11) .preview-article img,
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+3) .preview-article img {
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+9) .preview-article img,
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+3) .preview-article img {
 		object-fit: cover;
 		height: 100%;
 		width: 100%;
 	}
 
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+11) .preview-article .link-image,
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+3) .preview-article .link-image {
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+9) .preview-article .link-image,
+	.grid-container.layout-3x2 .react-reveal:nth-child(16n+3) .preview-article .link-image {
 		height: 100%;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+12),
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+14) {
-		grid-column: 3/4;
-	}
-
-	.grid-container.layout-3x2 .react-reveal:nth-child(15n+13),
-    .grid-container.layout-3x2 .react-reveal:nth-child(15n) {
-		grid-column: 4/5;
 	}
 
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+1) {
@@ -1868,6 +1847,10 @@ nav:not(.pager-container) {
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+1) .preview-article .link-image,
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+8) .preview-article .link-image {
 		height: 100%;
+	}
+
+	.layout-basic .wrapper-grid .react-reveal {
+		width: calc(25% - 1.2rem);
 	}
 
 	/* Footer Desktop */

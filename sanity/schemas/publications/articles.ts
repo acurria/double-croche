@@ -33,10 +33,20 @@ export default defineType({
             to: [{type: 'subcategories'}]       
         },
         {
+            name: 'isBanner',
+            title: "À activer si l'article est utilisé pour la bannière de la page d'accueil",
+            type: 'boolean'
+        },
+        {
             // Pour "Musique Interview", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival"
             name: 'image',
             title: "Image - Ratio 3:2 pour les articles Musique Interview, Cinéma Interview, Cinéma Chronique, Cinéma Festival et Ratio 1:1 pour les articles Musique Playlist, Musique Festivals, Concours",
             type: 'image'
+        },
+        {
+            name: 'oldArticle',
+            title: "À activer si le Festival de Musique ou le Concours est passé",
+            type: 'boolean'
         },
         {
             // Pour "Musique Interview", "Concours"
@@ -125,7 +135,7 @@ export default defineType({
         {
             // Pour "Concours"
             name: 'date',
-            title: "Date (Concours)",
+            title: "Date (Concours, Musique Festival)",
             type: 'date',
             options: {
                 dateFormat: 'DD-MM-YYYY'

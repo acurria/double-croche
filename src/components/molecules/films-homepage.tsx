@@ -19,7 +19,7 @@ export default function FilmsHomepage() {
 
     const {data, status} = useQuery(
         'elementsFilmsHomepage', async(context) => {
-            const query = '*[_type=="momentFilms"]';
+            const query = '*[_type=="momentFilms"] | order(_createdAt desc)[0..2]';
             return await client.fetch(query);
         }
     );
