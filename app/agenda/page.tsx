@@ -183,7 +183,7 @@ export default function Page() {
 						<li id='concerts-filter' className='item' onClick={manageFilter}>Concerts</li>
 						<li id='films-filter' className='item' onClick={manageFilter}>Films</li>
 						<li id='expos-filter' className='item' onClick={manageFilter}>Expos</li>
-						<li id='theater-filter' className='item' onClick={manageFilter}>Théâtre/Danse</li>
+						<li id='theater-filter' className='item' onClick={manageFilter}>Théâtre</li>
 					</Slider>
 				</div>
 			</div>
@@ -671,7 +671,7 @@ export default function Page() {
 					</div>
 					<div id='theater-filter-container' className='theater event-category lg:max-w-screen-2xl lg:mx-auto'>
 						<div className='filter-title'>
-							<h2>Théâtre/Danse</h2>
+							<h2>Théâtre</h2>
 						</div>
 						<div className='month-container'>
 							<div className='month-list'>
