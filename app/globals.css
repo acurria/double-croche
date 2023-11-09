@@ -1074,9 +1074,23 @@ nav:not(.pager-container) {
 /* Agenda */
 
 .filter-container {
+	position: relative;
 	margin-left: -1.5625rem;
 	margin-right: -1.5625rem;
 	border-top: 0.1875rem solid #AB731F;
+}
+
+.filter-items {
+	position: relative;
+}
+
+.filter-items ul {
+	display: flex;
+	overflow: scroll;
+	padding: 0 3rem;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .filter-container .item {
@@ -1086,6 +1100,16 @@ nav:not(.pager-container) {
 	cursor: pointer;
 	font-size: 1.4rem;
 	border-bottom: solid transparent 0.25rem;
+	margin: 0 1.5rem;
+	white-space: nowrap;
+}
+
+.filter-container .item:first-child {
+	margin-left: 0;
+}
+
+.filter-container .item:last-child {
+	margin-right: 0;
 }
 
 .filter-container .item.current {
@@ -1605,6 +1629,12 @@ nav:not(.pager-container) {
 		visibility: visible;
 	}
 
+	.filter-items .slick-slide > div {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	}
+
 	.album-image-link:hover::after,
 	.film-image-link:hover::after,
 	.preview-article .link-image:hover::after{
@@ -1918,8 +1948,9 @@ nav:not(.pager-container) {
 	}
 
 	.filter-items {
-		max-width: 40rem;
+		max-width: 55rem;
     	margin: 0 auto;
+		padding: 0;
 	}
 
 	.filter-container ul {
