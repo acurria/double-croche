@@ -1413,7 +1413,7 @@ nav:not(.pager-container) {
 		letter-spacing: 0.2rem;
 	}
 
-	.navigation .desktop-view .level-0 > .item-nav a {
+	.navigation .desktop-view .level-0 > .item-nav > a {
 		display: block;
 		padding-top: 1.6rem;
 		padding-bottom: 1.6rem;
