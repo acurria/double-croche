@@ -133,10 +133,9 @@ export default function Page() {
 
 	const exposSoon = (type:string):any => {
 		return data.exposSoon.map(function (item:any) {
-			const givenDateEnd = new Date(item.dateEnd);
 			const givenDateStart = new Date(item.dateStart);
 
-			if (givenDateStart > currentDate && givenDateEnd > currentDate && item.type === type) {
+			if (givenDateStart > currentDate && item.type === type) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
 						<li>{item.title} <span className='highlight-secondary'>({item.dateStart && dayjs(item.dateStart).format("DD/MM/YYYY") + ' au ' }{dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
@@ -154,7 +153,7 @@ export default function Page() {
 			const givenDateEnd = new Date(item.dateEnd);
 			const givenDateStart = new Date(item.dateStart);
 
-			if ((givenDateStart < currentDate || (givenDateEnd.getDay() === currentDate.getDay() &&  givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear())) && (givenDateEnd > currentDate || (givenDateEnd.getDay() === currentDate.getDay() &&  givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear())) && item.type === type) {
+			if ((givenDateStart < currentDate || (givenDateStart.getDay() === currentDate.getDay() &&  givenDateStart.getMonth() === currentDate.getMonth() && givenDateStart.getFullYear() === currentDate.getFullYear())) && (givenDateEnd > currentDate || (givenDateEnd.getDay() === currentDate.getDay() &&  givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear())) && item.type === type) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
 						<li>{item.title} <span className='highlight-secondary'>(jusqu'au {dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
