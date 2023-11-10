@@ -1091,17 +1091,23 @@ nav:not(.pager-container) {
 	top: 0;
 	bottom: 0;
 	height: 100%;
-	width: 20vw;
+	width: 13vw;
 	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
 }
 
 .filter-items ul {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 	display: flex;
 	overflow-x: auto;
 	padding: 0 3rem;
 	width: 100%;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.filter-items ul::-webkit-scrollbar {
+	display: none;
 }
 
 .filter-container .item {
