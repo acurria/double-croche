@@ -1084,9 +1084,20 @@ nav:not(.pager-container) {
 	position: relative;
 }
 
+.filter-items::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 5rem;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
+}
+
 .filter-items ul {
 	display: flex;
-	overflow: scroll;
+	overflow-x: auto;
 	padding: 0 3rem;
 	width: 100%;
 	justify-content: space-between;
@@ -1645,6 +1656,10 @@ nav:not(.pager-container) {
 		display: flex;
 		justify-content: center;
 		align-content: center;
+	}
+
+	.filter-items::after {
+		display: none;
 	}
 
 	.album-image-link:hover::after,
