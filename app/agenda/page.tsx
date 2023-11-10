@@ -8,33 +8,11 @@ import dayjs from "dayjs"
 // @ts-ignore
 import Fade from 'react-reveal/Fade'
 // @ts-ignore
-import Slider from "react-slick"
 import client from "../../src/createClient";
 import {useQuery} from "react-query";
 import React from "react";
 
 export default function Page() {
-	var settings = {
-		dots: false,
-		arrows: false,
-		infinite: false,
-		slidesToShow: 5,
-		centerMode: false,
-		slidesToScroll: 0,
-		responsive: [
-			{
-			  breakpoint: 1024,
-			  settings: {
-				slidesToShow: 3.5,
-				slidesToScroll: 1,
-				centerMode: false,
-				dots: false,
-				arrows: false,
-				infinite: false
-			  }
-			}
-		]
-	};
 
 	const manageFilter = (filterName:any) => {
 		let filterSelected = (filterName.target.id);
@@ -177,13 +155,13 @@ export default function Page() {
 			</div>
 			<div className='filter-container bg-black'>
 				<div className='filter-items'>
-					<Slider {...settings}>
+					<ul>
 						<li id='albums-filter' className='item current' onClick={manageFilter}>Albums</li>
 						<li id='concerts-filter' className='item' onClick={manageFilter}>Concerts</li>
 						<li id='films-filter' className='item' onClick={manageFilter}>Films</li>
 						<li id='expos-filter' className='item' onClick={manageFilter}>Expos</li>
 						<li id='theater-filter' className='item' onClick={manageFilter}>Théâtre</li>
-					</Slider>
+					</ul>
 				</div>
 			</div>
 			<div className='result-filter-container bg-white'>
