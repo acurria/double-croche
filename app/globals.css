@@ -1081,13 +1081,13 @@ nav:not(.pager-container) {
 }
 
 .agenda-year {
-	color: #111111;
+	color: #AB731F;
 	font-family: "Kanit", sans-serif;
 	font-size: 2.3rem;
 	letter-spacing: 0;
 	font-weight: 500;
 	text-align: center;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 .filter-items {
@@ -1198,7 +1198,7 @@ nav:not(.pager-container) {
 }
 
 .month-item {
-	margin-bottom: 4rem;
+	margin-bottom: 3rem;
 }
 
 .month-item.Janvier + .Janvier,
@@ -2031,7 +2031,7 @@ nav:not(.pager-container) {
 
 	.month-item {
 		width: calc((100% / 3) - 6rem);
-		margin: 0 3rem 3.125rem;
+		margin: 0 3rem 2.125rem;
 	}
 
 	.month-item.soon,

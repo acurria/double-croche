@@ -166,7 +166,7 @@ export default function Page() {
 			if(item.type === type && item.month === month) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
-						<li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM")})</span>
+						<li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
 						</li>
 					</ul>
 				</div>
@@ -183,7 +183,7 @@ export default function Page() {
 			if(item.type === type && item.month === month && (givenDateEnd > currentDate || (givenDateEnd.getDay() === currentDate.getDay() &&  givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear()))) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
-						<li>{item.title} <span className='highlight-secondary'>({item.dateStart && dayjs(item.dateStart).format("DD/MM") + ' au ' }{dayjs(item.dateEnd).format("DD/MM")})</span>
+						<li>{item.title} <span className='highlight-secondary'>({item.dateStart && dayjs(item.dateStart).format("DD/MM/YYYY") + ' au ' }{dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
 						</li>
 					</ul>
 				</div>
