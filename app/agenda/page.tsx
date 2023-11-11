@@ -91,7 +91,7 @@ export default function Page() {
 
 	let albumsCurrentYear = false;
 	const checkAlbumsCurrentYear = ():any => {
-		data.albumsYear.map(function (item) {
+		data.albumsYear.map(function (item:any) {
 			if (item.year === currentYear) {
 				albumsCurrentYear = true;
 			}
@@ -103,7 +103,7 @@ export default function Page() {
 
 	let albumsNextYear = false;
 	const checkAlbumsNextYear = ():any => {
-		data.albumsYear.map(function (item) {
+		data.albumsYear.map(function (item:any) {
 			if (item.year === nextYear) {
 				albumsNextYear = true;
 			}
@@ -115,7 +115,7 @@ export default function Page() {
 
 	let concertsCurrentYear = false;
 	const checkConcertsCurrentYear = ():any => {
-		data.concerts.map(function (item) {
+		data.concerts.map(function (item:any) {
 			if (item.year === currentYear) {
 				concertsCurrentYear = true;
 			}
@@ -127,7 +127,7 @@ export default function Page() {
 
 	let concertsNextYear = false;
 	const checkConcertsNextYear = ():any => {
-		data.concerts.map(function (item) {
+		data.concerts.map(function (item:any) {
 			if (item.year === nextYear) {
 				concertsNextYear = true;
 			}
@@ -139,7 +139,7 @@ export default function Page() {
 
 	let filmsCurrentYear = false;
 	const checkFilmsCurrentYear = ():any => {
-		data.filmsYear.map(function (item) {
+		data.filmsYear.map(function (item:any) {
 			if (item.year === currentYear) {
 				filmsCurrentYear = true;
 			}
@@ -151,7 +151,7 @@ export default function Page() {
 
 	let filmsNextYear = false;
 	const checkFilmsNextYear = ():any => {
-		data.filmsYear.map(function (item) {
+		data.filmsYear.map(function (item:any) {
 			if (item.year === nextYear) {
 				filmsNextYear = true;
 			}
