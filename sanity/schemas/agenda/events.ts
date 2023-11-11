@@ -29,7 +29,12 @@ export default defineType({
         },
         {
             name: 'month',
-            title: 'Mois',
+            title: 'Mois (Uniquement pour Albums, Films et Concerts)',
+            type: 'string'
+        },
+        {
+            name: 'year',
+            title: 'Année (Uniquement pour Albums, Films et Concerts)',
             type: 'string'
         },
         {
