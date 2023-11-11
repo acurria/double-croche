@@ -1114,7 +1114,6 @@ nav:not(.pager-container) {
 	width: 100%;
 	justify-content: space-between;
 	align-items: center;
-
 }
 
 .filter-items ul::-webkit-scrollbar {
