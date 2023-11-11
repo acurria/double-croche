@@ -1081,7 +1081,7 @@ nav:not(.pager-container) {
 }
 
 .agenda-year {
-	color: #AB731F;
+	color: #111111;
 	font-family: "Kanit", sans-serif;
 	font-size: 2.3rem;
 	letter-spacing: 0;
@@ -1982,7 +1982,7 @@ nav:not(.pager-container) {
 	/* Agenda */
 
 	.agenda-list {
-		padding: 3.125rem 3.125rem 0 3.125rem;
+		padding: 3.125rem;
 	}
 
 	.filter-container {

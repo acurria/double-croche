@@ -251,7 +251,7 @@ export default function Page() {
 			<div className='result-filter-container bg-white'>
 				<div className='agenda-list'>
 					<div id='albums-filter-container' className='albums event-category lg:max-w-screen-2xl lg:mx-auto active'>
-						<div className='filter-title'>
+						<div className='filter-title sr-only'>
 							<h2>Albums</h2>
 						</div>
 						{
@@ -558,7 +558,7 @@ export default function Page() {
 						</div>
 					</div>
 					<div id='concerts-filter-container' className='concerts event-category lg:max-w-screen-2xl lg:mx-auto'>
-						<div className='filter-title'>
+						<div className='filter-title sr-only'>
 							<h2>Concerts</h2>
 						</div>
 						{
@@ -865,7 +865,7 @@ export default function Page() {
 						</div>
 					</div>
 					<div id='films-filter-container' className='films event-category lg:max-w-screen-2xl lg:mx-auto'>
-						<div className='filter-title'>
+						<div className='filter-title sr-only'>
 							<h2>Films</h2>
 						</div>
 						{
@@ -1172,7 +1172,7 @@ export default function Page() {
 						</div>
 					</div>
 					<div id='expos-filter-container' className='expos event-category lg:max-w-screen-2xl lg:mx-auto'>
-						<div className='filter-title'>
+						<div className='filter-title sr-only'>
 							<h2>Expos</h2>
 						</div>
 						<div className='month-container'>
@@ -1193,7 +1193,7 @@ export default function Page() {
 						</div>
 					</div>
 					<div id='theater-filter-container' className='theater event-category lg:max-w-screen-2xl lg:mx-auto'>
-						<div className='filter-title'>
+						<div className='filter-title sr-only'>
 							<h2>Théâtre</h2>
 						</div>
 						<div className='month-container'>
