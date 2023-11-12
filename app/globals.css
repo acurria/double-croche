@@ -1384,6 +1384,10 @@ nav:not(.pager-container) {
 	color: #AB731F;
 }
 
+.month-container.next-year {
+	margin-top: 1rem;
+}
+
 .event-category {
 	display: none;
 }

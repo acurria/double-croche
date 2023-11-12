@@ -89,78 +89,6 @@ export default function Page() {
 	const nextYearInt = new Date().getFullYear() + 1;
 	const nextYear = nextYearInt.toString();
 
-	let albumsCurrentYear = false;
-	const checkAlbumsCurrentYear = ():any => {
-		data.albumsYear.map(function (item:any) {
-			if (item.year === currentYear) {
-				albumsCurrentYear = true;
-			}
-		});
-		if (albumsCurrentYear) {
-			return <p className="agenda-year">{currentYear}</p>
-		}
-	}
-
-	let albumsNextYear = false;
-	const checkAlbumsNextYear = ():any => {
-		data.albumsYear.map(function (item:any) {
-			if (item.year === nextYear) {
-				albumsNextYear = true;
-			}
-		});
-		if (albumsNextYear) {
-			return <p className="agenda-year">{nextYear}</p>
-		}
-	}
-
-	let concertsCurrentYear = false;
-	const checkConcertsCurrentYear = ():any => {
-		data.concerts.map(function (item:any) {
-			if (item.year === currentYear) {
-				concertsCurrentYear = true;
-			}
-		});
-		if (concertsCurrentYear) {
-			return <p className="agenda-year">{currentYear}</p>
-		}
-	}
-
-	let concertsNextYear = false;
-	const checkConcertsNextYear = ():any => {
-		data.concerts.map(function (item:any) {
-			if (item.year === nextYear) {
-				concertsNextYear = true;
-			}
-		});
-		if (concertsNextYear) {
-			return <p className="agenda-year">{nextYear}</p>
-		}
-	}
-
-	let filmsCurrentYear = false;
-	const checkFilmsCurrentYear = ():any => {
-		data.filmsYear.map(function (item:any) {
-			if (item.year === currentYear) {
-				filmsCurrentYear = true;
-			}
-		});
-		if (filmsCurrentYear) {
-			return <p className="agenda-year">{currentYear}</p>
-		}
-	}
-
-	let filmsNextYear = false;
-	const checkFilmsNextYear = ():any => {
-		data.filmsYear.map(function (item:any) {
-			if (item.year === nextYear) {
-				filmsNextYear = true;
-			}
-		});
-		if (filmsNextYear) {
-			return <p className="agenda-year">{nextYear}</p>
-		}
-	}
-
 	const albumsFilms = (type:string, month:string):any => {
 		return data.albumsFilms.map(function (item:any) {
 			if(item.type === type && item.month === month) {
@@ -254,9 +182,6 @@ export default function Page() {
 						<div className='filter-title sr-only'>
 							<h2>Albums</h2>
 						</div>
-						{
-							checkAlbumsCurrentYear()
-						}
 						<div className='month-container'>
 							<div className='month-list'>
 								{
@@ -405,10 +330,7 @@ export default function Page() {
 								}
 							</div>
 						</div>
-						{
-							checkAlbumsNextYear()
-						}
-						<div className='month-container'>
+						<div className='month-container next-year'>
 							<div className='month-list'>
 								{
 									data.albumsFilms.map(function (item:any, index:any) {
@@ -561,9 +483,6 @@ export default function Page() {
 						<div className='filter-title sr-only'>
 							<h2>Concerts</h2>
 						</div>
-						{
-							checkConcertsCurrentYear()
-						}
 						<div className='month-container'>
 							<div className='month-list'>
 								{
@@ -712,10 +631,7 @@ export default function Page() {
 								}
 							</div>
 						</div>
-						{
-							checkConcertsNextYear()
-						}
-						<div className='month-container'>
+						<div className='month-container next-year'>
 							<div className='month-list'>
 								{
 									data.concerts.map(function (item:any, index:any) {
@@ -868,10 +784,7 @@ export default function Page() {
 						<div className='filter-title sr-only'>
 							<h2>Films</h2>
 						</div>
-						{
-							checkFilmsCurrentYear()
-						}
-						<div className='month-container'>
+						<div className='month-container '>
 							<div className='month-list'>
 								{
 									data.albumsFilms.map(function (item:any, index:any) {
@@ -1019,10 +932,7 @@ export default function Page() {
 								}
 							</div>
 						</div>
-						{
-							checkFilmsNextYear()
-						}
-						<div className='month-container'>
+						<div className='month-container next-year'>
 							<div className='month-list'>
 								{
 									data.albumsFilms.map(function (item:any, index:any) {
