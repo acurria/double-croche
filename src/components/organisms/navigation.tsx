@@ -162,6 +162,21 @@ export default function Navigation() {
 					</div>
 				</div>
 			</nav>
+			<div id='searchbar-wrapper' className={`searchbar-wrapper ${searchIsOpen ? 'open' : ''}`}>
+				<div className='searchbar'>
+					<label htmlFor='searchbar-field' className='sr-only'>Rechercher</label>
+					<div className='search-field-button-wrapper'>
+						<form action={`/recherche`}>
+							<input id='input-search' type='search' autoComplete='off' className='searchbar-field'
+								   placeholder='Rechercher' name='result' value={searchValue}
+								   onChange={(event) => setSearchValue(event.target.value)}/>
+							<button type='submit' className='search-button' onClick={openSearch}>Rechercher</button>
+						</form>
+					</div>
+				</div>
+				<button id='close-search' className='close-search' onClick={openSearch}>Fermer la recherche</button>
+				<div className='search-overlay' onClick={openSearch}></div>
+			</div>
 		</div>
 	)
 }
