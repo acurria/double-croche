@@ -16,11 +16,6 @@ export default function Navigation() {
 		setBurgerIsOpen(burgerIsOpen => !burgerIsOpen);
 	};
 
-	const [searchIsOpen, setSearchIsOpen] = useState(false);
-	const openSearch = () => {
-		setSearchIsOpen(searchIsOpen => !searchIsOpen);
-	};
-
 	const [scroll, setScroll] = useState(false);
 		useEffect(() => {
 			window.addEventListener("scroll", () => {
@@ -47,8 +42,6 @@ export default function Navigation() {
 		});
 	};
 
-	const [searchValue, setSearchValue] = useState('');
-
 	return (
 		<div>
 			<nav className={`navigation w-full relative ${scroll ? 'scroll' : ''}`}>
@@ -68,16 +61,6 @@ export default function Navigation() {
 					</div>
 					<div className={`navigation-wrapper mobile-view lg:hidden ${burgerIsOpen ? 'open' : ''}`}>
 						<div className='wrapper-search-burger'>
-							<button id='search-icon' className='search-wrapper-icon' onClick={openSearch}>
-								<Image
-									priority
-									src="/search-icon.png"
-									alt="Icone de recherche"
-									className="search-icon"
-									width={23}
-									height={23}
-								/>
-							</button>
 							<div className='burger-nav flex justify-items-center flex-col items-end cursor-pointer' onClick={burgerClick}>
 								<span className='bar top-bar h-0.5 w-7 bg-white'></span>
 								<span className='bar middle-bar h-0.5 w-8 bg-white my-1.5'></span>
@@ -176,32 +159,9 @@ export default function Navigation() {
 								</li>
 							</ul>
 						</div>
-						<button id='search-icon' className='search-wrapper-icon' onClick={openSearch}>
-							<Image
-								priority
-								src="/search-icon.png"
-								alt="Icone de recherche"
-								className="search-icon"
-								width={23}
-								height={23}
-							/>
-						</button>
 					</div>
 				</div>
 			</nav>
-			<div id='searchbar-wrapper' className={`searchbar-wrapper ${searchIsOpen ? 'open' : ''}`}>
-				<div className='searchbar'>
-					<label htmlFor='searchbar-field' className='sr-only'>Rechercher</label>
-					<div className='search-field-button-wrapper'>
-						<input id='input-search' type='search' className='searchbar-field'
-							   placeholder='Rechercher' name='searchbar-field' value={searchValue}
-							   onChange={(event) => setSearchValue(event.target.value)}/>
-						<Link href={`/recherche`} className='search-button'>Rechercher</Link>
-					</div>
-				</div>
-				<button id='close-search' className='close-search' onClick={openSearch}>Fermer la recherche</button>
-				<div className='search-overlay' onClick={openSearch}></div>
-			</div>
 		</div>
 	)
 }
