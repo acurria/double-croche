@@ -14,7 +14,6 @@ type propsType = {
 
 export default function Page() {
 
-	console.log(searchValue);
 	const {data, status, refetch} = useQuery(
 		'elementsSearchResults', async(context) => {
 			const query = `{

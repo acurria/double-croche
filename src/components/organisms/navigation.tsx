@@ -193,10 +193,12 @@ export default function Navigation() {
 				<div className='searchbar'>
 					<label htmlFor='searchbar-field' className='sr-only'>Rechercher</label>
 					<div className='search-field-button-wrapper'>
-						<input id='input-search' type='search' className='searchbar-field'
-							   placeholder='Rechercher' name='searchbar-field' value={searchValue}
-							   onChange={(event) => setSearchValue(event.target.value)}/>
-						<Link href={`/recherche`} className='search-button'>Rechercher</Link>
+						<form action={`/recherche`}>
+							<input id='input-search' type='search' autoComplete='off' className='searchbar-field'
+								   placeholder='Rechercher' name='result' value={searchValue}
+								   onChange={(event) => setSearchValue(event.target.value)}/>
+							<button type='submit' className='search-button' onClick={openSearch}>Rechercher</button>
+						</form>
 					</div>
 				</div>
 				<button id='close-search' className='close-search' onClick={openSearch}>Fermer la recherche</button>

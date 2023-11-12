@@ -149,6 +149,14 @@
 	outline: none;
 }
 
+.searchbar-wrapper .searchbar-field.visited,
+.searchbar-wrapper .searchbar-field::focus,
+.searchbar-wrapper .searchbar-field::active,
+.searchbar-wrapper .searchbar-field::selection,
+.searchbar-wrapper .searchbar-field::-moz-selection {
+	background: transparent !important;
+}
+
 /* Typography */
 
 h1 {
