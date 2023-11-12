@@ -5,21 +5,20 @@ import React, {Component, useCallback, useEffect, useState} from 'react';
 // @ts-ignore
 import Fade from 'react-reveal/Fade';
 import client from "../../src/createClient";
+import { useSearchParams } from 'next/navigation'
 import {useQuery} from "react-query";
 import PreviewArticle from "@/src/components/molecules/preview-article";
 import Script from "next/script";
 
-type propsType = {
-	searchValue:string
-};
-
 export default function Page() {
+	const resultSearch = useSearchParams().get('resultat');
 
 	const {data, status, refetch} = useQuery(
 		'elementsSearchResults', async(context) => {
 			const query = `{
-									"articles" : *[_type=="articles" && category->slug.current=='musique' && subcategory->slug.current=='interview' && hidePublication != true]|order(createdDate desc){"_id": _id}
-									}`;
+							"articles" : *[_type=="articles" && hidePublication != true][artist->firstLastName match '${resultSearch}' || album->title match '${resultSearch}' || musicFestivalName->title match '${resultSearch}' || filmFestivalName->title match '${resultSearch}' || director->firstLastName match '${resultSearch}' || filmTitle->title match '${resultSearch}']
+								{"_id": _id}
+							}`;
 
 			return await client.fetch(query);
 		}
@@ -47,15 +46,15 @@ export default function Page() {
 			<div id='grid-container' className='grid-container layout-basic'>
 				<div className='wrapper-grid lg:max-w-screen-2xl lg:mx-auto'>
 					{
+						data.articles.length === 0 && <div className='empty-search-container'>
+							<h2>Aucun résultat ne correspond à votre recherche.</h2>
+						</div>
+					}
+					{
 						data.articles.map(function (item:any, index:number){
-								if (data.articles.length === 0) {
-									return <div key={item._id} className='empty-search-container'>
-										<h2>Aucun résultat ne correspond à votre recherche.</h2>
-									</div>
-								}
-								return <Fade key={item._id} bottom>
-									<PreviewArticle key={item._id} id={item._id}/>
-								</Fade>
+							return <Fade key={item._id} bottom>
+								<PreviewArticle key={item._id} id={item._id}/>
+							</Fade>
 							}
 						)
 					}

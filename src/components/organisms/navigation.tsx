@@ -195,7 +195,7 @@ export default function Navigation() {
 					<div className='search-field-button-wrapper'>
 						<form action={`/recherche`}>
 							<input id='input-search' type='search' autoComplete='off' className='searchbar-field'
-								   placeholder='Rechercher' name='result' value={searchValue}
+								   placeholder='Rechercher' name='resultat' value={searchValue}
 								   onChange={(event) => setSearchValue(event.target.value)}/>
 							<button type='submit' className='search-button' onClick={openSearch}>Rechercher</button>
 						</form>
