@@ -12,7 +12,7 @@ type propsType = {
 	searchValue:string
 };
 
-export default function Page({searchValue}:propsType) {
+export default function Page() {
 
 	console.log(searchValue);
 	const {data, status, refetch} = useQuery(
