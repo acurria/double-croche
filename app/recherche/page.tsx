@@ -50,7 +50,7 @@ export default function Page({searchValue}:propsType) {
 						data.articles.map(function (item:any, index:number){
 								if (data.articles.length === 0) {
 									return <div key={item._id} className='empty-search-container'>
-										<h2>Aucun résultat ne correspond à votre recherche</h2>
+										<h2>Aucun résultat ne correspond à votre recherche.</h2>
 									</div>
 								}
 								return <Fade key={item._id} bottom>
