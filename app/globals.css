@@ -1050,6 +1050,10 @@ nav:not(.pager-container) {
 	padding-left: 0;
 }
 
+.layout-basic h2 {
+	padding-top: 0.5rem;
+}
+
 .layout-basic h2 span:last-of-type {
 	color: #000000;
 }
@@ -1219,9 +1223,50 @@ nav:not(.pager-container) {
 /* Agenda */
 
 .filter-container {
+	position: relative;
 	margin-left: -1.5625rem;
 	margin-right: -1.5625rem;
 	border-top: 0.1875rem solid #AB731F;
+}
+
+.agenda-year {
+	color: #111111;
+	font-family: "Kanit", sans-serif;
+	font-size: 2.3rem;
+	letter-spacing: 0;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+.filter-items {
+	position: relative;
+}
+
+.filter-items::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	width: 13vw;
+	background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);
+}
+
+.filter-items ul {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	display: flex;
+	overflow-x: auto;
+	padding: 0 3rem;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.filter-items ul::-webkit-scrollbar {
+	display: none;
 }
 
 .filter-container .item {
@@ -1231,6 +1276,16 @@ nav:not(.pager-container) {
 	cursor: pointer;
 	font-size: 1.4rem;
 	border-bottom: solid transparent 0.25rem;
+	margin: 0 1.5rem;
+	white-space: nowrap;
+}
+
+.filter-container .item:first-child {
+	margin-left: 0;
+}
+
+.filter-container .item:last-child {
+	margin-right: 0;
 }
 
 .filter-container .item.current {
@@ -1292,7 +1347,7 @@ nav:not(.pager-container) {
 }
 
 .month-item {
-	margin-bottom: 4rem;
+	margin-bottom: 3rem;
 }
 
 .month-item.Janvier + .Janvier,
@@ -1535,6 +1590,18 @@ nav:not(.pager-container) {
 		letter-spacing: 0.2rem;
 	}
 
+	.navigation .desktop-view .level-0 > .item-nav > a {
+		display: block;
+		padding-top: 1.6rem;
+		padding-bottom: 1.6rem;
+	}
+
+	.navigation .desktop-view .level-0 > .item-nav:last-child,
+	.navigation .desktop-view .level-0 > .item-nav:nth-child(3) {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
 	.navigation .desktop-view .level-0 > .item-nav:last-of-type {
 		margin-right: 0;
 	}
@@ -1768,6 +1835,16 @@ nav:not(.pager-container) {
 		visibility: visible;
 	}
 
+	.filter-items .slick-slide > div {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	}
+
+	.filter-items::after {
+		display: none;
+	}
+
 	.album-image-link:hover::after,
 	.film-image-link:hover::after,
 	.preview-article .link-image:hover::after{
@@ -1969,38 +2046,38 @@ nav:not(.pager-container) {
 	}
 
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+1) {
-		grid-column: 1/3;
+		grid-column: 1/6;
 		grid-row-end: span 2;
 	}
 
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+2),
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+4) {
-		grid-column: 3/4;
+		grid-column: 6/8;
 	}
 
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+3),
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+5) {
-		grid-column: 4/5;
+		grid-column: 8/10;
 	}
 
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+6),
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+9){
-		grid-column: 1/2;
+		grid-column: 1/3;
 	}
 
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+7),
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n) {
-		grid-column: 2/3;
+		grid-column: 3/5;
 	}
 
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+8) {
-		grid-column: 3/5;
+		grid-column: 5/10;
 		grid-row-end: span 2;
 	}
 
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+1) .preview-article,
 	.grid-container.layout-1x1 .react-reveal:nth-child(10n+8) .preview-article {
-		height: calc(100% - 2rem);
+		height: calc(100% - 5.8rem);
 		width: 100%;
 	}
 
@@ -2072,7 +2149,7 @@ nav:not(.pager-container) {
 	/* Agenda */
 
 	.agenda-list {
-		padding: 3.125rem 3.125rem 0 3.125rem;
+		padding: 3.125rem;
 	}
 
 	.filter-container {
@@ -2081,8 +2158,9 @@ nav:not(.pager-container) {
 	}
 
 	.filter-items {
-		max-width: 40rem;
+		max-width: 55rem;
     	margin: 0 auto;
+		padding: 0;
 	}
 
 	.filter-container ul {
@@ -2120,7 +2198,7 @@ nav:not(.pager-container) {
 
 	.month-item {
 		width: calc((100% / 3) - 6rem);
-		margin: 0 3rem 3.125rem;
+		margin: 0 3rem 2.125rem;
 	}
 
 	.month-item.soon,

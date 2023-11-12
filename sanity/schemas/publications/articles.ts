@@ -135,7 +135,7 @@ export default defineType({
         {
             // Pour "Concours"
             name: 'date',
-            title: "Date (Concours)",
+            title: "Date (Concours, Musique Festival)",
             type: 'date',
             options: {
                 dateFormat: 'DD-MM-YYYY'

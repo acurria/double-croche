@@ -29,9 +29,13 @@ export default defineType({
         },
         {
             name: 'month',
-            title: 'Mois',
-            type: 'string',
-            validation: Rule => Rule.required()      
+            title: 'Mois (Uniquement pour Albums, Films et Concerts)',
+            type: 'string'
+        },
+        {
+            name: 'year',
+            title: 'Année (Uniquement pour Albums, Films et Concerts)',
+            type: 'string'
         },
         {
             name: 'dateStart',
