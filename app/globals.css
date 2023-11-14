@@ -83,6 +83,7 @@ body {
 }
 
 .searchbar-wrapper .searchbar {
+	position: relative;
 	width: 85%;
 	max-width: 44rem;
 	padding: 0 1.5rem 0 0;
@@ -90,7 +91,7 @@ body {
 
 .close-search {
 	position: absolute;
-	right: 1.3rem;
+	right: -0.7rem;
 	top: 50%;
 	transform: translateY(-50%);
 	font-size: 0;
@@ -1536,10 +1537,6 @@ nav:not(.pager-container) {
 	h2::before {
 		left: -3.375rem;
 		width: 3.125rem;
-	}
-
-	.close-search {
-		right: 2.5rem;
 	}
 
 	/* Navigation Desktop */
