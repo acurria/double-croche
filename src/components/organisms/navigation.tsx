@@ -200,8 +200,8 @@ export default function Navigation() {
 							<button type='submit' className='search-button' onClick={openSearch}>Rechercher</button>
 						</form>
 					</div>
+					<button id='close-search' className='close-search' onClick={openSearch}>Fermer la recherche</button>
 				</div>
-				<button id='close-search' className='close-search' onClick={openSearch}>Fermer la recherche</button>
 				<div className='search-overlay' onClick={openSearch}></div>
 			</div>
 		</div>
