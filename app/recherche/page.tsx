@@ -11,12 +11,13 @@ import PreviewArticle from "@/src/components/molecules/preview-article";
 import Script from "next/script";
 
 export default function Page() {
-	const resultSearch = useSearchParams().get('resultat');
+	const resultSearchInitial = useSearchParams().get('resultat');
+	const resultSearch = resultSearchInitial?.toLocaleLowerCase();
 
 	const {data, status, refetch} = useQuery(
 		'elementsSearchResults', async(context) => {
 			const query = `{
-							"articles" : *[_type=="articles" && hidePublication != true][artist->firstLastName match '${resultSearch}' || album->title match '${resultSearch}' || musicFestivalName->title match '${resultSearch}' || filmFestivalName->title match '${resultSearch}' || director->firstLastName match '${resultSearch}' || filmTitle->title match '${resultSearch}']
+							"articles" : *[_type=="articles" && hidePublication != true][slug.current match '${resultSearch}*' || artist->firstLastName match '${resultSearch}*' || album->title match '${resultSearch}*' || musicFestivalName->title match '${resultSearch}*' || filmFestivalName->title match '${resultSearch}*' || director->firstLastName match '${resultSearch}*' || filmTitle->title match '${resultSearch}*']
 								{"_id": _id}
 							}`;
 
