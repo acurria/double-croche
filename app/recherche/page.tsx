@@ -12,7 +12,8 @@ import Script from "next/script";
 
 export default function Page() {
 	const resultSearchInitial = useSearchParams().get('resultat');
-	const resultSearch = resultSearchInitial?.toLowerCase().replace("'", '-');
+	const resultSearchLowerCase = resultSearchInitial?.toLowerCase();
+	const resultSearch = resultSearchLowerCase?.replace(/[’']/g,"-");
 
 	/*
 	let resultSearchSplit = resultSearchLowerCase?.split(' ');
