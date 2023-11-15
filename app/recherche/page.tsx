@@ -12,7 +12,16 @@ import Script from "next/script";
 
 export default function Page() {
 	const resultSearchInitial = useSearchParams().get('resultat');
-	const resultSearch = resultSearchInitial?.toLocaleLowerCase();
+	const resultSearch = resultSearchInitial?.toLowerCase().replace("'", '-');
+
+	/*
+	let resultSearchSplit = resultSearchLowerCase?.split(' ');
+
+	resultSearchSplit.map(function (item:any, index:number) {
+		resultSearchSplit =  '*' + item + '*';
+		}
+	)
+	 */
 
 	const {data, status, refetch} = useQuery(
 		'elementsSearchResults', async(context) => {
@@ -24,6 +33,8 @@ export default function Page() {
 			return await client.fetch(query);
 		}
 	);
+
+
 
 	if (status !== 'success') {
 		return <div className="page-main"></div>
