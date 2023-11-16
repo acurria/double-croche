@@ -141,7 +141,9 @@ export default function Page() {
 		return data.concerts.map(function (item:any) {
 			const givenDateEnd = new Date(item.dateEnd);
 
-			if(item.type === type && item.month === month && (givenDateEnd > currentDate || (givenDateEnd.getDay() === currentDate.getDay() && givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear()))) {
+			console.log(givenDateEnd.getDate() )
+
+			if(item.type === type && item.month === month && (givenDateEnd > currentDate || (givenDateEnd.getDate() === currentDate.getDate() && givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear()))) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
 						<li>{item.title} <span className='highlight-secondary'>({item.dateStart && dayjs(item.dateStart).format("DD/MM/YYYY") + ' au ' }{dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
@@ -158,7 +160,7 @@ export default function Page() {
 		return data.concertsNextYear.map(function (item:any) {
 			const givenDateEnd = new Date(item.dateEnd);
 
-			if(item.type === type && item.month === month && (givenDateEnd > currentDate || (givenDateEnd.getDay() === currentDate.getDay() && givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear()))) {
+			if(item.type === type && item.month === month && (givenDateEnd > currentDate || (givenDateEnd.getDate() === currentDate.getDate() && givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear()))) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
 						<li>{item.title} <span className='highlight-secondary'>({item.dateStart && dayjs(item.dateStart).format("DD/MM/YYYY") + ' au ' }{dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
@@ -193,7 +195,7 @@ export default function Page() {
 			const givenDateEnd = new Date(item.dateEnd);
 			const givenDateStart = new Date(item.dateStart);
 
-			if ((givenDateStart < currentDate || (givenDateStart.getDay() === currentDate.getDay() &&  givenDateStart.getMonth() === currentDate.getMonth() && givenDateStart.getFullYear() === currentDate.getFullYear())) && (givenDateEnd > currentDate || (givenDateEnd.getDay() === currentDate.getDay() &&  givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear())) && item.type === type) {
+			if ((givenDateStart < currentDate || (givenDateStart.getDate() === currentDate.getDate() &&  givenDateStart.getMonth() === currentDate.getMonth() && givenDateStart.getFullYear() === currentDate.getFullYear())) && (givenDateEnd > currentDate || (givenDateEnd.getDate() === currentDate.getDate() &&  givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear())) && item.type === type) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
 						<li>{item.title} <span className='highlight-secondary'>(jusqu'au {dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
@@ -805,7 +807,6 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										console.log(item.year)
 										if (item.month === 'Novembre' && item.type === 'concerts' && item.year) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Novembre</h3>
