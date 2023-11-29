@@ -141,8 +141,6 @@ export default function Page() {
 		return data.concerts.map(function (item:any) {
 			const givenDateEnd = new Date(item.dateEnd);
 
-			console.log(givenDateEnd.getDate() )
-
 			if(item.type === type && item.month === month && (givenDateEnd > currentDate || (givenDateEnd.getDate() === currentDate.getDate() && givenDateEnd.getMonth() === currentDate.getMonth() && givenDateEnd.getFullYear() === currentDate.getFullYear()))) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
@@ -539,7 +537,9 @@ export default function Page() {
 							<div className='month-list'>
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Janvier' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Janvier' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Janvier</h3>
 												{
@@ -551,7 +551,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Février' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Février' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Février</h3>
 												{
@@ -563,7 +565,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Mars' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Mars' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Mars</h3>
 												{
@@ -575,7 +579,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Avril' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Avril' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Avril</h3>
 												{
@@ -587,7 +593,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Mai' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Mai' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Mai</h3>
 												{
@@ -599,7 +607,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Juin' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Juin' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Juin</h3>
 												{
@@ -611,7 +621,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Juillet' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Juillet' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Juillet</h3>
 												{
@@ -623,7 +635,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Août' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Août' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Août</h3>
 												{
@@ -635,7 +649,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Septembre' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Septembre' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Septembre</h3>
 												{
@@ -647,7 +663,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Octobre' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Octobre' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Octobre</h3>
 												{
@@ -659,7 +677,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Novembre' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Novembre' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Novembre</h3>
 												{
@@ -671,7 +691,9 @@ export default function Page() {
 								}
 								{
 									data.concerts.map(function (item:any, index:any) {
-										if (item.month === 'Décembre' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Décembre' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Décembre</h3>
 												{
@@ -687,7 +709,9 @@ export default function Page() {
 							<div className='month-list'>
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Janvier' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Janvier' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Janvier</h3>
 												{
@@ -699,7 +723,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Février' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Février' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Février</h3>
 												{
@@ -711,7 +737,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Mars' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Mars' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Mars</h3>
 												{
@@ -723,7 +751,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Avril' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Avril' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Avril</h3>
 												{
@@ -735,7 +765,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Mai' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Mai' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Mai</h3>
 												{
@@ -747,7 +779,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Juin' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Juin' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Juin</h3>
 												{
@@ -759,7 +793,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Juillet' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Juillet' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Juillet</h3>
 												{
@@ -771,7 +807,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Août' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Août' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Août</h3>
 												{
@@ -783,7 +821,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Septembre' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Septembre' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Septembre</h3>
 												{
@@ -795,7 +835,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Octobre' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Octobre' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Octobre</h3>
 												{
@@ -807,7 +849,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Novembre' && item.type === 'concerts' && item.year) {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Novembre' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Novembre</h3>
 												{
@@ -819,7 +863,9 @@ export default function Page() {
 								}
 								{
 									data.concertsNextYear.map(function (item:any, index:any) {
-										if (item.month === 'Décembre' && item.type === 'concerts') {
+										const givenDateEnd = new Date(item.dateEnd);
+
+										if (item.month === 'Décembre' && item.type === 'concerts' && givenDateEnd > currentDate) {
 											return <div key={index} className={`month-item ${item.month}`}>
 												<h3 className='month-title'>Décembre</h3>
 												{
