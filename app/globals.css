@@ -65,11 +65,11 @@
 	background-color: #000000;
 }
 
-.page-main.search-results {
+.page-main .search-results {
 	min-height: initial;
 }
 
-.page-main.search-results h1 {
+.page-main .search-results h1 {
 	margin-bottom: 0;
 }
 
