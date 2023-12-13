@@ -9,8 +9,8 @@ import client from "../../createClient";
 
 export default function FilmsHomepage() {
     var settings = {
-        dots: false,
-        arrows: true,
+        dots: true,
+        arrows: false,
         infinite: true,
         slidesToShow: 1,
         centerMode: true,
