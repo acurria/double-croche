@@ -142,6 +142,15 @@ export default defineType({
             }
         },
         {
+            // Pour "Cinéma Chronique"
+            name: 'releaseDate',
+            title: "Date de sortie (Cinéma Chroniques)",
+            type: 'date',
+            options: {
+                dateFormat: 'DD-MM-YYYY'
+            }
+        },
+        {
             // Pour "Musique Interview", "Musique Festival", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival"
             name: 'content',
             title: 'Description (Musique Interview, Musique Festival, Cinéma Interview, Cinéma Chronique, Cinéma Festival', 
