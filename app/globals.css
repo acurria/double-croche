@@ -1315,6 +1315,9 @@ nav:not(.pager-container) {
 
 .filter-container .item.current {
 	border-bottom: solid #AB731F 0.25rem;
+}
+
+.filter-container .item.current a {
 	color: #AB731F;
 }
 
@@ -1411,14 +1414,6 @@ nav:not(.pager-container) {
 
 .month-container.next-year {
 	margin-top: 1rem;
-}
-
-.event-category {
-	display: none;
-}
-
-.event-category.active {
-	display: block;
 }
 
 /* Article */

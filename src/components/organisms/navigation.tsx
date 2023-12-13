@@ -118,7 +118,7 @@ export default function Navigation() {
 									<Link href={`/concours`} onClick={burgerClick} aria-label="Aller à Concours">CONCOURS</Link>
 								</li>
 								<li className='item-nav'>
-									<Link href={`/agenda`} onClick={burgerClick} aria-label="Aller à Agenda">AGENDA</Link>
+									<Link href={`/agenda/albums`} onClick={burgerClick} aria-label="Aller à Agenda">AGENDA</Link>
 								</li>
 							</ul>
 						</div>
@@ -172,7 +172,7 @@ export default function Navigation() {
 									<Link href={`/concours`} aria-label="Aller à Concours">CONCOURS</Link>
 								</li>
 								<li className='item-nav'>
-									<Link href={`/agenda`} aria-label="Aller à Agenda">AGENDA</Link>
+									<Link href={`/agenda/albums`} aria-label="Aller à Agenda">AGENDA</Link>
 								</li>
 							</ul>
 						</div>
