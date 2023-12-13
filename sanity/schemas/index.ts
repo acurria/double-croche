@@ -1,5 +1,6 @@
 import albums from './entities/albums';
 import artists from './entities/artists';
+import platforms from './entities/platforms';
 import directors from './entities/directors';
 import filmFestivals from './entities/film-festivals';
 import films from './entities/films';
@@ -17,4 +18,4 @@ import momentsAlbum from './moments/moment-albums';
 import eventTypes from './agenda/event-types';
 import events from './agenda/events';
 
-export default [categories, subcategories, articles, banner, momentsFilm, momentsAlbum, eventTypes, events, albums, artists, directors, filmFestivals, films, musicFestivals];
+export default [categories, subcategories, articles, banner, momentsFilm, momentsAlbum, eventTypes, events, albums, artists, directors, filmFestivals, films, musicFestivals, platforms];

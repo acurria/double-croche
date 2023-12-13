@@ -26,6 +26,7 @@ export default function Page() {
 			const query = `{"albumsFilms" : *[_type=="events" && year=="${currentYear}"]|order(dateStart asc){
 															  'dateStart': dateStart,
 															  'dateEnd': dateEnd,
+															  'platform': platform->platformName,
 															  'month': month,
 															  'year': year,
 															  'title': title,
@@ -60,6 +61,7 @@ export default function Page() {
 															"albumsFilmsNextYear" : *[_type=="events" && year=="${nextYear}"]|order(dateStart asc){
 															  'dateStart': dateStart,
 															  'dateEnd': dateEnd,
+															  'platform': platform->platformName,
 															  'month': month,
 															  'year': year,
 															  'title': title,
@@ -89,12 +91,14 @@ export default function Page() {
 		return <div className="page-main"></div>
 	}
 
+
 	const albumsFilms = (type:string, month:string):any => {
 		return data.albumsFilms.map(function (item:any) {
+			console.log(item)
 			if(item.type === type && item.month === month) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
-						<li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+						<li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")}{item.platform && ', ' + item.platform})</span>
 						</li>
 					</ul>
 				</div>
@@ -109,7 +113,7 @@ export default function Page() {
 			if(item.type === type && item.month === month) {
 				return <div key={item.id} className="event-infos">
 					<ul className='month-event'>
-						<li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+						<li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")}{item.platform && ', ' + item.platform})</span>
 						</li>
 					</ul>
 				</div>
