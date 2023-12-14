@@ -1395,7 +1395,7 @@ nav:not(.pager-container) {
 	margin-bottom: 1rem;
 }
 
-.month-title {
+.page-main .month-title {
 	margin-bottom: 1.5625rem;
 	font-family: "Kanit", sans-serif;
 	letter-spacing: 0;
@@ -1600,7 +1600,7 @@ nav:not(.pager-container) {
 		margin-bottom: 3.125rem;
 	}
 
-	.page-main h3 {
+	.page-main h3:not(.month-title) {
 		font-size: 2.5rem;
 	}
 
