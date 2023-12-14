@@ -89,6 +89,7 @@ export default function PreviewArticle({id}:propsType) {
 							alt="Vercel Logo"
 							width={800}
 							height={800}
+							data-was-processed="true"
 						/>
 					</figure>
 				</Link>
