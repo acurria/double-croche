@@ -13,7 +13,7 @@ export async function generateMetadata({params}:propsType) {
 		title: article.title,
 		description: article.metadescription,
 		openGraph: {
-			images: article.image,
+			images: article.image[0],
 			width: 1800,
 			height: 1600
 		}
