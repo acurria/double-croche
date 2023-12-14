@@ -308,8 +308,8 @@ b {
 	font-weight: 500;
 }
 
-.highlight-secondary,
-.highlight-secondary span {
+.page-main .highlight-secondary,
+.page-main .highlight-secondary span {
 	color: #AB731F;
 }
 
