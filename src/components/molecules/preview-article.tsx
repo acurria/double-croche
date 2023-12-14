@@ -82,16 +82,11 @@ export default function PreviewArticle({id}:propsType) {
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<figure>
-						<Image
-							className="image-preview-article"
-							src={urlFor(data[0].image).url()}
-							alt="Vercel Logo"
-							width={800}
-							height={800}
-							data-was-processed="true"
-						/>
-					</figure>
+
+					<picture>
+						<source srcSet={urlFor(data[0].image).url()} />
+						<img src={urlFor(data[0].image).url()} alt="" />
+					</picture>
 				</Link>
 			}
 			{
