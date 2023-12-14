@@ -64,7 +64,6 @@ export default async function Article({params}:propsType) {
 							alt="Vercel Logo"
 							width={800}
 							height={800}
-							data-was-processed="true"
 						/>
 						<div className='wrapper-title'>
 							<h2 className='title-desktop'>
