@@ -1555,6 +1555,10 @@ nav:not(.pager-container) {
 	margin: 0.5rem 0 1.8rem;
 }
 
+.page-main .wrapper-article blockquote strong {
+	font-size: 0.9rem;
+}
+
 .page-main .wrapper-article a:hover {
 	text-decoration: none;
 }
