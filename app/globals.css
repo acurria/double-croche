@@ -1374,7 +1374,7 @@ nav:not(.pager-container) {
 	white-space: nowrap;
 }
 
-.filter-container .item:first-child {
+.filter-container .item:first-child a {
 	margin-left: 0;
 }
 
