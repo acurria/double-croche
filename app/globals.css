@@ -177,7 +177,8 @@ body {
 
 /* Typography */
 
-h1 {
+h1,
+h1 p {
 	font-size: 3.625rem;
 	text-transform: uppercase;
 	color: #AB731F;
@@ -1354,6 +1355,14 @@ nav:not(.pager-container) {
 	display: none;
 }
 
+.filter-container.mobile {
+	display: block;
+}
+
+.filter-container.desktop {
+	display: none;
+}
+
 .filter-container .item {
 	text-transform: uppercase;
 	padding: 1rem 0;
@@ -1961,6 +1970,14 @@ nav:not(.pager-container) {
 
 	.filter-items::after {
 		display: none;
+	}
+
+	.filter-container.mobile {
+		display: none;
+	}
+
+	.filter-container.desktop {
+		display: block;
 	}
 
 	.album-image-link:hover::after,

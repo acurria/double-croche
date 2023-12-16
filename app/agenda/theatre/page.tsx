@@ -128,12 +128,31 @@ export default function Page() {
 		<div className="category-page agenda bg-primary page-main">
 			<div className="header-category lg:mx-auto lg:max-w-screen-2xl">
 				<h1>
-					<Fade left cascade>
-						<p className='highlight-secondary'>Agenda</p>
-					</Fade>
+					<p className='highlight-secondary'>Agenda</p>
 				</h1>
 			</div>
-			<div className='filter-container bg-black'>
+			<div className='filter-container bg-black mobile'>
+				<div className='filter-items'>
+					<ul>
+						<li id='theater-filter' className='item current'>
+							<Link href={`/agenda/theatre`} aria-label="Aller à Agenda Théâtre">Théâtre</Link>
+						</li>
+						<li id='albums-filter' className='item'>
+							<Link href={`/agenda/albums`} aria-label="Aller à Agenda Albums">Albums</Link>
+						</li>
+						<li id='concerts-filter' className='item'>
+							<Link href={`/agenda/concerts`} aria-label="Aller à Agenda Concerts">Concerts</Link>
+						</li>
+						<li id='films-filter' className='item'>
+							<Link href={`/agenda/films`} aria-label="Aller à Agenda Films">Films</Link>
+						</li>
+						<li id='expos-filter' className='item'>
+							<Link href={`/agenda/expos`} aria-label="Aller à Agenda Expos">Expos</Link>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div className='filter-container bg-black desktop'>
 				<div className='filter-items'>
 					<ul>
 						<li id='albums-filter' className='item'>
