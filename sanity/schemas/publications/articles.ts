@@ -157,6 +157,24 @@ export default defineType({
             }
         },
         {
+            name: 'seeAlso1',
+            title: "À voir aussi #1",
+            type: 'reference',
+            to: [{type: 'articles'}]
+        },
+        {
+            name: 'seeAlso2',
+            title: "À voir aussi #2",
+            type: 'reference',
+            to: [{type: 'articles'}]
+        },
+        {
+            name: 'seeAlso3',
+            title: "À voir aussi #3",
+            type: 'reference',
+            to: [{type: 'articles'}]
+        },
+        {
             // Pour "Musique Interview", "Musique Festival", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival"
             name: 'content',
             title: 'Description (Musique Interview, Musique Festival, Cinéma Interview, Cinéma Chronique, Cinéma Festival', 
