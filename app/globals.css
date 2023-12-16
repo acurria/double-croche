@@ -2240,6 +2240,10 @@ nav:not(.pager-container) {
 		display: block;
 	}
 
+	.layout-basic.see-also .wrapper-grid .react-reveal {
+		width: calc((100% / 3) - 1.1rem);
+	}
+
 	/* Footer Desktop */
 
 	.footer .menu-container,
