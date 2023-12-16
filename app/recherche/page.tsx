@@ -27,7 +27,7 @@ export default function Page() {
 	const {data, status, refetch} = useQuery(
 		'elementsSearchResults', async(context) => {
 			const query = `{
-							"articles" : *[_type=="articles" && hidePublication != true][slug.current match '${resultSearch}*' || artist->firstLastName match '${resultSearch}*' || album->title match '${resultSearch}*' || musicFestivalName->title match '${resultSearch}*' || filmFestivalName->title match '${resultSearch}*' || director->firstLastName match '${resultSearch}*' || filmTitle->title match '${resultSearch}*']|order(createdDate desc)
+							"articles" : *[_type=="articles" && hidePublication != true][slug.current match '${resultSearch}*' || artist->firstLastName match '${resultSearch}*' || album->title match '${resultSearch}*' || musicFestivalName->title match '${resultSearch}*' || filmFestivalName->title match '${resultSearch}*' || director->firstLastName match '${resultSearch}*' || filmTitle->title match '${resultSearch}*' || newsTitle->title match '${resultSearch}*']|order(createdDate desc)
 								{"_id": _id}
 							}`;
 

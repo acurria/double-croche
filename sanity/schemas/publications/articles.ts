@@ -75,6 +75,12 @@ export default defineType({
             type: 'url'
         },
         {
+            // Pour "News"
+            name: 'newsTitle',
+            title: "Titre de la news (News)",
+            type: 'string'
+        },
+        {
             // Pour "Musique Festival", "Musique Playlist", "Cinéma Festival"
             name: 'year',
             title: "Année (Musique Festival, Musique Playlist, Cinéma Festival)",
