@@ -11,6 +11,7 @@ import {PortableText} from '@portabletext/react'
 import imageUrlBuilder from "@sanity/image-url";
 import Script from "next/script";
 import React from "react";
+import PreviewArticle from "@/src/components/molecules/preview-article";
 
 type propsType = {
 	params: {article: string}
@@ -102,6 +103,31 @@ export default async function Article({params}:propsType) {
 					}
 					<PortableText value={article.content} components={myPortableTextComponents}/>
 				</div>
+				{
+					article.seeAlso1 && <div className='grid-container layout-basic see-also lg:max-w-screen-lg lg:mx-auto' >
+						<h2>
+							<span className='highlight-secondary'>À VOIR </span>
+							<span>AUSSI</span>
+						</h2>
+						<div className='wrapper-grid'>
+							{
+								<Fade key={article.seeAlso1} bottom>
+									<PreviewArticle key={article.seeAlso1} id={article.seeAlso1}/>
+								</Fade>
+							}
+							{
+								<Fade key={article.seeAlso2} bottom>
+									<PreviewArticle key={article.seeAlso2} id={article.seeAlso2}/>
+								</Fade>
+							}
+							{
+								<Fade key={article.seeAlso3} bottom>
+									<PreviewArticle key={article.seeAlso3} id={article.seeAlso3}/>
+								</Fade>
+							}
+						</div>
+					</div>
+				}
 			</div>
 			<Script async src="https://www.googletagmanager.com/gtag/js?id=UA-80564203-1" />
 			<Script id="google-analytics">

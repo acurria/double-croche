@@ -1159,6 +1159,18 @@ nav:not(.pager-container) {
 	display: none;
 }
 
+.layout-basic.see-also h2 span {
+	white-space: nowrap;
+}
+
+.layout-basic.see-also {
+	padding: 3rem 0 0;
+}
+
+.layout-basic.see-also .react-reveal:last-child {
+	display: none;
+}
+
 .article-page .wrapper-title .title-info,
 .article-page .wrapper-title .info span,
 .article-page .wrapper-title .info {
@@ -2201,6 +2213,10 @@ nav:not(.pager-container) {
 
 	.layout-basic .wrapper-grid .react-reveal {
 		width: calc(25% - 1.2rem);
+	}
+
+	.layout-basic.see-also .react-reveal:last-child {
+		display: block;
 	}
 
 	/* Footer Desktop */
