@@ -321,7 +321,9 @@ b {
 }
 
 .page-main .highlight-secondary,
-.page-main .highlight-secondary span {
+.highlight-secondary,
+.page-main .highlight-secondary span,
+.highlight-secondary span {
 	color: #AB731F;
 }
 
