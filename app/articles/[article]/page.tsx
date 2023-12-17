@@ -77,13 +77,22 @@ export default async function Article({params}:propsType) {
 							</h2>
 							<p className='title-info'>
 								{
+									article.categorySlug === 'series' && article.subcategorySlug === 'news' && <span className='info'><span className="uppercase highlight-secondary">{article.artist}{article.album}{article.director}{article.filmTitle}{article.musicFestivalName}{article.filmFestivalName}</span> : {article.newsTitle}</span>
+								}
+								{
 									article.categorySlug === 'musique' && article.subcategorySlug === 'interview' && <span className='info'><span className='highlight-secondary uppercase'>{article.artist} </span> pour '{article.album}'</span>
 								}
 								{
 									article.categorySlug === 'musique' && article.subcategorySlug === 'festival' && <span className='info'><span className='highlight-secondary uppercase'>{article.musicFestivalName} {article.year} - </span>{article.city}</span>
 								}
 								{
+									article.categorySlug === 'musique' && article.subcategorySlug === 'news' && <span className='info'><span className="uppercase highlight-secondary">{article.artist}{article.artist}{article.musicFestivalName}</span> : {article.newsTitle}</span>
+								}
+								{
 									article.categorySlug === 'cinema' && article.subcategorySlug === 'festival' && <span className='info'><span className='highlight-secondary uppercase'>{article.filmFestivalName} </span>{article.year}</span>
+								}
+								{
+									article.categorySlug === 'cinema' && article.subcategorySlug === 'news' && <span className='info'><span className="uppercase highlight-secondary">{article.director}{article.filmTitle}{article.filmFestivalName}</span> : {article.newsTitle}</span>
 								}
 								{
 									article.categorySlug === 'cinema' && article.subcategorySlug === 'chronique' && <span className='info'><span className='highlight-secondary uppercase'>'{article.filmTitle}' </span> de {article.director}</span>
