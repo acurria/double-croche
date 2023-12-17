@@ -1376,7 +1376,7 @@ nav:not(.pager-container) {
 	white-space: nowrap;
 }
 
-.filter-container .item:first-child a {
+.filter-container .item:first-child {
 	margin-left: 0;
 }
 
@@ -1385,11 +1385,8 @@ nav:not(.pager-container) {
 }
 
 .filter-container .item.current {
-	border-bottom: solid #AB731F 0.25rem;
-}
-
-.filter-container .item.current a {
 	color: #AB731F;
+	border-bottom: solid #AB731F 0.25rem;
 }
 
 .result-filter-container {
@@ -1412,6 +1409,14 @@ nav:not(.pager-container) {
 	margin-bottom: 3rem;
 	border-left: 0.25rem solid #AB731F;
 	font-size: 2.5rem;
+}
+
+.event-category {
+	display: none;
+}
+
+.event-category.active {
+	display: block;
 }
 
 .agenda.category-page h3::after {

@@ -48,7 +48,7 @@ export default function Footer() {
 							<Link href={`/concours`} aria-label="Aller à Concours">Concours</Link>
 						</div>
 						<div className='menu-column'>
-							<Link href={`/agenda/albums`} aria-label="Aller à Agenda">Agenda</Link>
+							<Link href={`/agenda`} aria-label="Aller à Agenda">Agenda</Link>
 						</div>
 					</div>
 				</div>
