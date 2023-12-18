@@ -1,49 +1,85 @@
 "use client";
 
-import Image from 'next/image'
-import {useNextSanityImage} from 'next-sanity-image'
-
+import Image from 'next/image';
+import { useNextSanityImage } from 'next-sanity-image';
+import { PortableText } from '@portabletext/react';
+import imageUrlBuilder from '@sanity/image-url';
+import Script from 'next/script';
+import React, { useEffect, useState } from 'react';
 // @ts-ignore
-import Fade from 'react-reveal/Fade'
-import {getArticle} from "@/src/createClient";
-import client from "@/src/createClient";
-import {PortableText} from '@portabletext/react'
-import imageUrlBuilder from "@sanity/image-url";
-import Script from "next/script";
-import React from "react";
-import PreviewArticle from "@/src/components/molecules/preview-article";
+import Fade from 'react-reveal/Fade';
+import { getArticle } from '@/src/createClient';
+import client from '@/src/createClient';
+import PreviewArticle from '@/src/components/molecules/preview-article';
 
-type propsType = {
-	params: {article: string}
-};
+interface propsType {
+	params: { article: string };
+}
 
-export default async function Article({params}:propsType) {
-	const slug = params.article;
-	const article = await getArticle(slug);
-	const builder = imageUrlBuilder(client)
-	function urlFor(source:any) {
-		return builder.image(source)
+export default function Article({params}:propsType) {
+	const [article, setArticle] = useState<{
+		artist: string,
+		image: any,
+		album: string,
+		category: string,
+		categorySlug: any,
+		subcategory: string,
+		subcategorySlug: any,
+		musicFestivalName: string,
+		filmFestivalName: string,
+		city: string,
+		year: string,
+		month: string,
+		part: string,
+		director: string,
+		filmTitle: string,
+		date: any,
+		localisation: string,
+		externalLink: any,
+		url: any,
+		content: any,
+		title: string,
+		newsTitle: string,
+		metadescription: string,
+		seeAlso1: any,
+		seeAlso2: any,
+		seeAlso3: any
+	} | null>(null);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const slug = params.article;
+			const fetchedArticle = await getArticle(slug);
+			setArticle(fetchedArticle);
+		};
+
+		fetchData();
+	}, [params.article]);
+
+	if (!article) {
+		return <div className="page-main"></div>
+	}
+
+	const builder = imageUrlBuilder(client);
+	function urlFor(source: any) {
+		return builder.image(source);
 	}
 
 	const myPortableTextComponents = {
 		types: {
-			image: ({value}:any) => {
-				return (
-					<SanityImage {...value} />
-				);
+			image: ({ value }: any) => {
+				return <SanityImage {...value} />;
 			},
 		},
 	};
 
-	const SanityImage = ({asset}:any) => {
-		const imageProps:any = useNextSanityImage(client, asset);
+	const SanityImage = ({ asset }: any) => {
+		const imageProps: any = useNextSanityImage(client, asset);
 
 		if (!imageProps) return null;
 
-		return (
-			<Image {...imageProps} alt="image-article"/>
-		);
-	}
+		return <Image {...imageProps} alt="image-article" />;
+	};
 
 	return (
 		<div className="article bg-primary page-main">
@@ -150,4 +186,4 @@ export default async function Article({params}:propsType) {
 			</Script>
 		</div>
 	)
-}
+};
