@@ -2073,12 +2073,6 @@ nav:not(.pager-container) {
 		width: 60%;
 	}
 
-	.category-page.contest .main-category-article .preview-article,
-	.category-page.playlist .main-category-article .preview-article,
-	.category-page.festival .main-category-article .preview-article {
-		width: 40%;
-	}
-
 	.category-page.contest .wrapper-title,
 	.category-page.playlist .wrapper-title,
 	.category-page.festival .wrapper-title {
