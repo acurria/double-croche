@@ -212,7 +212,7 @@ export default function PreviewArticle({id}:propsType) {
 						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <span><span className="uppercase highlight-secondary">{data[0].director}</span> <span className="text-info">pour '{data[0].filmTitle}'</span></span>
 					}
 					{
-						data[0].categorySlug === 'concours' && <span className='subcategory'><span className='highlight-secondary uppercase'>{data[0].artist}</span><span className="text-info"> @ {data[0].localisation} {dayjs(data[0].date).format("DD/MM/YYYY")}</span></span>
+						data[0].categorySlug === 'concours' && <span className='subcategory'><span className='highlight-secondary uppercase'>{data[0].artist}</span><span className="text-info"> @ {data[0].localisation}</span><span className="text-info date">{dayjs(data[0].date).format("DD/MM/YYYY")}</span></span>
 					}
 				</span>
 			</p>

@@ -1216,6 +1216,10 @@ nav:not(.pager-container) {
 	margin-top: 0.5rem;
 }
 
+.text-info.date {
+	margin-left: 0.4rem;
+}
+
 .article-page .title-info {
 	font-size: 1.125rem;
 	margin-top: 0.7rem;
@@ -2036,7 +2040,15 @@ nav:not(.pager-container) {
 		display: inline-block;
 		font-size: 1.5rem;
 		margin-top: 0.5rem;
+		margin-right: 0.4rem;
+	}
 
+	.category-page .info-main-article .text-info.date {
+		margin-left: 0;
+	}
+
+	.category-page.contest .info-main-article .preview-article .title-info span:last-child {
+		display: block;
 	}
 
 	.category-page .main-category-article > .preview-article .title-info {
