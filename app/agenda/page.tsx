@@ -44,6 +44,7 @@ export default function Page() {
             const query = `{"albumsFilms" : *[_type=="events" && year=="${currentYear}"]|order(dateStart asc){
 															  'dateStart': dateStart,
 															  'dateEnd': dateEnd,
+															  'platform': platform->platformName,
 															  'month': month,
 															  'year': year,
 															  'title': title,
@@ -79,6 +80,7 @@ export default function Page() {
 															  'dateStart': dateStart,
 															  'dateEnd': dateEnd,
 															  'month': month,
+															  'platform': platform->platformName,
 															  'year': year,
 															  'title': title,
 															  'type': type->slug.current,
@@ -114,7 +116,7 @@ export default function Page() {
             if(item.type === type && item.month === month && (givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1)) {
                 return <div key={item.id} className="event-infos">
                     <ul className='month-event'>
-                        <li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+                        <li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")}{item.platform && ', ' + item.platform})</span>
                         </li>
                     </ul>
                 </div>
@@ -130,7 +132,7 @@ export default function Page() {
             if(item.type === type && item.month === month) {
                 return <div key={item.id} className="event-infos">
                     <ul className='month-event'>
-                        <li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
+                        <li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")}{item.platform && ', ' + item.platform})</span>
                         </li>
                     </ul>
                 </div>
