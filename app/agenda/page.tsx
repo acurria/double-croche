@@ -14,7 +14,7 @@ import React from "react";
 
 export default function Page() {
 
-    const currentDate = new Date();
+    const currentDate = new Date('October 3, 2023 03:24:00');
     const currentYear = new Date().getFullYear().toString();
 
     const nextYearInt = new Date().getFullYear() + 1;
@@ -109,7 +109,9 @@ export default function Page() {
 
     const albumsFilms = (type:string, month:string):any => {
         return data.albumsFilms.map(function (item:any) {
-            if(item.type === type && item.month === month) {
+            const givenDateStart = new Date(item.dateStart);
+
+            if(item.type === type && item.month === month && (givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1)) {
                 return <div key={item.id} className="event-infos">
                     <ul className='month-event'>
                         <li>{item.title} <span className='highlight-secondary'>({dayjs(item.dateStart).format("DD/MM/YYYY")}{item.dateEnd && ' au ' + dayjs(item.dateEnd).format("DD/MM/YYYY")})</span>
@@ -124,6 +126,7 @@ export default function Page() {
 
     const albumsFilmsNextYear = (type:string, month:string):any => {
         return data.albumsFilmsNextYear.map(function (item:any) {
+
             if(item.type === type && item.month === month) {
                 return <div key={item.id} className="event-infos">
                     <ul className='month-event'>
