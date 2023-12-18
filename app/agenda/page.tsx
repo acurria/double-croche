@@ -14,7 +14,7 @@ import React from "react";
 
 export default function Page() {
 
-    const currentDate = new Date('October 3, 2023 03:24:00');
+    const currentDate = new Date();
     const currentYear = new Date().getFullYear().toString();
 
     const nextYearInt = new Date().getFullYear() + 1;
@@ -239,7 +239,9 @@ export default function Page() {
                             <div className='month-list'>
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Janvier' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Janvier' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Janvier</h3>
                                                 {
@@ -251,7 +253,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Février' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Février' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Février</h3>
                                                 {
@@ -263,7 +267,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Mars' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Mars' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Mars</h3>
                                                 {
@@ -275,7 +281,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Avril' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Avril' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Avril</h3>
                                                 {
@@ -287,7 +295,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Mai' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Mai' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Mai</h3>
                                                 {
@@ -299,7 +309,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Juin' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Juin' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Juin</h3>
                                                 {
@@ -311,7 +323,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Juillet' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Juillet' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Juillet</h3>
                                                 {
@@ -323,7 +337,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Août' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Août' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Août</h3>
                                                 {
@@ -335,7 +351,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Septembre' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Septembre' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Septembre</h3>
                                                 {
@@ -347,7 +365,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Octobre' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Octobre' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Octobre</h3>
                                                 {
@@ -359,7 +379,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Novembre' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Novembre' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Novembre</h3>
                                                 {
@@ -371,7 +393,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Décembre' && item.type === 'albums') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Décembre' && item.type === 'albums' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Décembre</h3>
                                                 {
@@ -889,7 +913,9 @@ export default function Page() {
                             <div className='month-list'>
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Janvier' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Janvier' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Janvier</h3>
                                                 {
@@ -901,7 +927,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Février' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Février' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Février</h3>
                                                 {
@@ -913,7 +941,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Mars' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Mars' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Mars</h3>
                                                 {
@@ -925,7 +955,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Avril' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Avril' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Avril</h3>
                                                 {
@@ -937,7 +969,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Mai' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Mai' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Mai</h3>
                                                 {
@@ -949,7 +983,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Juin' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Juin' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Juin</h3>
                                                 {
@@ -961,7 +997,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Juillet' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Juillet' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Juillet</h3>
                                                 {
@@ -973,7 +1011,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Août' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Août' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Août</h3>
                                                 {
@@ -985,7 +1025,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Septembre' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Septembre' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Septembre</h3>
                                                 {
@@ -997,7 +1039,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Octobre' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Octobre' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Octobre</h3>
                                                 {
@@ -1009,7 +1053,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Novembre' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Novembre' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Novembre</h3>
                                                 {
@@ -1021,7 +1067,9 @@ export default function Page() {
                                 }
                                 {
                                     data.albumsFilms.map(function (item:any, index:any) {
-                                        if (item.month === 'Décembre' && item.type === 'films') {
+                                        const givenDateStart = new Date(item.dateStart);
+
+                                        if (item.month === 'Décembre' && item.type === 'films' && ((givenDateStart.getMonth() + 1) >= (currentDate.getMonth() + 1))) {
                                             return <div key={index} className={`month-item ${item.month}`}>
                                                 <h3 className='month-title'>Décembre</h3>
                                                 {
