@@ -28,7 +28,11 @@ export async function getArticle(slug: string) {
               "url": slug.current,
               "content": content,
               "title": title,
-              "metadescription": metadescription
+              "newsTitle": newsTitle,
+              "metadescription": metadescription,
+              "seeAlso1": seeAlso1->_id,
+              "seeAlso2": seeAlso2->_id,
+              "seeAlso3": seeAlso3->_id
         }`,
         {slug}
     )

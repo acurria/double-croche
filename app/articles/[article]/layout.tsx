@@ -10,8 +10,11 @@ export async function generateMetadata({params}:propsType) {
 	const article = await getArticle(slug);
 
 	return {
-	  title: article.title,
-	  description: article.metadescription,
+		title: article.title,
+		description: article.metadescription,
+		openGraph: {
+			images: article.image
+		}
 	}
 }
 

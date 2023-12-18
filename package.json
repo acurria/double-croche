@@ -33,6 +33,7 @@
         "react-icons": "^4.8.0",
         "react-query": "^3.39.3",
         "react-reveal": "^1.2.2",
+        "react-router-hash-link": "^2.4.3",
         "react-slick": "^0.29.0",
         "sanity": "^3.8.3",
         "slick-carousel": "^1.8.1",

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 
 export default function Footer() {
+	const currentYear = new Date().getFullYear().toString();
 
 	return (
 		<div className='footer bg-black'>
@@ -84,7 +85,7 @@ export default function Footer() {
 						</a>
 					</div>
 					<div className='copyright text-center text-xs font-normal'>
-						<p className='text-secondary'>© 2023 DOUBLE-CROCHE. Tous droits réservés</p>
+						<p className='text-secondary'>© {currentYear} DOUBLE-CROCHE. Tous droits réservés</p>
 						<p className='credit'>Site web réalisé par <Link href="https://alexandrecurria.fr" target='_blank' aria-label="Redirige vers le site web alexandrecurria.fr">alexandrecurria.fr</Link></p>
 					</div>
 				</div>

@@ -9,8 +9,8 @@ import client from "../../createClient";
 
 export default function AlbumsHomepage() {
     var settings = {
-        dots: false,
-        arrows: true,
+        dots: true,
+        arrows: false,
         infinite: true,
         slidesToShow: 1,
         centerMode: true,

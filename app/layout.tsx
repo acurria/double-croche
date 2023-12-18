@@ -2,8 +2,11 @@ import './globals.css'
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-	title: 'Double-Croche | Toute l’actualité musique et cinéma ▶️',
+	title: 'Double-Croche | Toute l’actualité musique et cinéma ▶',
 	description: 'Plongez dans un univers captivant mêlant musique et cinéma. Explorez des articles, critiques, interviews et découvrez les liens étroits entre ces deux formes d\'expression artistique. Laissez-vous inspirer par la passion et la créativité qui animent ce site',
+	openGraph: {
+		images: ['/logo-black.jpeg'],
+	},
 };
 export default function RootLayout({
 	children,

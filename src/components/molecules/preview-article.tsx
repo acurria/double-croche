@@ -33,6 +33,7 @@ export default function PreviewArticle({id}:propsType) {
 			  "subcategorySlug": subcategory->slug.current,
 			  "musicFestivalName": musicFestivalName->title,
 			  "filmFestivalName": filmFestivalName->title,
+			  "newsTitle": newsTitle,
 			  "city": city,
 			  "year": year,
 			  "month": month,
@@ -82,6 +83,18 @@ export default function PreviewArticle({id}:propsType) {
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+				</Link>
+			}
+			{
+				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'news' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
+					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
 					<Image
 						className="image-preview-article"
 						src={urlFor(data[0].image).url()}
@@ -128,6 +141,30 @@ export default function PreviewArticle({id}:propsType) {
 				</Link>
 			}
 			{
+				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'news' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
+					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
+					<Image
+						className="image-preview-article"
+						src={urlFor(data[0].image).url()}
+						alt="Vercel Logo"
+						width={800}
+						height={800}
+					/>
+				</Link>
+			}
+			{
+				data[0].categorySlug === 'series' && data[0].subcategorySlug === 'news' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
+					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
+					<Image
+						className="image-preview-article"
+						src={urlFor(data[0].image).url()}
+						alt="Vercel Logo"
+						width={800}
+						height={800}
+					/>
+				</Link>
+			}
+			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
 					<Image
@@ -148,6 +185,9 @@ export default function PreviewArticle({id}:propsType) {
 			<p className='title-info'>
 				<span className='info'>
 					{
+						data[0].categorySlug === 'series' && data[0].subcategorySlug === 'news' && <span><span className="uppercase highlight-secondary">{data[0].artist}{data[0].album}{data[0].director}{data[0].filmTitle}{data[0].musicFestivalName}{data[0].filmFestivalName}</span> <span className="text-info"> : {data[0].newsTitle}</span></span>
+					}
+					{
 						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <span><span className="uppercase highlight-secondary">{data[0].artist}</span> <span className="text-info">pour '{data[0].album}'</span></span>
 					}
 					{
@@ -157,7 +197,13 @@ export default function PreviewArticle({id}:propsType) {
 						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <span><span className="uppercase highlight-secondary">{data[0].musicFestivalName} {data[0].year} - </span> <span className="text-info">{data[0].city}</span></span>
 					}
 					{
+						data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'news' && <span><span className="uppercase highlight-secondary">{data[0].artist}{data[0].artist}{data[0].musicFestivalName}</span> <span className="text-info"> : {data[0].newsTitle}</span></span>
+					}
+					{
 						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <span><span className="uppercase highlight-secondary">{data[0].filmFestivalName} {data[0].year} - </span> <span className="text-info">{data[0].day}</span></span>
+					}
+					{
+						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'news' && <span><span className="uppercase highlight-secondary">{data[0].director}{data[0].filmTitle}{data[0].filmFestivalName}</span> <span className="text-info"> : {data[0].newsTitle}</span></span>
 					}
 					{
 						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <span><span className="uppercase highlight-secondary">'{data[0].filmTitle}'</span> <span className="text-info">de {data[0].director}</span></span>
@@ -166,7 +212,7 @@ export default function PreviewArticle({id}:propsType) {
 						data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <span><span className="uppercase highlight-secondary">{data[0].director}</span> <span className="text-info">pour '{data[0].filmTitle}'</span></span>
 					}
 					{
-						data[0].categorySlug === 'concours' && <span className='subcategory'><span className='highlight-secondary uppercase'>{data[0].artist}</span><span className="text-info"> @ {data[0].localisation} {dayjs(data[0].date).format("DD/MM/YYYY")}</span></span>
+						data[0].categorySlug === 'concours' && <span className='subcategory'><span className='highlight-secondary uppercase'>{data[0].artist}</span><span className="text-info"> @ {data[0].localisation}</span><span className="text-info date">{dayjs(data[0].date).format("DD/MM/YYYY")}</span></span>
 					}
 				</span>
 			</p>
@@ -177,13 +223,22 @@ export default function PreviewArticle({id}:propsType) {
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link" href={`/articles/${data[0].url}`} aria-label="Lire l'article">Lire l'article</Link>
 			}
 			{
+				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'news' && <Link className="link" href={`/articles/${data[0].url}`} aria-label="Lire l'article">Lire l'article</Link>
+			}
+			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link" href={`/articles/${data[0].url}`} aria-label="Lire l'article">Lire l'article</Link>
+			}
+			{
+				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'news' && <Link className="link" href={`/articles/${data[0].url}`} aria-label="Lire l'article">Lire l'article</Link>
 			}
 			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link" href={`/articles/${data[0].url}`} aria-label="Lire l'article">Lire l'article</Link>
 			}
 			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link" href={`/articles/${data[0].url}`} aria-label="Lire l'article">Lire l'article</Link>
+			}
+			{
+				data[0].categorySlug === 'series' && data[0].subcategorySlug === 'news' && <Link className="link" href={`/articles/${data[0].url}`} aria-label="Lire l'article">Lire l'article</Link>
 			}
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link" href={data[0].externalLink} target='_blank' aria-label="Écouter sur Spotify">Écouter sur Spotify</Link>

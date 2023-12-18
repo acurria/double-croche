@@ -28,6 +28,13 @@ export default defineType({
             validation: Rule => Rule.required()       
         },
         {
+            // Pour "Films"
+            name: 'platform',
+            title: "Plateforme (Lorsqu'il s'agit d'un film)",
+            type: 'reference',
+            to: [{type: 'platforms'}]
+        },
+        {
             name: 'month',
             title: 'Mois (Uniquement pour Albums, Films et Concerts)',
             type: 'string'

@@ -38,9 +38,9 @@ export default defineType({
             type: 'boolean'
         },
         {
-            // Pour "Musique Interview", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival"
+            // Pour "Musique Interview", "Musique News", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival", "Cinéma News", "Séries News"
             name: 'image',
-            title: "Image - Ratio 3:2 pour les articles Musique Interview, Cinéma Interview, Cinéma Chronique, Cinéma Festival et Ratio 1:1 pour les articles Musique Playlist, Musique Festivals, Concours",
+            title: "Image - Ratio 3:2 pour les articles Musique Interview, Musique News, Cinéma Interview, Cinéma News, Cinéma Chronique, Cinéma Festival, Séries News. Et Ratio 1:1 pour les articles Musique Playlist, Musique Festivals, Concours",
             type: 'image'
         },
         {
@@ -49,16 +49,16 @@ export default defineType({
             type: 'boolean'
         },
         {
-            // Pour "Musique Interview", "Concours"
+            // Pour "Musique Interview", "Musique News", "Séries News", "Concours",
             name: 'artist',
-            title: "Artiste (Musique Interview, Concours)",
+            title: "Artiste (Musique Interview, Musique News, Séries News, Concours)",
             type: 'reference',
             to: [{type: 'artists'}]   
         },
         {
-            // Pour "Musique Interview"
+            // Pour "Musique Interview", "Musique News", "Séries News",
             name: 'album',
-            title: "Album (Musique Interview)",
+            title: "Album (Musique Interview, Musique News, Séries News)",
             type: 'reference',
             to: [{type: 'albums'}]  
         },
@@ -75,6 +75,12 @@ export default defineType({
             type: 'url'
         },
         {
+            // Pour "Séries News", "Musique News", "Cinéma News"
+            name: 'newsTitle',
+            title: "Titre de la news (Séries News, Musique News, Cinéma News)",
+            type: 'string'
+        },
+        {
             // Pour "Musique Festival", "Musique Playlist", "Cinéma Festival"
             name: 'year',
             title: "Année (Musique Festival, Musique Playlist, Cinéma Festival)",
@@ -89,34 +95,34 @@ export default defineType({
         {
             // Pour "Musique Festival"
             name: 'musicFestivalName',
-            title: "Nom du festival (Musique Festival)",
+            title: "Nom du festival (Musique Festival, Musique News, Séries News)",
             type: 'reference',
             to: [{type: 'musicFestivals'}]   
         },
         {
             // Pour "Cinéma Festival"
             name: 'filmFestivalName',
-            title: "Nom du festival (Cinéma Festival)",
+            title: "Nom du festival (Cinéma Festival, Cinéma News, Séries News)",
             type: 'reference',
             to: [{type: 'filmFestivals'}]   
         },
         {
             // Pour "Musique Festival"
             name: 'city',
-            title: "Ville (Musique Festival)",
+            title: "Ville (Musique Festival, Musique News, Séries News)",
             type: 'string'
         },
         {
             // Pour "Cinéma Interview" et "Cinéma Chronique"
             name: 'director',
-            title: "Réalisateur (Cinéma Interview et Cinéma Chronique)",
+            title: "Réalisateur (Cinéma Interview et Cinéma Chronique, Cinéma News, Séries News)",
             type: 'reference',
             to: [{type: 'directors'}]  
         },
         {
             // Pour "Cinéma Interview" et "Cinéma Chronique"
             name: 'filmTitle',
-            title: "Titre du film (Cinéma Interview et Cinéma Chronique)",
+            title: "Titre du film (Cinéma Interview et Cinéma Chronique, Cinéma News, Séries News)",
             type: 'reference',
             to: [{type: 'films'}]  
         },
@@ -140,6 +146,33 @@ export default defineType({
             options: {
                 dateFormat: 'DD-MM-YYYY'
             }
+        },
+        {
+            // Pour "Cinéma Chronique"
+            name: 'releaseDate',
+            title: "Date de sortie (Cinéma Chroniques)",
+            type: 'date',
+            options: {
+                dateFormat: 'DD-MM-YYYY'
+            }
+        },
+        {
+            name: 'seeAlso1',
+            title: "À voir aussi #1",
+            type: 'reference',
+            to: [{type: 'articles'}]
+        },
+        {
+            name: 'seeAlso2',
+            title: "À voir aussi #2",
+            type: 'reference',
+            to: [{type: 'articles'}]
+        },
+        {
+            name: 'seeAlso3',
+            title: "À voir aussi #3",
+            type: 'reference',
+            to: [{type: 'articles'}]
         },
         {
             // Pour "Musique Interview", "Musique Festival", "Cinéma Interview", "Cinéma Chronique", "Cinéma Festival"
