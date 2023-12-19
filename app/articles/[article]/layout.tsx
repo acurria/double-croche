@@ -10,8 +10,8 @@ export async function generateMetadata({params}:propsType) {
 	const article = await getArticle(slug);
 
 	return {
-		title: article?.title ?? 'Page non trouvée',
-		description: article?.metadescription ?? 'Page non trouvée',
+		title: article?.title ?? 'Double-Croche | Toute l’actualité musique et cinéma ▶',
+		description: article?.metadescription ?? 'Plongez dans un univers captivant mêlant musique et cinéma. Explorez des articles, critiques, interviews et découvrez les liens étroits entre ces deux formes d\'expression artistique. Laissez-vous inspirer par la passion et la créativité qui animent ce site',
 		openGraph: {
 			images: article?.image ?? 'Image non trouvée'
 		}

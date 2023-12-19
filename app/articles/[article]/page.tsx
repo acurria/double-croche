@@ -47,21 +47,38 @@ export default function Article({params}:propsType) {
 		seeAlso3: any
 	} | null>(null);
 
+	const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
 		const fetchData = async () => {
 			const slug = params.article;
 			const fetchedArticle = await getArticle(slug);
 			setArticle(fetchedArticle);
+			setLoading(false);
 		};
 
 		fetchData();
 	}, [params.article]);
 
-
-	if (!article) {
-		return <div className='page-main'/>
+	if (loading) {
+		return (
+			<div className='not-found-page'>
+				<div className="not-found-container">
+					<h2>Chargement en cours...</h2>
+				</div>
+			</div>
+		);
 	}
 
+	if (!article) {
+		return (
+			<div className='not-found-page'>
+				<div className="not-found-container">
+					<h2>La page que vous tentez d’atteindre n’est pas disponible, mais vous trouverez plein d’autres choses chouettes sur <Link href="/#" aria-label="Retour à l'accueil">double-croche.com</Link> ! </h2>
+				</div>
+			</div>
+		);
+	}
 
 	const builder = imageUrlBuilder(client);
 	function urlFor(source: any) {
