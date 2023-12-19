@@ -57,13 +57,11 @@ export default function Article({params}:propsType) {
 		fetchData();
 	}, [params.article]);
 
+
 	if (!article) {
-		return <div className='not-found-page'>
-			<div className="not-found-container">
-				<h2>La page que vous tentez d’atteindre n’est pas disponible, mais vous trouverez plein d’autres choses chouettes sur <Link href="/#" aria-label="Retour à l'accueil">double-croche.com</Link> ! </h2>
-			</div>
-		</div>
+		return <div className='page-main'/>
 	}
+
 
 	const builder = imageUrlBuilder(client);
 	function urlFor(source: any) {
