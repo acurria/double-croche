@@ -618,6 +618,10 @@ nav:not(.pager-container) {
 	overflow-x: auto;
 }
 
+.wrapper-at {
+	display: flex;
+}
+
 .pager-container .pager-item,
 .pager-container .pagination-number {
 	margin: 0 0.7rem;
@@ -835,6 +839,19 @@ nav:not(.pager-container) {
 	letter-spacing: 0;
 	font-size: 0.875rem;
 	line-height: 1;
+}
+
+.preview-article span.subcategory.contest-at-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.preview-article .title-info .text-info.at-contest {
+	margin: -0.12rem 0.2rem 0 0;
+}
+
+.preview-article .title-info .at-highlight {
+	margin-right: 0.3rem;
 }
 
 .recent-articles-grid {
@@ -1216,8 +1233,12 @@ nav:not(.pager-container) {
 	margin-top: 0.5rem;
 }
 
-.text-info.date {
-	margin-left: 0.4rem;
+.text-info.before-date {
+	margin-right: 0.3rem;
+}
+
+span.subcategory span {
+	margin-bottom: 0.3rem;
 }
 
 .article-page .title-info {
@@ -2039,16 +2060,26 @@ nav:not(.pager-container) {
 	.category-page .info-main-article .preview-article .title-info span {
 		display: inline-block;
 		font-size: 1.5rem;
-		margin-top: 0.5rem;
+		margin-top: 0.3rem;
 		margin-right: 0.4rem;
+	}
+
+	.category-page .info-main-article .preview-article .title-info span.at-contest {
+		margin-top: -0.4rem;
 	}
 
 	.category-page .info-main-article .text-info.date {
 		margin-left: 0;
 	}
 
-	.category-page.contest .info-main-article .preview-article .title-info span:last-child {
-		display: block;
+	.category-page.contest .info-main-article .preview-article .title-info .wrapper-at,
+	.category-page.contest .info-main-article .preview-article .title-info .subcategory.contest-at-container {
+		display: flex;
+		align-items: center;
+	}
+
+	.category-page.contest .info-main-article .preview-article .text-info:last-child {
+		width: 100%;
 	}
 
 	.category-page .main-category-article > .preview-article .title-info {
