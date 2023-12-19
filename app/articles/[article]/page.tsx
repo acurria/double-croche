@@ -11,6 +11,7 @@ import Fade from 'react-reveal/Fade';
 import { getArticle } from '@/src/createClient';
 import client from '@/src/createClient';
 import PreviewArticle from '@/src/components/molecules/preview-article';
+import Link from "next/link";
 
 interface propsType {
 	params: { article: string };
@@ -57,7 +58,11 @@ export default function Article({params}:propsType) {
 	}, [params.article]);
 
 	if (!article) {
-		return <div className="page-main"></div>
+		return <div className='not-found-page'>
+			<div className="not-found-container">
+				<h2>La page que vous tentez d’atteindre n’est pas disponible, mais vous trouverez plein d’autres choses chouettes sur <Link href="/#" aria-label="Retour à l'accueil">double-croche.com</Link> ! </h2>
+			</div>
+		</div>
 	}
 
 	const builder = imageUrlBuilder(client);

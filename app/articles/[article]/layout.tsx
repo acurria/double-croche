@@ -10,10 +10,10 @@ export async function generateMetadata({params}:propsType) {
 	const article = await getArticle(slug);
 
 	return {
-		title: article.title,
-		description: article.metadescription,
+		title: article?.title ?? 'Page non trouvée',
+		description: article?.metadescription ?? 'Page non trouvée',
 		openGraph: {
-			images: article.image
+			images: article?.image ?? 'Image non trouvée'
 		}
 	}
 }
