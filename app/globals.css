@@ -1187,7 +1187,7 @@ nav:not(.pager-container) {
 	padding: 3rem 0 0;
 }
 
-.layout-basic.see-also .react-reveal:last-child {
+.layout-basic.see-also .react-reveal:nth-child(3) {
 	display: none;
 }
 
