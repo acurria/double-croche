@@ -153,24 +153,24 @@ export default function Article({params}:propsType) {
 					<PortableText value={article.content} components={myPortableTextComponents}/>
 				</div>
 				{
-					article.seeAlso1 && <div className='grid-container layout-basic see-also lg:max-w-screen-lg lg:mx-auto' >
+					(article.seeAlso1) && <div className='grid-container layout-basic see-also lg:max-w-screen-lg lg:mx-auto' >
 						<h2>
 							<span className='highlight-secondary'>À VOIR </span>
 							<span>AUSSI</span>
 						</h2>
 						<div className='wrapper-grid'>
 							{
-								<Fade key={article.seeAlso1} bottom>
+								(article.seeAlso1) && <Fade key={article.seeAlso1} bottom>
 									<PreviewArticle key={article.seeAlso1} id={article.seeAlso1}/>
 								</Fade>
 							}
 							{
-								<Fade key={article.seeAlso2} bottom>
+								(article.seeAlso2) && <Fade key={article.seeAlso2} bottom>
 									<PreviewArticle key={article.seeAlso2} id={article.seeAlso2}/>
 								</Fade>
 							}
 							{
-								<Fade key={article.seeAlso3} bottom>
+								(article.seeAlso3) && <Fade key={article.seeAlso3} bottom>
 									<PreviewArticle key={article.seeAlso3} id={article.seeAlso3}/>
 								</Fade>
 							}
