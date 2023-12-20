@@ -59,30 +59,8 @@ export default function PreviewArticle({id}:propsType) {
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'playlist' && <Link className="link-image" href={data[0].externalLink} target='_blank' aria-label="Écouter sur Spotify">
 					<span className='read-article link-to hidden lg:block'>Écouter sur Spotify</span>
-					<Image
-						className="image-preview-article"
-						src={urlFor(data[0].image).url()}
-						alt="Vercel Logo"
-						width={800}
-						height={800}
-					/>
-				</Link>
-			}
-			{
-				data[0].categorySlug === 'concours' && <Link className="link-image" href={data[0].externalLink} target='_blank' aria-label="Voir le post sur Instagram">
-					<span className='read-article link-to hidden lg:block'>Voir le post sur Instagram</span>
-					<Image
-						className="image-preview-article"
-						src={urlFor(data[0].image).url()}
-						alt="Vercel Logo"
-						width={800}
-						height={800}
-					/>
-				</Link>
-			}
-			{
-				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
-					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
+					{
+						data[0].image &&
 						<Image
 							className="image-preview-article"
 							src={urlFor(data[0].image).url()}
@@ -90,90 +68,142 @@ export default function PreviewArticle({id}:propsType) {
 							width={800}
 							height={800}
 						/>
+					}
+				</Link>
+			}
+			{
+				data[0].categorySlug === 'concours' && <Link className="link-image" href={data[0].externalLink} target='_blank' aria-label="Voir le post sur Instagram">
+					<span className='read-article link-to hidden lg:block'>Voir le post sur Instagram</span>
+					{
+						data[0].image &&
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+					}
+				</Link>
+			}
+			{
+				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
+					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
+					{
+						data[0].image &&
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+					}
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'news' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
-						className="image-preview-article"
-						src={urlFor(data[0].image).url()}
-						alt="Vercel Logo"
-						width={800}
-						height={800}
-					/>
+					{
+						data[0].image &&
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+					}
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'musique' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
-						className="image-preview-article"
-						src={urlFor(data[0].image).url()}
-						alt="Vercel Logo"
-						width={800}
-						height={800}
-					/>
+					{
+						data[0].image &&
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+					}
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'festival' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
-						className="image-preview-article"
-						src={urlFor(data[0].image).url()}
-						alt="Vercel Logo"
-						width={800}
-						height={800}
-					/>
+					{
+						data[0].image &&
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+					}
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'chronique' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
-						className="image-preview-article"
-						src={urlFor(data[0].image).url()}
-						alt="Vercel Logo"
-						width={800}
-						height={800}
-					/>
+					{
+						data[0].image &&
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+					}
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'news' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
-						className="image-preview-article"
-						src={urlFor(data[0].image).url()}
-						alt="Vercel Logo"
-						width={800}
-						height={800}
-					/>
+					{
+						data[0].image &&
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+					}
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'series' && data[0].subcategorySlug === 'news' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
-						className="image-preview-article"
-						src={urlFor(data[0].image).url()}
-						alt="Vercel Logo"
-						width={800}
-						height={800}
-					/>
+					{
+						data[0].image &&
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+					}
 				</Link>
 			}
 			{
 				data[0].categorySlug === 'cinema' && data[0].subcategorySlug === 'interview' && <Link className="link-image" href={`/articles/${data[0].url}`} aria-label="Lire l'article">
 					<span className='read-article link-to hidden lg:block'>Lire l'article</span>
-					<Image
-						className="image-preview-article"
-						src={urlFor(data[0].image).url()}
-						alt="Vercel Logo"
-						width={800}
-						height={800}
-					/>
+					{
+						data[0].image &&
+						<Image
+							className="image-preview-article"
+							src={urlFor(data[0].image).url()}
+							alt="Vercel Logo"
+							width={800}
+							height={800}
+						/>
+					}
 				</Link>
 			}
 			<p className='category-subcategory'>
