@@ -4,6 +4,9 @@ const nextConfig = {
         appDir: true,
         scrollRestoration: true
     },
+    compiler: {
+        styledComponents: true,
+    },
     images: {
         domains: ['cdn.sanity.io']
     }
